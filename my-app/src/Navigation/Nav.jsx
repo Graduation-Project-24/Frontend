@@ -24,7 +24,7 @@ function Nav() {
               <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
               <div class="dropdown m-0">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  All Categories
+                  All Categories test
                 </button>
                 <ul class="dropdown-menu">
                   <li><button class="dropdown-item" type="button">Action</button></li>
