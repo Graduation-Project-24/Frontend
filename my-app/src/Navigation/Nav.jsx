@@ -1,8 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-
-import Logo from '../../assets/logo.jpg'
+import Logo from '../assets/logo.jpg'
 import './Nav.css'
+
+import NavMenu from '../component/NavMenu';
 function Nav() {
+
+  const menuItems = [
+    { id: 1, label: 'Home', link: '/' },
+    { id: 2, label: 'About', link: '/about' },
+    { id: 3, label: 'Shop', link: '/shop' },
+    { id: 4, label: 'Contact Us', link: '/contact' },
+    { id: 5, label: 'Login', link: '/login' },
+  ];
+
   return (
     <>
       <nav class="navbar navbar-expand-lg p-0">
@@ -30,23 +40,9 @@ function Nav() {
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse m-0" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Shop</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Contact Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Login</a>
-              </li>
-            </ul>
+          <div>
+            <NavMenu menuItems={menuItems} />
+          </div>
           </div>
           <button class="btn btn-outline-success" type="submit">Search</button>
         </div>
