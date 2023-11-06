@@ -2,7 +2,7 @@
 import Logo from '../../assets/logo.jpg'
 import './Nav.css'
 
-import NavMenu from '../NavMenu/NavMenu';
+import NavMenu from './NavMenu/NavMenu';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BsFillCartFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
