@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Logo from '../../assets/logo.jpg'
+import Profile from '../../assets/profile.svg'
 import './Nav.css'
 
-import NavMenu from '../NavMenu/NavMenu';
+import NavMenu from './NavMenu/NavMenu';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BsFillCartFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
@@ -13,9 +14,10 @@ function Nav() {
     { id: 1, label: 'Home', link: '/home' },
     { id: 2, label: 'About', link: '/about' },
     { id: 3, label: 'Shop', link: '/shop' },
-    { id: 4, label: 'Contact Us', link: '/contact' },
-    { id: 5, label: 'Login', link: '/login' },
+    { id: 4, label: 'Contact Us', link: '/contact' }
   ];
+  
+  let Loging = false;
 
   return (
     <>
@@ -27,8 +29,8 @@ function Nav() {
           <form className="d-flex" role="search">
               <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
               <div className="dropdown m-0">
-                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  All Categories test
+                <button className="btn text-black-50 bg-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  All Categories
                 </button>
                 <ul className="dropdown-menu">
                   <li><button className="dropdown-item" type="button">Action</button></li>
@@ -36,7 +38,7 @@ function Nav() {
                   <li><button className="dropdown-item" type="button">Something else here</button></li>
                 </ul>
               </div>
-            <button className="btn btn-outline-success" type="submit">
+            <button className="btn text-white search" type="submit">
               <AiOutlineSearch />
             </button>
           </form>
@@ -44,11 +46,19 @@ function Nav() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse m-0" id="navbarSupportedContent">
-          <div>
-            <NavMenu menuItems={menuItems} />
+            <div>
+              <NavMenu menuItems={menuItems} />
+            </div>
+            <button className="btn bg-orange ms-2"><BsFillCartFill /></button>
           </div>
-          </div>
-          <button className="btn btn-warning" type="submit"><BsFillCartFill /></button>
+          {Loging === true ?
+            <div className='profile-icon'>
+              <img src={Profile} alt='profile-img' />
+            </div> :
+            <button className="btn login" type="submit">
+              Login
+            </button>
+          }
         </div>
       </nav>
     </>
