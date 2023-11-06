@@ -3,7 +3,7 @@ import './Footer.css'
 import Visa from '../../assets/visa.svg'
 import Stripe from '../../assets/stripe.svg'
 import Mastercard from '../../assets/mastercard.svg'
-import Logo from '../../assets/logo.jpg'
+import Logo from '../../assets/darklogo.png'
 
 function Footer() {
   return <>

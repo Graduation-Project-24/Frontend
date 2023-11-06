@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import Logo from '../../assets/logo.jpg'
+import Logo from '../../assets/darklogo.png'
 import Profile from '../../assets/profile.svg'
 import './Nav.css'
 
