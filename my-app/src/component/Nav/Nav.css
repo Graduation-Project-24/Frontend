@@ -17,3 +17,43 @@ nav{
 .navbar-nav{
     color:#fff
 }
+.form-control{
+    border-radius:4px 0 0 4px ;
+    -webkit-border-radius:4px 0 0 4px ;
+    -moz-border-radius:4px 0 0 4px ;
+    -ms-border-radius:4px 0 0 4px ;
+    -o-border-radius:4px 0 0 4px ;
+}
+.dropdown-toggle{
+    border-radius:0px ;
+    -webkit-border-radius:0px ;
+    -moz-border-radius:0px ;
+    -ms-border-radius:0px ;
+    -o-border-radius:0px ;
+}
+.search{
+    border-radius:0 4px 4px 0 ;
+    -webkit-border-radius:0 4px 4px 0 ;
+    -moz-border-radius:0 4px 4px 0 ;
+    -ms-border-radius:0 4px 4px 0 ;
+    -o-border-radius:0 4px 4px 0 ;
+    background-color: var(--forth-color);
+}
+.login{
+    background-color: var(--forth-color);
+    color:#fff
+}
+.profile-icon  {
+    width:120px;
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
