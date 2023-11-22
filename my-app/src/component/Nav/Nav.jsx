@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import Logo from '../../assets/logo.jpg'
+import Logo from '../../assets/whitelogo.png'
 import Profile from '../../assets/profile.svg'
 import './Nav.css'
 
@@ -22,7 +22,7 @@ function Nav() {
   return (
     <>
       <nav className="navbar navbar-expand-lg p-0">
-        <div className="container">
+        <div className="container-fluid">
           <Link className="navbar-brand logo p-0" to="home">
             <img src={Logo} alt="logo" />
           </Link>
