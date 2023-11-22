@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+
 import "./Footer.css";
 import Visa from "../../assets/visa.svg";
 import Stripe from "../../assets/stripe.svg";
 import Mastercard from "../../assets/mastercard.svg";
 import Logo from "../../assets/whitelogo.png";
+
 
 function Footer() {
   return (
@@ -43,6 +45,14 @@ function Footer() {
                 </ul>
               </div>
             </div>
+
+            <div className="row d-flex flex-column align-items-center my-3">
+                <div className="logo mb-3 d-block">
+                    <img src={Logo} alt="Logo" />
+                </div>
+                <div className="text text-center text-white">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy a type specimen book.</p>
+
             <div class="col-md-6 col-lg-3">
               <div class="links">
                 <h5 class="text-light">Customer Service</h5>

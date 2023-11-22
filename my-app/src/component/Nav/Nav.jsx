@@ -17,7 +17,7 @@ function Nav() {
     { id: 4, label: 'Contact Us', link: '/contact' }
   ];
   
-  let Loging = false;
+  let Loging = true;
 
   return (
     <>
