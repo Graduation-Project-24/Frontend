@@ -3,7 +3,7 @@ import './Footer.css'
 import Visa from '../../assets/visa.svg'
 import Stripe from '../../assets/stripe.svg'
 import Mastercard from '../../assets/mastercard.svg'
-import Logo from '../../assets/darklogo.png'
+import Logo from '../../assets/whitelogo.png'
 
 function Footer() {
   return <>
@@ -64,7 +64,7 @@ function Footer() {
                 
                 </div>
             </div>
-            <div className="row d-flex flex-column align-items-center my-4">
+            <div className="row d-flex flex-column align-items-center my-3">
                 <div className="logo mb-3 d-block">
                     <img src={Logo} alt="Logo" />
                 </div>
