@@ -1,5 +1,13 @@
 .hero{
-    height:500px;
     width: 100%;
-    background-image: "./assets/herobackground.png";
+    max-height: 50vh;
+    background:url("./assets/herobackground.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.left h1{
+    font-size:46px
+}
+.left h1 span{
+    color:#0AAEB9
 }

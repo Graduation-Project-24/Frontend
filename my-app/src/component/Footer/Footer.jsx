@@ -8,8 +8,7 @@ import Logo from "../../assets/whitelogo.png";
 
 
 function Footer() {
-  return (
-    <>
+  return <>
       <div class="footer pt-5 pb-3 text-white-50 text-center text-md-start ">
         <div class="container-fluid">
           <div class="row">
@@ -45,14 +44,6 @@ function Footer() {
                 </ul>
               </div>
             </div>
-
-            <div className="row d-flex flex-column align-items-center my-3">
-                <div className="logo mb-3 d-block">
-                    <img src={Logo} alt="Logo" />
-                </div>
-                <div className="text text-center text-white">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy a type specimen book.</p>
-
             <div class="col-md-6 col-lg-3">
               <div class="links">
                 <h5 class="text-light">Customer Service</h5>
@@ -135,6 +126,5 @@ function Footer() {
         </div>
       </div>
     </>
-  );
 }
 export default Footer;
