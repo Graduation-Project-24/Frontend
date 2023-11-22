@@ -22,7 +22,7 @@ function Nav() {
   return (
     <>
       <nav className="navbar navbar-expand-lg p-0">
-        <div className="container">
+        <div className="container-fluid">
           <Link className="navbar-brand logo p-0" to="home">
             <img src={Logo} alt="logo" />
           </Link>
