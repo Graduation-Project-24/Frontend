@@ -3,10 +3,10 @@ import './Hero.css'
 
 function Hero() {
   return <>
-    <div className="hero">
-        <div className="container-fluid my-2">
+    <div className="hero py-2">
+        <div className="container-fluid">
             <div className="row">
-                <div className="col-3 col-md-6 left d-flex flex-column justify-content-center">
+                <div className="left col-3 col-md-6 my-5 py-5 d-flex flex-column justify-content-center">
                     <h1>Shop <span>Computer & experience</span></h1>
                     <p>
                         You cannot inspect quality into the product, it is already there.
@@ -15,7 +15,10 @@ function Hero() {
                     <a href='#' className='btn btn-primary'>View More</a>
                 </div>
                 <div className="col-3 col-md-6 right">
-                    test
+                    <div className='offer'>
+                        <p>40%</p>
+                        <p>off</p>
+                    </div>
                 </div>
             </div>
         </div>

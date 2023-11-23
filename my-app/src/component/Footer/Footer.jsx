@@ -107,7 +107,7 @@ function Footer() {
               </div>
             </div>
           </div>
-          <div className="row d-flex flex-column align-items-center my-4">
+          <div className="row d-flex flex-column align-items-center mb-4">
             <div className="logo mb-3 d-flex justify-content-center ">
               <img src={Logo} alt="Logo" />
             </div>
