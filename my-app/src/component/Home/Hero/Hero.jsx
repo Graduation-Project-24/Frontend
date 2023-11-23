@@ -3,7 +3,7 @@ import './Hero.css'
 
 function Hero() {
   return <>
-    <div className="hero py-2">
+    <div className="hero">
         <div className="container-fluid">
             <div className="row">
                 <div className="left col-3 col-md-6 my-5 py-5 d-flex flex-column justify-content-center">

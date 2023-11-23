@@ -1,27 +1,34 @@
 .hero{
     width: 100%;
+    padding-top:80px;
+    padding-bottom:80px;
     background:url("./assets/herobackground.png");
     background-repeat: no-repeat;
-    background-size: cover
+    background-size: cover;
 }
 .left h1{
     font-size:46px
 }
 .left a{
     width:fit-content;
-    background-color: #0AAEB9;
+    background-color: var(--forth-color);
     border: #0AAEB9;
     padding-inline:20px
 }
+.left a:hover{
+    background-color: var(--secondary-color);
+
+}
 .right{
     position: relative;
+    
 }
 .right .offer{
     position: absolute;
-    top: 60px;
-    right: 120px;
+    top: 40px;
+    right: 50px;
     color: #fff;
-    font-size: 50px;
+    font-size: 40px;
     background: linear-gradient(#FDC830, #F37335);
     width: 200px;
     border-radius: 50%;
