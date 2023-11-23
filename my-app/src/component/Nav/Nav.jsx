@@ -61,6 +61,15 @@ function Nav() {
           }
         </div>
       </nav>
+      <div className='flag'>
+        <ul>
+          <li><a href="#">Customer Service</a></li>
+          <li><a href="#">Best Seller</a></li>
+          <li><a href="#">Today's Deals</a></li>
+          <li><a href="#">Fashion</a></li>
+          <li><a href="#">New Releases</a></li>
+        </ul>
+      </div>
     </>
   )
 }

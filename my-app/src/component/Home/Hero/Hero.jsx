@@ -7,7 +7,7 @@ function Hero() {
         <div className="container-fluid">
             <div className="row">
                 <div className="left col-3 col-md-6 my-5 py-5 d-flex flex-column justify-content-center">
-                    <h1>Shop <span>Computer & experience</span></h1>
+                    <h1>Shop Computer & experience</h1>
                     <p>
                         You cannot inspect quality into the product, it is already there.
                         I am not a product of my circumstances.I am a product of my decisions.

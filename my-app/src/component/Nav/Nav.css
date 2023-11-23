@@ -56,3 +56,17 @@ nav{
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
+.flag{
+    background: linear-gradient(90deg, #253036 0%, #414E56 100%);
+    display: flex;
+    justify-content: start;
+    padding:10px
+}
+.flag ul{
+    display: flex;
+    margin-bottom: 0;
+}
+li{
+    list-style: none;
+    margin-right: 30px;
+}
