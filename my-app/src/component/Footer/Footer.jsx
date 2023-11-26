@@ -89,7 +89,7 @@ function Footer() {
               </div>
             </div>
             <div class="col-md-6 col-lg-3">
-              <div class="links">
+              <div class="links payment">
                 <h5 class="text-light">Payment Methods</h5>
                 <div>
                   <div className="icons d-flex ">

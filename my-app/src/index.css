@@ -11,8 +11,14 @@
   --third-color: #384959;
   --forth-color: #faa933;
 }
+.primary-color{
+  background-color: #384959;
+}
 .bg-orange{
   background-color:#faa933;
+}
+.orange{
+  color:#faa933
 }
 
 a {
