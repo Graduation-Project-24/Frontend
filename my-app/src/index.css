@@ -3,7 +3,10 @@
   margin: 0;
   font-family: Poppins;
   box-sizing: border-box;
+  outline: 0;
+  border: 0;
 }
+
 
 :root {
   --primary-color: #384959;
@@ -23,6 +26,9 @@
 
 a {
   text-decoration: none;
+  color:#fff;
+}
+a:hover{
   color:#fff
 }
 

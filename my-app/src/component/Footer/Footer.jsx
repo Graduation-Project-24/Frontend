@@ -9,13 +9,13 @@ import Logo from "../../assets/whitelogo.png";
 
 function Footer() {
   return <>
-      <div class="footer pt-5 pb-3 text-white-50 text-center text-md-start ">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-6 col-lg-3">
-              <div class="links">
-                <h5 class="text-light">Company</h5>
-                <ul class="list-unstyled lh-lg">
+      <div className="footer pt-5 pb-3 text-white-50 text-center text-md-start ">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-md-6 col-lg-3">
+              <div className="links">
+                <h5 className="text-light">Company</h5>
+                <ul className="list-unstyled lh-lg">
                   <li>
                     <a href="#" className="text-white-50">
                       About
@@ -44,10 +44,10 @@ function Footer() {
                 </ul>
               </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="links">
-                <h5 class="text-light">Customer Service</h5>
-                <ul class="list-unstyled lh-lg ">
+            <div className="col-md-6 col-lg-3">
+              <div className="links">
+                <h5 className="text-light">Customer Service</h5>
+                <ul className="list-unstyled lh-lg ">
                   <li>
                     <a href="#" className="text-white-50">
                       Deliver Information
@@ -66,10 +66,10 @@ function Footer() {
                 </ul>
               </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="links">
-                <h5 class="text-light">Order & Purchase</h5>
-                <ul class="list-unstyled lh-lg">
+            <div className="col-md-6 col-lg-3">
+              <div className="links">
+                <h5 className="text-light">Order & Purchase</h5>
+                <ul className="list-unstyled lh-lg">
                   <li>
                     <a href="#" className="text-white-50">
                       Check Order Status
@@ -88,9 +88,9 @@ function Footer() {
                 </ul>
               </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="links payment">
-                <h5 class="text-light">Payment Methods</h5>
+            <div className="col-md-6 col-lg-3">
+              <div className="links payment">
+                <h5 className="text-light">Payment Methods</h5>
                 <div>
                   <div className="icons d-flex ">
                     <a href="#" className="ms-">
@@ -120,7 +120,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <hr class="border border-secondary border-1 opacity-75" />
+        <hr className="border border-secondary border-1 opacity-75" />
         <div className="copyright text-center">
           @2023 ApplicationName. All right Reserved
         </div>

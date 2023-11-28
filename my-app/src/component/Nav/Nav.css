@@ -32,9 +32,10 @@
     -moz-border-radius: 0px 4px 4px 0px;
     -ms-border-radius: 0px 4px 4px 0px;
     -o-border-radius: 0px 4px 4px 0px;
-    outline: none;
-    border: none;
-    color:black
+    
+}
+.dropdown-toggle{
+    color:black !important;
 }
 .search{
     border-radius:0 4px 4px 0 ;
@@ -47,10 +48,18 @@
     border: none;
 }
 .search:hover{
-    background-color: #fff !important;
+    background-color: #000 !important;
 }
 .search:active{
     background-color: #fff !important;
+}
+.btn-primary{
+    border: 0;
+}
+.btn-primary:hover{
+    background-color: var(--secondary-color);
+    outline: 0;
+    border: 0;
 }
 .login{
     background-color: var(--forth-color);

@@ -1,7 +1,7 @@
-import { BrowserRouter, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import Layout from "./component/Layout/Layout"
-import Home from "./component/Home/Home"
+import Home from "./Home/Home"
 import About from './About/About';
 import "./index.css";
 

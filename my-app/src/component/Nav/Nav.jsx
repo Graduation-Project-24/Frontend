@@ -19,7 +19,7 @@ import './Nav.css'
 
 import { AiOutlineSearch } from 'react-icons/ai';
 
-function Example(args) {
+function Navigation(args) {
 
   const menuItems = [
     { id: 1, label: 'Home', link: '/' },
@@ -44,19 +44,19 @@ function Example(args) {
             <Form.Control
               type="search"
               placeholder="Search"
-              className="form-control"
+              className="form-control text-black-50"
               aria-label="Search"
             />
             <NavDropdown
               title="Dropdown"
               id={`offcanvasNavbarDropdown-expand-lg`}
-              className='bg-white dropdown me-1 text-black'
+              className='bg-white dropdown me-1 text-black-50'
             >
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
             </NavDropdown>
-            <Button className='btn-disabled-color bg-orange text-white'><AiOutlineSearch /></Button>
+            <Button className='bg-orange text-white'><AiOutlineSearch /></Button>
           </Form>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} className='orange' />
           <Navbar.Offcanvas
@@ -90,4 +90,4 @@ function Example(args) {
   );
 }
 
-export default Example;
+export default Navigation;
