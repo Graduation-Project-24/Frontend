@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import product1 from "./assets/product1.png"
 import product2 from "./assets/product4.png"
 import product3 from "./assets/product2.png"
