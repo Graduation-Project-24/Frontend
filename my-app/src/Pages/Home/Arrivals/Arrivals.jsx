@@ -46,8 +46,6 @@ const data = [
 ]; 
 function Arrivals() {
 
-
-
   return (
     <>
       <div className="arrivals my-1 py-2">
