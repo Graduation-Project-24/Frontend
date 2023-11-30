@@ -33,7 +33,7 @@ function SubCategories() {
   return (
     <>
       <div className="supcategory mt-2">
-        <div className="container-fluid">
+        <div className="container-fluid" data-aos="zoom-in">
           <div className="row flex-wrap justify-content-center gap-1">
               {data.map ((element) =>
                 <div className="box position-relative ">

@@ -49,13 +49,13 @@ function Arrivals() {
 
   return (
     <>
-      <div className="arrivals my-1 py-2">
-        <div className="container-fluid">
+      <div className="arrivals my-1 py-2 ">
+        <div className="container-fluid ">
           <h3><span className="orange">New</span> Arrivals</h3>
-          <div className="row justify-content-center flex-wrap gap-1">
+          <div className="row justify-content-between flex-wrap gap-1">
             {
               data.map((element)=>
-                <div className="product border  p-3 ">
+                <div className="product border p-3 " data-aos="zoom-in">
                   <div className="title">
                     <h5 className="text-black-50 fs-6">{element.seller}</h5>
                     <h4 className="fs-6">{element.title}</h4>

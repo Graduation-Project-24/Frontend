@@ -9,11 +9,11 @@ import Logo from "../../assets/whitelogo.png";
 
 function Footer() {
   return <>
-      <div className="footer pt-5 pb-3 text-white-50 text-center text-md-start ">
+      <div className="footer pt-5 pb-3 text-white-50 text-center text-md-start overflow-hidden">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-md-6 col-lg-3">
-              <div className="links">
+            <div className="col-md-6 col-lg-3" >
+              <div className="links" data-aos="fade-right">
                 <h5 className="text-light">Company</h5>
                 <ul className="list-unstyled lh-lg">
                   <li>
@@ -45,7 +45,7 @@ function Footer() {
               </div>
             </div>
             <div className="col-md-6 col-lg-3">
-              <div className="links">
+              <div className="links" data-aos="fade-right">
                 <h5 className="text-light">Customer Service</h5>
                 <ul className="list-unstyled lh-lg ">
                   <li>
@@ -67,7 +67,7 @@ function Footer() {
               </div>
             </div>
             <div className="col-md-6 col-lg-3">
-              <div className="links">
+              <div className="links"  data-aos="fade-left">
                 <h5 className="text-light">Order & Purchase</h5>
                 <ul className="list-unstyled lh-lg">
                   <li>
@@ -89,7 +89,7 @@ function Footer() {
               </div>
             </div>
             <div className="col-md-6 col-lg-3">
-              <div className="links payment">
+              <div className="links payment"  data-aos="fade-left">
                 <h5 className="text-light">Payment Methods</h5>
                 <div>
                   <div className="icons d-flex ">
@@ -107,8 +107,8 @@ function Footer() {
               </div>
             </div>
           </div>
-          <div className="row d-flex flex-column align-items-center mb-4">
-            <div className="logo mb-3 d-flex justify-content-center ">
+          <div className="row d-flex flex-column align-items-center mb-4" data-aos="zoom-in">
+            <div className="logo mb-3 d-flex justify-content-center">
               <img src={Logo} alt="Logo" />
             </div>
             <div className="text text-center text-white">

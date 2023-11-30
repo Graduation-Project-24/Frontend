@@ -76,15 +76,14 @@ function Categories() {
   return (
     <>
     <SubCategories />
-    <div className="py-2 my-2">
-      <div className="container-fluid">
+    <div className="py-2 my-2" >
+      <div className="container-fluid" >
         <div className="row">
-          <div className="parent d-flex flex-wrap justify-content-between">
+          <div className="parent d-flex flex-wrap justify-content-between overflow-hidden" data-aos="zoom-in">
             {
               data.map((element) => 
                 <div 
-                  className="category d-flex flex-column align-items-center justify-content-center" 
-                  
+                  className="category d-flex flex-column align-items-center justify-content-center " 
                 >
                   <div className="py-4 px-4 m-1" style={{"background":element.color, "borderRadius" :"10px"}}>
                     <a className="background" href="#"> 
