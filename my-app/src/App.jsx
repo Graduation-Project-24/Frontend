@@ -8,6 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 // css file
 import "./index.css";
+import User from './Pages/User/User.jsx';
 
 function App() { 
 
@@ -24,7 +25,8 @@ function App() {
     {path:'', element :<Layout />, children:[
       {path:'home', element:<Home />},
       {path:'about', element:<About />},
-    ]}
+    ]},
+    {path:'user', element:<User />},
   ])
 
   return (

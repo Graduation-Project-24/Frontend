@@ -2,8 +2,9 @@ import Categories from './Categories/Categories'
 import Contact from './Contact/Contact'
 import Hero from './Hero/Hero'
 import Arrivals from "./Arrivals/Arrivals"
-import './Home.css'
 import BestSeller from './BestSeller/BestSeller'
+import Services from './Services/Services'
+import './Home.css'
 
 function Home() {
   return <>
@@ -11,6 +12,7 @@ function Home() {
     <Categories />
     <Arrivals />
     <BestSeller />
+    <Services />
     <Contact />
   </>
 }export default Home

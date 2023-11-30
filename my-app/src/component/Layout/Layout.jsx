@@ -3,6 +3,7 @@ import Nav from '../Nav/Nav'
 import Footer from '../Footer/Footer'
 import About from '../../Pages/About/About'
 import Home from "../../Pages/Home/Home"
+import User from '../../Pages/User/User'
 
 function Layout() {
   return <>
@@ -10,6 +11,7 @@ function Layout() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/user" element={<User />}></Route>
       </Routes>
       <Footer />
   </>

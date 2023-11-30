@@ -32,9 +32,9 @@ function BestSeller() {
                 <a href="#" className="btn primary-color text-white">View More</a>
               </div>
             </div>
-            <div className="col products d-flex flex-nowrap">
+            <div className="col products d-flex flex-nowrap" >
               {data.map((e) =>
-                <div className="product border p-2 mx-2 flex-column ">
+                <div className="product border p-2 mx-2 flex-column" data-aos="fade-right">
                   <div className="image">
                     <img src={e.src} alt="productimage" />
                   </div>

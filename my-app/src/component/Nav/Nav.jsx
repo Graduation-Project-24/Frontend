@@ -28,7 +28,7 @@ function Navigation(args) {
     { id: 4, label: 'Contact', link: '/contact' }
   ];
 
-  let Loging = true;
+  let Loging = false;
 
   return (
     <>
@@ -78,7 +78,7 @@ function Navigation(args) {
               {
             Loging === true ?
             <a className="profile-icon " href='#' data-aos="fade-left"><img src={Profile} alt="Profile" /></a> :
-            <button className='btn login' data-aos="fade-left">Login</button>
+            <Link className='btn login bg-orange' data-aos="fade-left" to='/user'>Login</Link>
           }
             </Offcanvas.Body>
             
