@@ -19,12 +19,16 @@
 }
 .primary-color:hover{
   background-color: #2d3a46;
+  color:#fff;
 }
 .bg-orange{
   background-color:#faa933;
 }
 .bg-orange:hover{
   background-color:#d5922e;
+}
+.orange{
+  color:#faa933
 }
 .orange{
   color:#faa933

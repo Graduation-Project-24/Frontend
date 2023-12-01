@@ -48,7 +48,7 @@ function Navigation(args) {
               aria-label="Search"
             />
             <NavDropdown
-              title="Dropdown"
+              title="Category"
               id={`offcanvasNavbarDropdown-expand-lg`}
               className='bg-white dropdown me-1 text-black-50'
             >
