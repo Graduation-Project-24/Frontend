@@ -1,0 +1,124 @@
+.hero{
+    width: 100%;
+    padding-top:80px;
+    padding-bottom:80px;
+    background:url("./assets/herobackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero .left h1{
+    font-size:46px
+}
+.hero .left a{
+    width:fit-content;
+    background-color: var(--forth-color);
+    border: #0AAEB9;
+    padding-inline:20px
+}
+.hero .left a:hover{
+    background-color: var(--secondary-color);
+
+}
+.hero .right{
+    position: relative;
+    
+}
+.hero .right .offer{
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    color: #fff;
+    font-size: 40px;
+    background: linear-gradient(#FDC830, #F37335);
+    width: 200px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: normal;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.category {
+    width:120px;
+}
+.category img
+{
+    width:100%
+}
+.supcategory{
+    background: linear-gradient(180deg, #FAA933 0%, rgba(255, 255, 255, 0.00) 100%);
+}
+.supcategory .box{
+    width:300px;
+    height:200px;
+    
+}
+
+.supcategory .image img{
+    width:100%;
+    height: 100%;
+}
+.supcategory .title{
+    position: absolute;
+    background: rgba(254, 249, 249, 0.95);
+    box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.57);
+    width: 80%;
+    bottom:30px;
+}
+.supcategory .title a{
+    color:#14B1F0;
+}
+.arrivals .product{
+    width:280px
+}
+.bestseller .product{
+    width:220px
+}
+.contact{
+    background: url(./assets/contactbackground.png);
+    background-size: cover ;
+    background-repeat: no-repeat;
+    padding-top:100px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+.contact h1{
+    font-family: Poppins;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 44px;
+}
+.contact p{
+    font-size: 18px;
+    font-family: sans-serif;
+}
+.contact form{
+    background: #F2F4F6;
+    width: fit-content;
+    text-align: center;
+    margin: auto;
+    padding: 0 20px;
+    border-bottom: 1px solid #ddd;
+}
+.contact input{
+    border: none;
+    outline: none;
+    padding: 10px 25px;
+    background: none;
+    margin-left: 10px;
+    margin-right: 60px;
+    width:auto;
+    height: auto;
+}
+.contact button{
+    font-family: sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    background-color: #F2F4F6;
+    border: none;
+}
+.services .box{
+    background: var(--neutral-02100, #F3F5F7);
+}

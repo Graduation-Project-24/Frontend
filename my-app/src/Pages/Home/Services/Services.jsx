@@ -3,8 +3,6 @@ import { CiMoneyBill } from "react-icons/ci";
 import { CiLock } from "react-icons/ci";
 import { FiPhone } from "react-icons/fi";
 
-import "./Services.css";
-
 function Services() {
   const data = [
     {
@@ -37,7 +35,7 @@ function Services() {
             <h3><span className="orange">Our</span> Services</h3>
             <div className="ourservices d-flex justify-content-between mt-3">
             {data.map((e) => 
-              <div className="box p-5 rounded-3" data-aos="zoom-in">
+              <div className="box p-3 p-lg-5 rounded-3" data-aos="zoom-in">
                 <div className="icon fs-1 fw-normal mb-3">
                   {e.icon}
                 </div>

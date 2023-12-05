@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import product1 from "./assets/product1.png"
-import product2 from "./assets/product4.png"
-import product3 from "./assets/product2.png"
-import product4 from "./assets/product3.png"
-import product5 from "./assets/product5.png"
+import product1 from "../assets/product1.png"
+import product2 from "../assets/product4.png"
+import product3 from "../assets/product2.png"
+import product4 from "../assets/product3.png"
+import product5 from "../assets/product5.png"
 
-import "./Arrivals.css"
+
 
 const data = [
   {
@@ -55,7 +55,7 @@ function Arrivals() {
           <div className="row justify-content-between flex-wrap gap-1">
             {
               data.map((element)=>
-                <div className="product border p-3 " data-aos="zoom-in">
+                <div className="product  border p-3 " data-aos="zoom-in">
                   <div className="title">
                     <h5 className="text-black-50 fs-6">{element.seller}</h5>
                     <h4 className="fs-6">{element.title}</h4>

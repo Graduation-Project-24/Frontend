@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import './Hero.css' 
+/* eslint-disable jsx-a11y/anchor-is-valid */ 
 
 function Hero() {
   return <>

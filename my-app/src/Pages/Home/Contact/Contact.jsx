@@ -1,4 +1,4 @@
-import "./Contact.css";
+
 import { AiOutlineMail } from "react-icons/ai";
 
 function Contact() {

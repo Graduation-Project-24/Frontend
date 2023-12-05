@@ -1,19 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable array-callback-return */
-import "./Categories.css";
-import SubCategories from "./SubCategories/SubCategories";
+import SubCategories from "./SubCategories";
 
-import image1 from "./assets/fashion.png"
-import image2 from "./assets/school.png"
-import image3 from "./assets/sport.png"
-import image4 from "./assets/electroinc.png"
-import image5 from "./assets/supermarket.png"
-import image6 from "./assets/beauty.png"
-import image7 from "./assets/mobile.png"
-import image8 from "./assets/footwear.png"
-import image9 from "./assets/toys.png"
-import image10 from "./assets/laptops.png"
-import image11 from "./assets/all.png"
+import image1 from '../assets/appliances-bg.png'
+import image2 from "../assets/school.png"
+import image3 from "../assets/sport.png"
+import image4 from "../assets/electroinc.png"
+import image5 from "../assets/supermarket.png"
+import image6 from "../assets/beauty.png"
+import image7 from "../assets/mobile.png"
+import image8 from "../assets/footwear.png"
+import image9 from "../assets/toys.png"
+import image10 from "../assets/laptops.png"
+import image11 from "../assets/all.png"
 
 const data = [
     {
