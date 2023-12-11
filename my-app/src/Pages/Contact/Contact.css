@@ -1,0 +1,31 @@
+.contact{
+    margin-top:50px;
+}
+.content{
+    margin-top:100px
+}
+.content .box{
+    width: 300px;
+}
+.content .box .text{
+    width:auto 
+}
+.content form input,
+.content form textarea{
+    display: block;
+    margin-block:10px;
+    padding:10px 15px;
+    width: 70%;
+    border:1px solid #ddd;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+@media (max-width:991px){
+    .content form input,
+    .content form textarea{
+        width:100%  
+    }
+}

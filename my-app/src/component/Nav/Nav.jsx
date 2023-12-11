@@ -14,7 +14,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Logo from '../../assets/whitelogo.png'
-import Profile from '../../assets/profile.svg'
+import Profile from '../../assets/me.jpg'
 import './Nav.css'
 
 import { AiOutlineSearch } from 'react-icons/ai';
@@ -28,7 +28,7 @@ function Navigation(args) {
     { id: 4, label: 'Contact', link: '/contact' }
   ];
 
-  let Loging = false;
+  let Loging = true;
 
   return (
     <>
@@ -77,7 +77,7 @@ function Navigation(args) {
               </Nav>
               {
             Loging === true ?
-            <a className="profile-icon " href='#' data-aos="fade-left"><img src={Profile} alt="Profile" /></a> :
+            <Link className="profile-icon" to='./profile' data-aos="fade-left"><img src={Profile} alt="Profile" /></Link> :
             <Link className='btn login bg-orange' data-aos="fade-left" to='/user'>Login</Link>
           }
             </Offcanvas.Body>

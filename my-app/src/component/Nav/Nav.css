@@ -75,6 +75,14 @@
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
+.profile-icon img{
+    width: 100%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
 .flag{
     background: linear-gradient(90deg, #253036 0%, #414E56 100%);
 
