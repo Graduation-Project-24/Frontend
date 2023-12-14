@@ -1,17 +1,17 @@
 .contact{
     margin-top:50px;
 }
-.content{
+.contact .content{
     margin-top:100px
 }
-.content .box{
+.contact .content .box{
     width: 300px;
 }
-.content .box .text{
+.contact .content .box .text{
     width:auto 
 }
-.content form input,
-.content form textarea{
+.contact .content form input,
+.contact .content form textarea{
     display: block;
     margin-block:10px;
     padding:10px 15px;

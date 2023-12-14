@@ -12,6 +12,8 @@ import "./index.css";
 import User from './Pages/User/User.jsx';
 import Shop from './Pages/Shop/Shop.jsx';
 import Profile from './Pages/Profile/Profile.jsx';
+import Account from './Pages/Profile/Account.jsx';
+import Password from './Pages/Profile/Password.jsx';
 
 function App() { 
 
@@ -30,7 +32,10 @@ function App() {
       {path:'about', element:<About />},
       {path:'contact', element:<Contact />},
       {path:'shop', element:<Shop />},
-      {path:'profile', element:<Profile />},
+      {path:'profile', element:<Profile />, children:[
+        {path:'', element:<Account/>},
+        {path:'password', element:<Password/>}
+      ]},
     ]},
     {path:'user', element:<User />},
   ])
