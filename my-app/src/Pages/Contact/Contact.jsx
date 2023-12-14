@@ -57,7 +57,7 @@ export default function Contact() {
                 <input type="text" name="subject" placeholder="This is an optional" />
                 <label htmlFor="textarea"> Message</label>
                 <textarea name="textarea" cols="30" rows="10" placeholder="Hi! i’d like to ask about"></textarea>
-                <button type='submit' className=' btn bg-orange text-white'>Submit</button>
+                <button type='submit' className=' btn primary-color text-white float-start'>Submit</button>
               </form>
             </div>
           </div>

@@ -36,9 +36,9 @@ function Navigation(args) {
       <Navbar expand="lg" className="nav">
         <Container fluid className='justifycontent-between'>
           <Navbar.Brand href="#">
-            <div className="logo" data-aos="fade-right">
+            <Link className="logo" to='./' data-aos="fade-right">
               <img src={Logo} alt="Logo" />
-            </div>
+            </Link>
           </Navbar.Brand>
           <Form className="d-flex" data-aos="fade-right">
             <Form.Control

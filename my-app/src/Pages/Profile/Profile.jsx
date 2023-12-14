@@ -3,17 +3,16 @@ import "./Profile.css";
 import profile from './assets/me.jpg'
 import { FaCamera } from "react-icons/fa";
 
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, NavLink } from "react-router-dom";
 
 
 
 export default function Profile() {
   
-  const [isActive, setIsActive] = useState(false);
-  
-  let Links = document.querySelectorAll(Link);
-  
-  
+  const [click, setClick] = useState(false)
+
+  const handleClick = () =>setClick(!click)
+
   return (
     <>
       <div className="profile">
@@ -30,11 +29,37 @@ export default function Profile() {
                 </div>
                 <div className="box-list d-flex flex-column justify-content-between align-items-start">
                   <ul className="mb-0 mt-3">
-                    <li className="mb-4"><Link to="/profile" className={isActive ? "active" : ""} onClick={handleClick}>Account</Link></li>
-                    <li className="mb-4"><Link to="/profile/password" className={isActive ? "active" : ""} onClick={handleClick}>Password</Link></li>
-                    <li className="mb-4"><Link to="/profile/orders" className={isActive ? "active" : ""} onClick={handleClick}>Orders</Link></li>
-                    <li className="mb-4"><Link to="/profile/favorite" className={isActive ? "active" : ""} onClick={handleClick}>Favorite</Link></li>
-                    <li className="mb-4"><Link to="/user" className={isActive ? "active" : ""} onClick={handleClick}>Log Out</Link></li>
+                    <li className="mb-4">
+                      <NavLink 
+                        to="/profile/" className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : "nav-link"}>Account
+                      </NavLink>
+                    </li>
+                    <li className="mb-4">
+                      <NavLink
+                        to="/profile/password" 
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : "nav-link"}>Password
+                      </NavLink>
+                    </li>
+                    <li className="mb-4">
+                      <NavLink 
+                        to="/profile/orders" className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : "nav-link"}>Orders
+                      </NavLink>
+                    </li>
+                    <li className="mb-4">
+                      <NavLink 
+                        to="/profile/favorite" className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : "nav-link"}>Favorite
+                      </NavLink>
+                    </li>
+                    <li className="mb-4">
+                      <NavLink 
+                        to="/user" className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : "nav-link"}>Log Out
+                      </NavLink>
+                    </li>
                   </ul>
                 </div>
               </div>

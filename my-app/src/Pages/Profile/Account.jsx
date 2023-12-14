@@ -26,8 +26,8 @@ import React from "react";
           <input type="tel" name="lastname" placeholder="Phone" />
           <label htmlFor="birthday">Birthday</label>
           <input type="date" name="birthday" placeholder="Birthday" />
-          <button type="submit" className=" btn bg-orange text-white">
-            Submit
+          <button type="submit" className="btn primary-color mt-3 text-white float-end">
+            Save Changes
           </button>
         </form>
       </div>
