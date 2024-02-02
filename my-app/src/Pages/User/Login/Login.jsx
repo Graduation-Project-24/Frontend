@@ -6,6 +6,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 
 
@@ -13,10 +14,10 @@ import { RiLockPasswordFill } from "react-icons/ri";
 function Login() {
   return <>
     <div className="login d-flex">
-        <div className="left">
+        <div className="left" data-aos="fade-right">
           <img src={background} alt="" />
         </div>  
-        <div className="right d-flex flex-column justify-content-center align-items-center">
+        <div className="right d-flex flex-column justify-content-center align-items-center" data-aos="fade-left">
           <div className="login-form">
             <header className="mb-4">
               <h3 className="fw-bold fs-1 text-center">Welcome</h3>
@@ -46,10 +47,10 @@ function Login() {
             </div>
             <div className="register d-flex justify-content-center">
               <p>Don't have account?</p>
-              <a href="#" className="orange">Register Now</a>
+              <Link to="/register" className="orange">Register Now</Link>
             </div>
             <div className="admin">
-            <a href="#" className="text-black d-block text-center">Admin</a>
+            <Link to="/user/register" className="text-black d-block text-center">Admin</Link>
             </div>
           </div>
         </div>

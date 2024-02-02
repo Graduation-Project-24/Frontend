@@ -1,17 +1,12 @@
-import { useState } from "react";
 import "./Profile.css";
 import profile from './assets/me.jpg'
 import { FaCamera } from "react-icons/fa";
 
-import { Link, Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 
 
 export default function Profile() {
-  
-  const [click, setClick] = useState(false)
-
-  const handleClick = () =>setClick(!click)
 
   return (
     <>
@@ -32,7 +27,7 @@ export default function Profile() {
                     <li className="mb-4">
                       <NavLink 
                         to="/profile/" className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "active" : "nav-link"}>Account
+                        isPending ? "pending active" : isActive ? "active" : " nav-link"}>Account
                       </NavLink>
                     </li>
                     <li className="mb-4">

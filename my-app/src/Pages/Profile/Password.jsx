@@ -1,3 +1,5 @@
+import {Link } from 'react-router-dom'; 
+
 function Password() {
   return <>
     <div className="title">
@@ -11,7 +13,7 @@ function Password() {
           <input type="password" name="newpassword" placeholder="New Password" />
           <label htmlFor="confirmpassword">Re-enter Password</label>
           <input type="password" name="confirmpassword" placeholder="Re-enter Password" />
-          <p>if you forget your password <a className="orange" href="#2">Click me</a></p>
+          <p>if you forget your password <Link className='orange' to="/forgetpassword">Click me</Link></p>
           <button type="submit" className="btn primary-color mt-3 text-white float-end">
             Save Changes
           </button>
