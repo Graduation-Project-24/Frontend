@@ -1,4 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { useState, useEffect } from "react";
+
 import background from "../assets/userbackground.png"
 
 import { FaGoogle } from "react-icons/fa";
@@ -8,10 +10,22 @@ import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
-
-
+import axios from 'axios';
 
 function Login() {
+
+
+  useEffect(() => {
+    axios.get('https://www.smarketp.somee.com/swagger/v1/swagger.json/api/account/login')
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+
+
   return <>
     <div className="login d-flex">
         <div className="left" data-aos="fade-right">
