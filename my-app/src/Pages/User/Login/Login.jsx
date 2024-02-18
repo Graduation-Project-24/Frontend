@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import background from "../assets/userbackground.png"
 
@@ -9,27 +9,38 @@ import { FaApple } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-
 import axios from 'axios';
 
 function Login() {
 
+  const [values, setValues] = useState({
+    email:'',
+    password:'',
+    showPassword:false
+  })
 
-  useEffect(() => {
-    axios.get('https://www.smarketp.somee.com/swagger/v1/swagger.json/api/account/login')
-      .then(response => {
-        console.log(response.data);
+  const handleSubmit =(e)=>{
+    e.preventDefault();
+    axios
+      .post("https://www.smarketp.somee.com/api/Account/login",{
+        email:values.email,
+        password:values.pass
       })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err))
+  }
 
+  const handleShowPass = () =>{
+    setValues({
+      ...values,
+      showPassword: !values.password
+    })
+  }
 
   return <>
     <div className="login d-flex">
         <div className="left" data-aos="fade-right">
-          <img src={background} alt="" />
+          <div className="img"></div>
         </div>  
         <div className="right d-flex flex-column justify-content-center align-items-center" data-aos="fade-left">
           <div className="login-form">
@@ -37,19 +48,35 @@ function Login() {
               <h3 className="fw-bold fs-1 text-center">Welcome</h3>
               <p className="fs-3 fst-italic text-black-50 text-center">Ship Smarter Today</p>
             </header>
-            <form className="d-flex flex-column">
+            <form className="d-flex flex-column" onSubmit={handleSubmit}>
               <label htmlFor="email">Enter Email<span className="text-danger">*</span></label>
               <div className="email d-flex align-items-center mt-1 my-3">
                 <MdEmail className="fs-5 text-black-50"/>
-                <input className="" type="email" name="email" placeholder="Email" />
+                <input 
+                  className="" 
+                  type="email" 
+                  name="email" 
+                  placeholder="Email" 
+                  value={values.email}
+                  onChange={(e) => setValues({...values, email:e.target.value})}
+                  required
+                />
               </div>
               <label htmlFor="password">Enter password<span className="text-danger">*</span></label>
               <div className="password d-flex align-items-center mt-1 my-3">
                 <RiLockPasswordFill className="fs-5 text-black-50"/>
-                <input className="" type="password" name="password" placeholder="Password" />
+                <input 
+                  className="" 
+                  type="password" 
+                  name="password" 
+                  value={values.pass}
+                  placeholder="Password" 
+                  onChange={(e) => setValues({...values, password:e.target.value})}
+                  required
+                />
               </div>
               <a href="#" className="text-black-50 text-end mb-3">Forget your password?</a>
-              <button type="submit" className="btn primary-color rounded-3 text-white mb-3 fw-bold">Login</button>
+              <button type="submit" onSubmit={handleSubmit} className="btn primary-color rounded-3 text-white mb-3 fw-bold">Login</button>
             </form>
             <div className="line d-flex">
               <p className="text text-black-50 mb-0 text-center">OR</p>

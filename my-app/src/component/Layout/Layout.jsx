@@ -12,6 +12,7 @@ import Account from '../../Pages/Profile/Account'
 import ForgetPassword from '../../Pages/Confirmations/ForgetPassword'
 import ConfirmPassword from '../../Pages/Confirmations/ConfirmPassword'
 import Register from '../../Pages/User/Register/Register'
+import Login from '../../Pages/User/Login/Login'
 
 function Layout() {
   return <>
@@ -25,7 +26,7 @@ function Layout() {
         <Route path="/confirmpassword" element={<ConfirmPassword/>}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/shop" element={<Shop />}></Route>
-        <Route path="/profile" element={<Profile />}>
+        <Route path="/*" element={<Profile />}>
           <Route path="" element={<Account/>}></Route>
           <Route path="password" element={<Password/>}></Route>  
         </Route>

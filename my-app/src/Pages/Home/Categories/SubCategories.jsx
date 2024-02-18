@@ -32,7 +32,7 @@ const data = [
 function SubCategories() {
   return (
     <>
-      <div className="supcategory mt-2">
+      <div className="supcategory pt-2">
         <div className="container-fluid" data-aos="zoom-in">
           <div className="row flex-wrap justify-content-center gap-1">
               {data.map ((element) =>
