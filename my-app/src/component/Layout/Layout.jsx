@@ -12,13 +12,12 @@ import Account from '../../Pages/Profile/Account'
 import ForgetPassword from '../../Pages/Confirmations/ForgetPassword'
 import ConfirmPassword from '../../Pages/Confirmations/ConfirmPassword'
 import Register from '../../Pages/User/Register/Register'
-import Login from '../../Pages/User/Login/Login'
 
 function Layout() {
   return <>
       <Nav /> 
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/user" element={<User />}></Route>
         <Route path="/register" element={<Register/>}></Route>

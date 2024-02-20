@@ -1,13 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useEffect, useState } from "react";
-
 import background from "../assets/userbackground.png"
 
+import { useState } from "react";
+import { Navigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
+import { FaEye } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
@@ -19,28 +21,32 @@ function Login() {
     showPassword:false
   })
 
+  const handleShowPass = () =>{
+    setValues({
+      ...values,
+      showPassword: !values.showPassword
+    })
+  }
+
   const handleSubmit =(e)=>{
     e.preventDefault();
     axios
       .post("https://www.smarketp.somee.com/api/Account/login",{
         email:values.email,
-        password:values.pass
+        password:values.password
       })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err))
-  }
-
-  const handleShowPass = () =>{
-    setValues({
-      ...values,
-      showPassword: !values.password
-    })
+      .then((res) => 
+        window.location.href ="/home"
+      )
+      .catch((err) => 
+        window.alert("Login Failed Check Your Email or password")
+      )
   }
 
   return <>
     <div className="login d-flex">
         <div className="left" data-aos="fade-right">
-          <div className="img"></div>
+          <img className="" src={background} alt="" />
         </div>  
         <div className="right d-flex flex-column justify-content-center align-items-center" data-aos="fade-left">
           <div className="login-form">
@@ -67,13 +73,14 @@ function Login() {
                 <RiLockPasswordFill className="fs-5 text-black-50"/>
                 <input 
                   className="" 
-                  type="password" 
+                  type={values.showPassword ? "text" : "password"}
                   name="password" 
                   value={values.pass}
                   placeholder="Password" 
                   onChange={(e) => setValues({...values, password:e.target.value})}
                   required
                 />
+                <span className="eye" onClick={handleShowPass}><FaEye className="fs-5 text-black-50"/></span>
               </div>
               <a href="#" className="text-black-50 text-end mb-3">Forget your password?</a>
               <button type="submit" onSubmit={handleSubmit} className="btn primary-color rounded-3 text-white mb-3 fw-bold">Login</button>

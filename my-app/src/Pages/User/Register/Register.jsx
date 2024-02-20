@@ -1,10 +1,8 @@
 import background from "../assets/userbackground.png"
 
-import { FaGoogle } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
-import { FaApple } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
+import { FaEye } from "react-icons/fa";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -19,30 +17,41 @@ function Register() {
     phoneNumber:'',
     email:'',
     password:'',
+    showPassword:false
   })
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setFormData((prevProps) => ({
+      ...prevProps,
+      [name]: value
+    }))
+  }
 
   const handleSubmit =(e)=>{
     e.preventDefault();
     axios
       .post("https://www.smarketp.somee.com/api/Account/register",{
-        email:formData.email,
-        password:formData.pass,
         firstname:formData.firstname,
         lastname:formData.lastname,
-        phoneNumber:formData.phoneNumber,
         date:formData.date,
+        phoneNumber:formData.phoneNumber,
+        email:formData.email,
+        password:formData.password,
 
       })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err))
+      .then(window.location.href ="/user")
+      .catch((err) => window.alert("checkpassword"))
   }
 
-  // const handleShowPass = () =>{
-  //   setFormData({
-  //     ...formData,
-  //     showPassword: !formData.password
-  //   })
-  // }
+  const handleShowPass = () =>{
+    setFormData({
+      ...formData,
+      showPassword: !formData.showPassword
+    })
+  }
+
+  console.log(formData)
 
   return <>
     <div className="Register d-flex">
@@ -53,95 +62,119 @@ function Register() {
             <p className="fs-3 fst-italic text-black-50 text-center">Ship Smarter Today</p>
           </header>
           <form className="d-flex flex-column" onSubmit={handleSubmit}>
-            <div className="d-flex">
-              <label htmlFor="firstname">Enter First Name<span className="d-block text-danger">*</span></label>
-              <div className="email d-flex align-items-center mt-1 my-3">
-                <MdEmail className="fs-5 text-black-50"/>
-                <input 
-                  type="text" 
-                  name="firstname" 
-                  placeholder="Omar"
-                  value={formData.firstname}
-                  onChange={(e) => setFormData({...formData, firstname:e.target.value})}
-                />
+            <div className="d-flex justify-content-between">
+              <div>
+                <label htmlFor="firstname">Enter First Name<span className="text-danger">*</span></label>
+                <div className="email d-flex align-items-center mt-1 my-3">
+                  <MdEmail className="fs-5 text-black-50"/>
+                  <input 
+                    type="text" 
+                    name="firstname" 
+                    placeholder="Omar"
+                    value={formData.firstname}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
               </div>
-              <label htmlFor="lastname">Enter Last Name<span className="text-danger">*</span></label>
-              <div className="email d-flex align-items-center mt-1 my-3">
-                <MdEmail className="fs-5 text-black-50"/>
-                <input 
-                  type="text" 
-                  name="firstname" 
-                  placeholder="Omar"
-                  value={formData.lastname}
-                  onChange={(e) => setFormData({...formData, lastname:e.target.value})}
-                />
-              </div>
-            </div>
-            <div className="d-flex">
-              <label htmlFor="birthday">Enter Your Data<span className="text-danger">*</span></label>
-              <div className="email d-flex align-items-center mt-1 my-3">
-                <MdEmail className="fs-5 text-black-50"/>
-                <input 
-                  type="date" 
-                  name="date" 
-                  placeholder="11/4/2001"
-                  value={formData.date}
-                  onChange={(e) => setFormData({...formData, date:e.target.value})}
-                />
-              </div>
-              <label htmlFor="phone">Enter Phone<span className="text-danger">*</span></label>
-              <div className="email d-flex align-items-center mt-1 my-3">
-                <MdEmail className="fs-5 text-black-50"/>
-                <input 
-                  type="phone" 
-                  name="phoneNumber" 
-                  placeholder="01013477824"
-                  value={formData.phoneNumber}
-                  onChange={(e) => setFormData({...formData, phoneNumber:e.target.value})}
-                />
+              <div>
+                <label htmlFor="lastname">Enter Last Name<span className="text-danger">*</span></label>
+                <div className="email d-flex align-items-center mt-1 my-3">
+                  <MdEmail className="fs-5 text-black-50"/>
+                  <input 
+                    type="text" 
+                    name="lastname" 
+                    placeholder="El-Nahas"
+                    value={formData.lastname}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
               </div>
             </div>
-            <label htmlFor="email">Enter Email<span className="text-danger">*</span></label>
-            <div className="email d-flex align-items-center mt-1 my-3">
-              <MdEmail className="fs-5 text-black-50"/>
-              <input 
-                  type="email" 
-                  name="email" 
-                  placeholder="ommar@gmail.com"
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email:e.target.value})}
-                  required
-                />
-            </div>
-            <div className="d-flex">
-              <label htmlFor="password">Enter password<span className="text-danger">*</span></label>
-              <div className="password d-flex align-items-center mt-1 my-3">
-                <RiLockPasswordFill className="fs-5 text-black-50"/>
-                <input 
-                  type="password" 
-                  name="password" 
-                  value={formData.password}
-                  onChange={(e) => setFormData({...formData, password:e.target.value})}
-                />
+            <div className="d-flex justify-content-between">
+              <div>
+                <label htmlFor="birthday">Enter Your Data<span className="text-danger">*</span></label>
+                <div className="email d-flex align-items-center mt-1 my-3">
+                  <MdEmail className="fs-5 text-black-50"/>
+                  <input 
+                    type="date" 
+                    name="date" 
+                    placeholder="11/4/2001"
+                    value={formData.date}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
               </div>
-              <label htmlFor="confirmpassword">Re-Enter password<span className="text-danger">*</span></label>
-              <div className="password d-flex align-items-center mt-1 my-3">
-                <RiLockPasswordFill className="fs-5 text-black-50"/>
+              <div>
+                <label htmlFor="phone">Enter Phone<span className="text-danger">*</span></label>
+                <div className="email d-flex align-items-center mt-1 my-3">
+                  <MdEmail className="fs-5 text-black-50"/>
+                  <input 
+                    type="phone" 
+                    name="phoneNumber" 
+                    placeholder="01013477824"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="d-flex align-items-center justify-content-center">
+              <label htmlFor="email">Enter Email<span className="text-danger">*</span></label>
+              <div className="email d-flex align-items-center mt-1 my-3">
+                <MdEmail className="fs-5 text-black-50"/>
                 <input 
-                  type="password"
-                />
+                    type="email" 
+                    name="email" 
+                    placeholder="ommar@gmail.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+              </div>
+            </div>
+            <div className="d-flex justify-content-between">
+              <div>
+                <label htmlFor="password">Enter password<span className="text-danger">*</span></label>
+                <div className="password d-flex align-items-center mt-1 my-3">
+                  <RiLockPasswordFill className="fs-5 text-black-50"/>
+                  <input 
+                    type={formData.showPassword ? "text" : "password"}
+                    name="password" 
+                    value={formData.password}
+                    placeholder="password"
+                    onChange={handleChange}
+                    required
+                  />
+                  <span className="eye" onClick={handleShowPass}><FaEye className="fs-5 text-black-50"/></span>
+                </div>
+              </div>
+              <div>
+                <label htmlFor="confirmpassword">Re-Enter password<span className="text-danger">*</span></label>
+                <div className="password d-flex align-items-center mt-1 my-3">
+                  <RiLockPasswordFill className="fs-5 text-black-50"/>
+                  <input 
+                    type={formData.showPassword ? "text" : "password"}
+                    placeholder="Confirm password"  
+                    required
+                  />
+                  <span className="eye" onClick={handleShowPass}><FaEye className="fs-5 text-black-50"/></span>
+              </div>
               </div>
             </div>
             <button type="submit" className="btn primary-color rounded-3 text-white mb-3 fw-bold">Register</button>
           </form>
           <div className="register d-flex justify-content-center">
             <p>have account?</p>
-            <Link to="/login" className="orange">Login</Link>
+            <Link to="/user" className="orange">Login</Link>
           </div>
         </div>
       </div>
       <div className="right" data-aos="fade-left">
-        <img src={background} alt="" />
+        <img className="" src={background} alt="" />
       </div> 
     </div>
   </>;
