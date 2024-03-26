@@ -1,6 +1,7 @@
 import React from 'react'
 import "./shop.css"
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react'
+import {Link} from "react-router-dom"
 import SideBar from './SideBar.jsx'
 import Pagination from './Pagination.jsx'
 
@@ -8,23 +9,23 @@ export default function Shop() {
 
   let api ="https://www.smarketp.somee.com/api/Product/GetProductsWeb"
 
-  const [products, setData] = useState([]);
+  const [products, setData] = useState([])
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const [recordsPerPage] = useState(8);
+  const [currentPage, setCurrentPage] = useState(1)
+  const [recordsPerPage] = useState(8)
 
-  const indexOfLastRecord = currentPage * recordsPerPage;
-  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-  const currentRecords = products.slice(indexOfFirstRecord, indexOfLastRecord);
+  const indexOfLastRecord = currentPage * recordsPerPage
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage
+  const currentRecords = products.slice(indexOfFirstRecord, indexOfLastRecord)
   const nPages = Math.ceil(products.length / recordsPerPage)
 
   useEffect(() => {
     const getProduct = async () => {
-      const response = await fetch(api);
-      const data = await response.json();
-      setData(data);
+      const response = await fetch(api)
+      const data = await response.json()
+      setData(data)
     };
-    getProduct();
+    getProduct()
   }, [])
 
 
@@ -33,7 +34,7 @@ export default function Shop() {
       <div className='container-fluid d-flex my-3 py-2'>
         <SideBar />
         <div className="products flex-wrap">
-          {
+          {products ? (
             currentRecords.map((e) => 
             <div className="cardd border rounded-3 px-2 py-2" style={{width: 200}}>
               <div className='card-img'>
@@ -45,10 +46,13 @@ export default function Shop() {
               <hr />
               <div className='d-flex justify-content-between align-items-center'>
                 <h6 className='m-0'>{e.price}$</h6>
-                <button className='btn primary-color text-white m-0'>Details</button>
+                <Link to={`/product-details/${e.id}`} className='btn bg-orange m-0'>
+                  Details
+                </Link>
               </div>
             </div>
             )
+          ):  <div className="parentloader"><div class="loader"></div></div>
           }
         </div>
       </div>

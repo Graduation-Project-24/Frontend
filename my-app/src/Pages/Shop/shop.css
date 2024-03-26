@@ -20,18 +20,12 @@
 @media (min-width: 991px) {
     .products { grid-template-columns: repeat(4, 1fr);}
 }
-.cardd{
+.box{
+    height:300px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-.product{
-    height:400px;
-    overflow: hidden;
-}
-.product .product-img{
-    width:150px;
-    height:200px
 }
 .card-img{
     width:  120px;
@@ -52,3 +46,30 @@
     -ms-transform: translate(50%);
     -o-transform: translate(50%);
 }
+.card-title{
+    white-space: nowrap;
+    overflow: hidden;
+}
+.product .product-img{
+    width:250px;
+    display: flex;
+    margin: auto;
+}
+.product .product-img img{
+    max-width: 100%;
+}
+.product nav{
+    display: flex;
+}
+.product-detail nav ul{
+    position: relative;
+    border-bottom:1px solid #ccc ;
+}
+.product-detail nav ul li{
+    font-size: 24px;
+    font-weight: bold;
+}
+.product-detail nav ul li.active{
+    color:#faa933
+}
+

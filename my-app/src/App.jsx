@@ -17,6 +17,7 @@ import Password from './Pages/Profile/Password.jsx';
 import ForgetPassword from './Pages/Confirmations/ForgetPassword.jsx';
 import ConfirmPassword from './Pages/Confirmations/ConfirmPassword.jsx';
 import Register from './Pages/User/Register/Register.jsx';
+import Product from './Pages/Shop/Product.jsx';
 
 function App() { 
 
@@ -35,6 +36,7 @@ function App() {
       {path:'about', element:<About />},
       {path:'contact', element:<Contact />},
       {path:'shop', element:<Shop />},
+      {path:'product-details/:id', element:<Product />},
       {path:'profile', element:<Profile />, children:[
         {path:'', element:<Account/>},
         {path:'password', element:<Password/>},
