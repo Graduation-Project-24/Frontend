@@ -20,7 +20,7 @@
 @media (min-width: 991px) {
     .products { grid-template-columns: repeat(4, 1fr);}
 }
-.box{
+.shop .box{
     height:300px;
     overflow: hidden;
     display: flex;

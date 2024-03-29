@@ -46,7 +46,7 @@ export default function Shop() {
               <hr />
               <div className='d-flex justify-content-between align-items-center'>
                 <h6 className='m-0'>{e.price}$</h6>
-                <Link to={`/product-details/${e.id}`} className='btn bg-orange m-0'>
+                <Link to={`${e.id}`} className='btn bg-orange m-0'>
                   Details
                 </Link>
               </div>

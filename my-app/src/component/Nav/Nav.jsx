@@ -22,7 +22,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 function Navigation(args) {
 
   const menuItems = [
-    { id: 1, label: 'Home', link: '/home' },
+    { id: 1, label: 'Home', link: '/' },
     { id: 2, label: 'About', link: '/about' },
     { id: 3, label: 'Shop', link: '/shop' },
     { id: 4, label: 'Contact', link: '/contact' }
