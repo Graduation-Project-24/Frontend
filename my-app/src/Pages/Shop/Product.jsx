@@ -1,28 +1,33 @@
 import { FaHeart } from "react-icons/fa";
-
+import { FaStar } from "react-icons/fa";
 
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import {Link} from "react-router-dom"
+import axios from "axios";
 
 function Product() {
   const params = useParams()
   const [product, setProduct] = useState(null)
+  const [loading, setLoading] = useState(true)
 
-  let api =`https://www.smarketp.somee.com/api/Product/Details/${params.id}`
+  let api =`https://www.smarketp.somee.com/api/Product/getproductdetailsforweb/${params.id}`
 
   useEffect(() => {
-    const getProduct = async () => {
-      const response = await fetch(api)
-      const data = await response.json()
-      setProduct(data)
-    }
-    getProduct()
+    axios.get(api)
+    .then((response) => {
+      setProduct(response.data);
+    })
+    .finally(() => {
+      setLoading(false);
+    });
+    
   }, [params.id])
 
   const [quantity, setQuantity] = useState(1)
 
-  let stock = 8
+  let stock = product?.left || 0;
 
   function plus(){
     if(quantity < stock )
@@ -34,7 +39,7 @@ function Product() {
   }
 
   return <>
-    {product ?(
+    {!loading ?(
       <div className="product py-3 my-3">
         <div className="container-fluid">
           <div className="row">
@@ -46,8 +51,12 @@ function Product() {
             <div className="col-6">
               <div>
                 <h2 className="mb-3">{product.name}</h2>
-                <div className="price mb-3">
-                  <p className="fs-3 orange">{product.price}$</p>
+                <div className="price mb-3 d-flex align-items-center">
+                  <p className="fs-3 orange me-3">{product.price}$</p>
+                  <p>{[...Array(product.averageRate)].map((e, i) => (
+                        <FaStar className="star" />
+                      ))}
+                  </p>
                 </div>
                 <div className="quantity mb-4">
                   Quatity:
@@ -79,7 +88,30 @@ function Product() {
         </div>
       </div>
     ) : <div className="parentloader"><div class="loader"></div></div>}
-  </>;
+    <div className="other-products mb-4">
+      <div className="container-fluid">
+        <div className="row justify-content-around">
+          {!loading ?(
+            product.productDtoFilters.map((e) => 
+            <div className="cardd border rounded-3 px-2 py-2" style={{width: 200}}>
+              <div className='card-img'>
+                <img className="" src={e.imageUrl} alt="Card" />
+              </div>
+              <div className="card-body">
+                <h5 className="card-title fs-6 text-black-50">{e.name}</h5>
+              </div>
+              <hr />
+              <div className='d-flex justify-content-between align-items-center'>
+                <Link to={`${e.id}`} className='btn bg-orange m-0'>
+                  Details {e.id}
+                </Link>
+              </div>
+            </div>
+            )):<div className="parentloader"><div class="loader"></div></div>}
+        </div>
+      </div>
+    </div>
+  </>
 }
 
 export default Product;

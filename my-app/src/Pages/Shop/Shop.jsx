@@ -12,7 +12,7 @@ export default function Shop() {
   const [products, setData] = useState([])
 
   const [currentPage, setCurrentPage] = useState(1)
-  const [recordsPerPage] = useState(8)
+  const [recordsPerPage] = useState(12)
 
   const indexOfLastRecord = currentPage * recordsPerPage
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage
@@ -52,8 +52,7 @@ export default function Shop() {
               </div>
             </div>
             )
-          ):  <div className="parentloader"><div class="loader"></div></div>
-          }
+          ):  <div className="parentloader"><div class="loader"></div></div>}
         </div>
       </div>
       <Pagination

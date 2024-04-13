@@ -53,7 +53,6 @@ function App() {
           
           <Route path="/forgetpassword" element={<ForgetPassword/>}></Route>
           <Route path="/confirmpassword" element={<ConfirmPassword/>}></Route>
-
         </Route>
 
         <Route path="user" element={<User />}></Route>
