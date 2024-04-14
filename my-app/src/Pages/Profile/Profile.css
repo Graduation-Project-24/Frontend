@@ -37,16 +37,9 @@
             -o-border-radius: 50%;
         }
     }
-    .box-list li .active{
-        color:#000;
-        padding-bottom: 5px;
-        font-weight:bold;
-        border-bottom: 1px solid #000;
-        width: 100%;
-    }
-    .box-list li nav-link{
-        color:rgba(0,0,0,.5)
-    }
+}
+.box .box-list nav a.nav-link{
+    color:rgba(0,0,0,.5)
 }
 .profile .form input{
     display: block;

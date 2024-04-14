@@ -1,8 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  Link
-}from "react-router-dom"
+import {Link, NavLink}from "react-router-dom"
 
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -21,14 +19,13 @@ import { AiOutlineSearch } from 'react-icons/ai';
 
 function Navigation(args) {
 
-  const menuItems = [
-    { id: 1, label: 'Home', link: '/' },
-    { id: 2, label: 'About', link: '/about' },
-    { id: 3, label: 'Shop', link: '/shop' },
-    { id: 4, label: 'Contact', link: '/contact' }
-  ];
-
   let Loging = true;
+
+  const activeStyle = {
+    fontWeight: "bold",
+    textDecoration: "underline",
+    color: "orange"
+  }
 
   return (
     <>
@@ -72,8 +69,36 @@ function Navigation(args) {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3" data-aos="fade-left">
-                {menuItems.map((item) =>
-                <Nav.Link className='text-white ' as={Link} to={item.link}>{item.label}</Nav.Link>)}
+                <NavLink 
+                  to="/"
+                  style={({isActive}) => isActive ? activeStyle : null }
+                  className="nav-link"
+                >
+                  Home
+                </NavLink>
+                
+                <NavLink 
+                  to="/about"
+                  style={({isActive}) => isActive ? activeStyle : null }
+                  className="nav-link"
+                >
+                  About
+                </NavLink>
+                
+                <NavLink 
+                  to="/shop"
+                  style={({isActive}) => isActive ? activeStyle : null }
+                  className="nav-link"
+                >
+                  Shop
+                </NavLink>
+                <NavLink 
+                  to="/contact"
+                  style={({isActive}) => isActive ? activeStyle : null }
+                  className="nav-link"
+                >
+                  Contact
+                </NavLink>
               </Nav>
               {
             Loging === true ?

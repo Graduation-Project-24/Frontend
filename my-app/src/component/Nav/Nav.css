@@ -96,3 +96,15 @@ li{
     list-style: none;
     margin-right: 30px;
 }
+ nav .nav-link{
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: normal;
+}
+Navbar nav .active-link{
+    font-weight: "bold";
+    text-decoration: "underline";
+    color: orange;
+    margin-right: 10px;
+}
