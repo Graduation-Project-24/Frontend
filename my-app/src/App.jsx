@@ -18,6 +18,8 @@ import ForgetPassword from './Pages/Confirmations/ForgetPassword.jsx';
 import ConfirmPassword from './Pages/Confirmations/ConfirmPassword.jsx';
 import Register from './Pages/User/Register/Register.jsx';
 import Product from './Pages/Shop/Product.jsx';
+import Cart from './Pages/Cart/Cart.jsx';
+
 
 function App() { 
 
@@ -38,6 +40,7 @@ function App() {
           <Route index element={<Home />}></Route>
           <Route path="about" element={<About />}></Route>
           <Route path="contact" element={<Contact />}></Route>
+          <Route path="cart" element={<Cart />}></Route>
           
           <Route path="shop">
             <Route index element={<Shop />} ></Route>

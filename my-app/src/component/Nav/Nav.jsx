@@ -16,6 +16,7 @@ import Profile from '../../assets/me.jpg'
 import './Nav.css'
 
 import { AiOutlineSearch } from 'react-icons/ai';
+import { FaCartArrowDown } from "react-icons/fa";
 
 function Navigation(args) {
 
@@ -98,6 +99,14 @@ function Navigation(args) {
                   className="nav-link"
                 >
                   Contact
+                </NavLink>
+                <NavLink 
+                  to="/cart"
+                  style={({isActive}) => isActive ? activeStyle : null }
+                  className="nav-link"
+                >
+                  <FaCartArrowDown className='me-1' />
+                  Cart 
                 </NavLink>
               </Nav>
               {

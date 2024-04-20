@@ -31,23 +31,23 @@ export default function Profile() {
                 <div className="box-list d-flex flex-column justify-content-between align-items-start">
                   <nav className="mb-0 mt-3">
                     <NavLink  
-                      to="/profile/" 
+                      to="." 
                       end
                       style={({isActive}) => isActive ? activeStyle : null }
                       className="nav-link mb-4">Account
                     </NavLink>
                     <NavLink
-                      to="/profile/password" 
+                      to="password" 
                       style={({isActive}) => isActive ? activeStyle : null }
                       className="nav-link mb-4">Password
                     </NavLink>
                     <NavLink 
-                      to="/profile/orders" 
+                      to="orders" 
                       style={({isActive}) => isActive ? activeStyle : null }
                       className="nav-link mb-4">Orders
                     </NavLink>
                     <NavLink 
-                      to="/profile/favorite" 
+                      to="favorite" 
                       style={({isActive}) => isActive ? activeStyle : null }
                       className="nav-link mb-4">Favorite
                     </NavLink>
