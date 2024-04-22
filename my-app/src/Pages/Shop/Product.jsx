@@ -2,9 +2,8 @@ import { FaHeart } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, Navigate} from "react-router-dom";
 import { useEffect, useState } from "react";
-import {Link} from "react-router-dom"
 import axios from "axios";
 
 function Product() {
@@ -102,9 +101,9 @@ function Product() {
               </div>
               <hr />
               <div className='d-flex justify-content-between align-items-center'>
-                <Link to={`${e.id}`} className='btn bg-orange m-0'>
-                  Details {e.id}
-                </Link>
+                <button onClick={() => Navigate("/shop", { replace: true })} className='btn bg-orange m-0'>
+                  Details
+                </button>
               </div>
             </div>
             )):<div className="parentloader"><div class="loader"></div></div>}

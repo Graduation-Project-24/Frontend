@@ -61,7 +61,6 @@ li {
   cursor: pointer;
 }
 .parentloader{
-  height: 80vh;
   display: flex;
 }
 .loader {

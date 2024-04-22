@@ -29,6 +29,28 @@ function Cart() {
                     <MdDelete className="action ms-2 text-danger" />
                   </td>
                 </tr>
+                
+                <tr>
+                  <td>Product 2</td>
+                  <td><img src="image_source" alt="Product 2" width="50" height="50"/></td>
+                  <td>1</td>
+                  <td>$200</td>
+                  <td>
+                    <IoIosAddCircle className="action me-2 text-primary" />
+                    <MdDelete className="action ms-2 text-danger" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Product 2</td>
+                  <td><img src="image_source" alt="Product 2" width="50" height="50"/></td>
+                  <td>1</td>
+                  <td>$200</td>
+                  <td>
+                    <IoIosAddCircle className="action me-2 text-primary" />
+                    <MdDelete className="action ms-2 text-danger" />
+                  </td>
+                </tr>
             </tbody>
         </table>
         </div>

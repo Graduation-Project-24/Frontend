@@ -53,3 +53,12 @@
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
 }
+
+.favorite .table td, .table th {
+    text-align: start;
+    vertical-align: middle;
+}
+.favorite .table .action{
+    font-size:24px;
+    cursor: pointer;
+}

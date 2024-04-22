@@ -19,6 +19,8 @@ import ConfirmPassword from './Pages/Confirmations/ConfirmPassword.jsx';
 import Register from './Pages/User/Register/Register.jsx';
 import Product from './Pages/Shop/Product.jsx';
 import Cart from './Pages/Cart/Cart.jsx';
+import Order from './Pages/Profile/Order.jsx';
+import Favorite from './Pages/Profile/Favorite.jsx';
 
 
 function App() { 
@@ -50,8 +52,8 @@ function App() {
           <Route path="/profile" element={<Profile />}>
             <Route index element={<Account/>}></Route>
             <Route path="password" element={<Password/>}></Route>  
-            <Route path="orders" element={<Password/>}></Route>  
-            <Route path="favorite" element={<Password/>}></Route>  
+            <Route path="orders" element={<Order />}></Route>  
+            <Route path="favorite" element={<Favorite />}></Route>  
           </Route>
           
           <Route path="/forgetpassword" element={<ForgetPassword/>}></Route>

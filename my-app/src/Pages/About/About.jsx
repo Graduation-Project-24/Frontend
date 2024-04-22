@@ -18,7 +18,7 @@ function About() {
         </div>
         <div className="row mt-3 justify-content-center">
           <h3>Our Team</h3>     
-          <div class="box" style={{width: 250}}>
+          <div class="box" style={{width: 220}}>
             <div className="box-img">
               <img src={omar} class="card-img-top" alt="member-image" />
             </div>
@@ -27,7 +27,7 @@ function About() {
               <p class="box-text text-black-50">Frontend Developer</p>
             </div>
           </div>
-          <div class="box" style={{width: 250}}>
+          <div class="box" style={{width: 220}}>
             <div className="box-img">
               <img src={omar} class="card-img-top" alt="member-image" />
             </div>
@@ -36,7 +36,7 @@ function About() {
               <p class="box-text text-black-50">Frontend Developer</p>
             </div>
           </div>
-          <div class="box" style={{width: 250}}>
+          <div class="box" style={{width: 220}}>
             <div className="box-img">
               <img src={omar} class="card-img-top" alt="member-image" />
             </div>
@@ -45,7 +45,7 @@ function About() {
               <p class="box-text text-black-50">Frontend Developer</p>
             </div>
           </div>
-          <div class="box" style={{width: 250}}>
+          <div class="box" style={{width: 220}}>
             <div className="box-img">
               <img src={omar} class="card-img-top" alt="member-image" />
             </div>
@@ -54,7 +54,7 @@ function About() {
               <p class="box-text text-black-50">Frontend Developer</p>
             </div>
           </div>
-          <div class="box" style={{width: 250}}>
+          <div class="box" style={{width: 220}}>
             <div className="box-img">
               <img src={omar} class="card-img-top" alt="member-image" />
             </div>
@@ -63,7 +63,7 @@ function About() {
               <p class="box-text text-black-50">Frontend Developer</p>
             </div>
           </div>
-          <div class="box" style={{width: 250}}>
+          <div class="box" style={{width: 220}}>
             <div className="box-img">
               <img src={omar} class="card-img-top" alt="member-image" />
             </div>
@@ -72,7 +72,7 @@ function About() {
               <p class="box-text text-black-50">Frontend Developer</p>
             </div>
           </div>
-          <div class="box" style={{width: 250}}>
+          <div class="box" style={{width: 220}}>
             <div className="box-img">
               <img src={omar} class="card-img-top" alt="member-image" />
             </div>
@@ -81,7 +81,7 @@ function About() {
               <p class="box-text text-black-50">Frontend Developer</p>
             </div>
           </div>
-          <div class="box" style={{width: 250}}>
+          <div class="box" style={{width: 220}}>
             <div className="box-img">
               <img src={omar} class="card-img-top" alt="member-image" />
             </div>
@@ -90,7 +90,7 @@ function About() {
               <p class="box-text text-black-50">Frontend Developer</p>
             </div>
           </div>
-          <div class="box" style={{width: 250}}>
+          <div class="box" style={{width: 220}}>
             <div className="box-img">
               <img src={omar} class="card-img-top" alt="member-image" />
             </div>
@@ -99,7 +99,7 @@ function About() {
               <p class="box-text text-black-50">Frontend Developer</p>
             </div>
           </div>
-          <div class="box" style={{width: 250}}>
+          <div class="box" style={{width: 220}}>
             <div className="box-img">
               <img src={omar} class="card-img-top" alt="member-image" />
             </div>

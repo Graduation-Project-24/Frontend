@@ -1,10 +1,17 @@
-import React from 'react'
-import './shop.css'
+import "./Sidebar.css"
+import Category from "./Category/Category"
+import Price from "./Price/Price"
 
-function sidebar() {
-  return (
-    <div className='sidebar'>sidebar</div>
-  )
+function Sidebar({handleChange}) {
+    console.log(handleChange)
+    return (
+        <>
+            <section className="sidebar">
+                <Category handleChange={handleChange}/>
+                <Price  handleChange={handleChange}/>
+            </section>
+            
+        </>
+    )
 }
-
-export default sidebar
+export default Sidebar

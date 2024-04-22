@@ -12,7 +12,7 @@ export default function Shop() {
   const [products, setData] = useState([])
 
   const [currentPage, setCurrentPage] = useState(1)
-  const [recordsPerPage] = useState(12)
+  const [recordsPerPage] = useState(15)
 
   const indexOfLastRecord = currentPage * recordsPerPage
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage
@@ -33,7 +33,7 @@ export default function Shop() {
     <div className="shop">
       <div className='container-fluid d-flex my-3 py-2'>
         <SideBar />
-        <div className="products flex-wrap">
+        <div className="products flex-wrap d-flex justify-content-center mx-auto">
           {products ? (
             currentRecords.map((e) => 
             <div className="cardd border rounded-3 px-2 py-2" style={{width: 200}}>
