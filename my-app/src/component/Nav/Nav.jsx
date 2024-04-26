@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link, NavLink}from "react-router-dom"
+import { jwtDecode } from "jwt-decode";
 
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -12,15 +13,15 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Logo from '../../assets/whitelogo.png'
-import Profile from '../../assets/me.jpg'
 import './Nav.css'
 
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaCartArrowDown } from "react-icons/fa";
 
-function Navigation(args) {
+function Navigation() {
 
-  let Loging = true;
+  var token = localStorage.getItem('userToken', token)
+  var decode = jwtDecode(token)
 
   const activeStyle = {
     fontWeight: "bold",
@@ -110,9 +111,9 @@ function Navigation(args) {
                 </NavLink>
               </Nav>
               {
-            Loging === true ?
-            <Link className="profile-icon" to='./profile' data-aos="fade-left"><img src={Profile} alt="Profile" /></Link> :
-            <Link className='btn login bg-orange' data-aos="fade-left" to='/user'>Login</Link>
+            decode ?
+            <Link className="profile-icon" to='./profile' data-aos="fade-left"><img src={decode.imageUrl} alt="Profile" /></Link> :
+            <Link className='btn login bg-orange text-white' data-aos="fade-left" to='/user'>Login</Link>
           }
             </Offcanvas.Body>
             

@@ -2,7 +2,6 @@
 import background from "../assets/userbackground.png"
 
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
@@ -35,8 +34,13 @@ function Login() {
         email:values.email,
         password:values.password
       })
+      .then((res) => {
+        const token = res.data.token;
+        console.log(token)
+        localStorage.setItem('userToken', token);
+      })
       .then((res) => 
-        window.location.href ="/home"
+        window.location.href ="/"
       )
       .catch((err) => 
         window.alert("Login Failed Check Your Email or password")

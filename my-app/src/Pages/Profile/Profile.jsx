@@ -4,7 +4,7 @@ import { FaCamera } from "react-icons/fa";
 
 import { Outlet, NavLink } from "react-router-dom";
 
-
+import { jwtDecode } from "jwt-decode";
 
 export default function Profile() {
 
@@ -14,6 +14,9 @@ export default function Profile() {
     color: "orange"
   }
 
+  var token = localStorage.getItem("userToken", token);
+  const decoded = jwtDecode(token);
+
   return (
     <>
       <div className="profile">
@@ -22,11 +25,11 @@ export default function Profile() {
             <div class="row  justify-content-around gap-3">
               <div className="col-3 box py-4 rounded" data-aos="fade-right">
                 <div className="box-img">
-                  <img src={profile} alt="profile" />
+                  <img src={decoded.imageUrl} alt="profile" />
                   <FaCamera className="camera text-white fs-3"/>
                 </div>
                 <div className="box-title">
-                  <h3 className="fw-bold fs-5 text-center mt-2">Omar EL-Nahas</h3>
+                  <h3 className="fw-bold fs-5 text-center mt-2">{decoded.given_name} {decoded.family_name}</h3>
                 </div>
                 <div className="box-list d-flex flex-column justify-content-between align-items-start">
                   <nav className="mb-0 mt-3">
@@ -54,7 +57,8 @@ export default function Profile() {
                     <NavLink 
                       to="/user" 
                       style={({isActive}) => isActive ? activeStyle : null }
-                      className="nav-link mb-4">Logout
+                      className="nav-link mb-4"
+                      onClick={()=>(localStorage.removeItem("userToken"))}>Logout
                     </NavLink>
                   </nav>
                 </div>
