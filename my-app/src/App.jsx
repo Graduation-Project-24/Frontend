@@ -21,6 +21,7 @@ import Product from './Pages/Shop/Product.jsx';
 import Cart from './Pages/Cart/Cart.jsx';
 import Order from './Pages/Profile/Order.jsx';
 import Favorite from './Pages/Profile/Favorite.jsx';
+import Login from './Pages/User/Login/Login.jsx';
 
 
 function App() { 
@@ -38,33 +39,35 @@ function App() {
     <>  
     <BrowserRouter>
       <Routes>
-        <Route path="/user/*" element={<User />}></Route>
-        <Route path="/register" element={<Register/>}></Route>
-
-        <Route path='/' element={<Layout />}>
-          <Route index element={<Home />}></Route>
-          <Route path="about" element={<About />}></Route>
-          <Route path="contact" element={<Contact />}></Route>
-          <Route path="cart" element={<Cart />}></Route>
-          
-          <Route path="shop">
-            <Route index element={<Shop />} ></Route>
-            <Route path=":id" element={<Product />}></Route>    
-          </Route>
-          
-          <Route path="/profile" element={<Profile />}>
-            <Route index element={<Account/>}></Route>
-            <Route path="password" element={<Password/>}></Route>  
-            <Route path="orders" element={<Order />}></Route>  
-            <Route path="favorite" element={<Favorite />}></Route>  
-          </Route>
-          
-          <Route path="/forgetpassword" element={<ForgetPassword/>}></Route>
-          <Route path="/confirmpassword" element={<ConfirmPassword/>}></Route>
+        {/* Public routes */}
+        <Route path="/user" element={<User />}>
+          <Route index element={<Login />} />
+          <Route path="register" element={<Register />} />
         </Route>
 
-        
-        
+        {/* Protected routes */}
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="cart" element={<Cart />} />
+
+          <Route path="shop">
+            <Route index element={<Shop />} />
+            <Route path=":id" element={<Product />} />
+          </Route>
+
+          <Route path="profile" element={<Profile />}>
+            <Route index element={<Account />} />
+            <Route path="password" element={<Password />} />
+            <Route path="orders" element={<Order />} />
+            <Route path="favorite" element={<Favorite />} />
+          </Route>
+        </Route>
+
+        {/* Other routes */}
+        <Route path="forgetpassword" element={<ForgetPassword />} />
+        <Route path="confirmpassword" element={<ConfirmPassword />} />
       </Routes>
     </BrowserRouter>
     </>
