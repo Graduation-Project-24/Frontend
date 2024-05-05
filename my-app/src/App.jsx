@@ -38,6 +38,9 @@ function App() {
     <>  
     <BrowserRouter>
       <Routes>
+        <Route path="/user/*" element={<User />}></Route>
+        <Route path="/register" element={<Register/>}></Route>
+
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />}></Route>
           <Route path="about" element={<About />}></Route>
@@ -60,8 +63,7 @@ function App() {
           <Route path="/confirmpassword" element={<ConfirmPassword/>}></Route>
         </Route>
 
-        <Route path="user" element={<User />}></Route>
-        <Route path="/register" element={<Register/>}></Route>
+        
         
       </Routes>
     </BrowserRouter>

@@ -2,16 +2,24 @@ import { FaHeart } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 
 import React from "react";
-import { useParams, Link, Navigate} from "react-router-dom";
+import { useParams, Link} from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 function Product() {
-  const params = useParams()
+
+  var {id} = useParams()
+
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
 
-  let api =`https://www.smarketp.somee.com/api/Product/getproductdetailsforweb/${params.id}`
+  const [flag, setFlag] = useState(id)
+  let updateId =(e)=>{
+    setFlag(e)
+    window.scrollTo(0,0)
+  }
+
+  let api =`https://www.smarketp.somee.com/api/Product/getproductdetailsforweb/${flag}`
 
   useEffect(() => {
     axios.get(api)
@@ -22,7 +30,7 @@ function Product() {
       setLoading(false);
     });
     
-  }, [params.id])
+  }, [flag])
 
   const [quantity, setQuantity] = useState(1)
 
@@ -94,19 +102,17 @@ function Product() {
             product.productDtoFilters.map((e) => 
             <div className="cardd border rounded-3 px-2 py-2" style={{width: 200}}>
               <div className='card-img'>
-                <img className="" src={e.imageUrl} alt="Card" />
+                <img src={e.imageUrl} alt="Card" />
               </div>
               <div className="card-body">
                 <h5 className="card-title fs-6 text-black-50">{e.name}</h5>
               </div>
               <hr />
               <div className='d-flex justify-content-between align-items-center'>
-                <button onClick={() => Navigate("/shop", { replace: true })} className='btn bg-orange m-0'>
-                  Details
-                </button>
+                <Link to={`/shop/${e.productId}`} onClick={()=>updateId(e.productId)}  className="btn bg-orange">See more</Link>
               </div>
             </div>
-            )):<div className="parentloader"><div class="loader"></div></div>}
+            )):<div className="parentloader"><div className="loader"></div></div>}
         </div>
       </div>
     </div>

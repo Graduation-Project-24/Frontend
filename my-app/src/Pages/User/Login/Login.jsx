@@ -8,6 +8,8 @@ import { FaApple } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaEye } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 import { Link } from "react-router-dom";
 import axios from 'axios';
@@ -27,6 +29,10 @@ function Login() {
     })
   }
 
+  let goHome =()=>{
+    window.location.href ="/"
+  }
+
   const handleSubmit =(e)=>{
     e.preventDefault();
     axios
@@ -36,19 +42,18 @@ function Login() {
       })
       .then((res) => {
         const token = res.data.token;
-        console.log(token)
         localStorage.setItem('userToken', token);
+        toast.success("Login Success !")
+        setTimeout(goHome,3000)
       })
-      .then((res) => 
-        window.location.href ="/"
-      )
       .catch((err) => 
-        window.alert("Login Failed Check Your Email or password")
+        toast.error("Login Failed")
       )
   }
 
   return <>
     <div className="login d-flex">
+        <ToastContainer />
         <div className="left" data-aos="fade-right">
           <img className="" src={background} alt="" />
         </div>  
@@ -76,7 +81,6 @@ function Login() {
               <div className="password d-flex align-items-center mt-1 my-3">
                 <RiLockPasswordFill className="fs-5 text-black-50"/>
                 <input 
-                  className="" 
                   type={values.showPassword ? "text" : "password"}
                   name="password" 
                   value={values.pass}
@@ -87,7 +91,12 @@ function Login() {
                 <span className="eye" onClick={handleShowPass}><FaEye className="fs-5 text-black-50"/></span>
               </div>
               <a href="#" className="text-black-50 text-end mb-3">Forget your password?</a>
-              <button type="submit" onSubmit={handleSubmit} className="btn primary-color rounded-3 text-white mb-3 fw-bold">Login</button>
+              <button 
+                type="submit" 
+                // onClick={} 
+                onSubmit={handleSubmit} 
+                className="btn primary-color rounded-3 text-white mb-3 fw-bold"
+                >Login</button>
             </form>
             <div className="line d-flex">
               <p className="text text-black-50 mb-0 text-center">OR</p>

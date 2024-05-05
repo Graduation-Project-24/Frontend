@@ -1,5 +1,4 @@
 import "./Profile.css";
-import profile from './assets/me.jpg'
 import { FaCamera } from "react-icons/fa";
 
 import { Outlet, NavLink } from "react-router-dom";
