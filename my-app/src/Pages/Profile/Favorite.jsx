@@ -61,8 +61,6 @@ function Favorite() {
     }
   };
   
-  
-  
 
   return (
     <>

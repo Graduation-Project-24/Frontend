@@ -28,7 +28,7 @@ function Account() {
           <label htmlFor="city">City</label>
           <input type="text" name="city" placeholder="City" />
           <label htmlFor="phone">Phone</label>
-          <input type="tel" name="lastname" placeholder={decoded.mobilephone}  />
+          <input type="tel" name="lastname" placeholder="0123456789" />
           <label htmlFor="birthday">Birthday</label>
           <input type="date" name="birthday" placeholder={decoded.birthdate}  />
           <button type="submit" className="btn primary-color mt-3 text-white float-end">

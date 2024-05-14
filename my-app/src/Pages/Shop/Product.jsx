@@ -4,21 +4,23 @@ import { FaStar } from "react-icons/fa";
 import React from "react";
 import { useParams, Link} from "react-router-dom";
 import { useEffect, useState } from "react";
+import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 
 function Product() {
 
-  var {id} = useParams()
+  var token = localStorage.getItem("userToken", token);
 
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
-
-  const [flag, setFlag] = useState(id)
+  
   let updateId =(e)=>{
     setFlag(e)
     window.scrollTo(0,0)
   }
-
+  
+  var {id} = useParams()
+  const [flag, setFlag] = useState(id)
   let api =`https://www.smarketp.somee.com/api/Product/getproductdetailsforweb/${flag}`
 
   useEffect(() => {
@@ -43,6 +45,97 @@ function Product() {
   function minus(){
     if(quantity > 1)
       setQuantity(quantity - 1)
+  }
+
+  const [favToggel, setFavToggle] = useState(false)
+  console.log(favToggel)
+
+  const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    fetchFavorites();
+  }, []);
+
+  const fetchFavorites = async () => {
+      try {
+        const response = await fetch("https://www.smarketp.somee.com/api/Favorite/GetFavorites", {
+          method: "GET",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+          }
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setFavorites(data);
+        } else {
+          console.error("Failed to fetch favorites");
+        }
+      } catch (error) {
+        console.error("Error fetching favorites:", error);
+      }
+  };
+
+  const handleAddFavorite = async (id) => {
+      try {
+        const response = await fetch("https://www.smarketp.somee.com/api/Favorite/Add", {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ productId: id })
+        });
+  
+        if (response.ok) {
+          // If deletion is successful, reload the page
+          fetchFavorites();        
+        } else {
+          console.error("Failed to delete favorite");
+        }
+      } catch (error) {
+        console.error("Error deleting favorite:", error);
+      }
+  };
+
+  // const handleDeleteFavorite = async (productId) => {
+  //   const token = localStorage.getItem("userToken");
+  //   if (token) {
+  //     try {
+  //       const response = await fetch("https://www.smarketp.somee.com/api/Favorite/Delete", {
+  //         method: "POST",
+  //         headers: {
+  //           "Authorization": `Bearer ${token}`,
+  //           "Content-Type": "application/json"
+  //         },
+  //         body: JSON.stringify({ productId: productId })
+  //       });
+  
+  //       if (response.ok) {
+  //         // If deletion is successful, reload the page
+  //         fetchFavorites();        
+  //       } else {
+  //         console.error("Failed to delete favorite");
+  //       }
+  //     } catch (error) {
+  //       console.error("Error deleting favorite:", error);
+  //     }
+  //   } else {
+  //     console.error("Token not found in localStorage");
+  //   }
+  // };
+
+  if(favToggel){
+    handleAddFavorite()
+    console.log()
+  }
+
+
+  const activeStyle = {
+    width: "fit-content",
+    margin: "0 20",
+    padding: "5px 10px",
   }
 
   return <>
@@ -76,7 +169,11 @@ function Product() {
                 <div className="action">
                   <button className="btn border border-2 me-1">Add to Cart</button>
                   <button className="btn primary-color me-1">Buy Now</button>
-                  <button className="btn border border-2 rounded-circle"><FaHeart /></button>
+                  <button 
+                    style={activeStyle}
+                    className={favToggel ? "text-danger" : null }
+                    onClick={() => (setFavToggle(!favToggel))}
+                    ><FaHeart /></button>
                 </div>
               </div>
             </div>
