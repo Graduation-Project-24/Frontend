@@ -28,6 +28,7 @@ export default function Shop() {
     getProduct()
   }, [])
 
+  // console.log(currentRecords[0].reviews[0].rate)
 
   return <>
     <div className="shop">

@@ -44,7 +44,7 @@ function Login() {
         const token = res.data.token;
         localStorage.setItem('userToken', token);
         toast.success("Login Success !")
-        setTimeout(goHome,2000)
+        setTimeout(goHome,1000)
       })
       .catch((err) => 
         toast.error("Login Failed")

@@ -4,8 +4,8 @@ import { FaStar } from "react-icons/fa";
 import React from "react";
 import { useParams, Link} from "react-router-dom";
 import { useEffect, useState } from "react";
-import { jwtDecode } from "jwt-decode";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
 
 function Product() {
 
@@ -48,56 +48,55 @@ function Product() {
   }
 
   const [favToggel, setFavToggle] = useState(false)
-  console.log(favToggel)
 
-  const [favorites, setFavorites] = useState([]);
+  // const [favorites, setFavorites] = useState([]);
 
-  useEffect(() => {
-    fetchFavorites();
-  }, []);
+  // useEffect(() => {
+  //   fetchFavorites();
+  // }, []);
 
-  const fetchFavorites = async () => {
-      try {
-        const response = await fetch("https://www.smarketp.somee.com/api/Favorite/GetFavorites", {
-          method: "GET",
-          headers: {
-            "Authorization": `Bearer ${token}`,
-            "Content-Type": "application/json"
-          }
-        });
+  // const fetchFavorites = async () => {
+  //     try {
+  //       const response = await fetch("https://www.smarketp.somee.com/api/Favorite/GetFavorites", {
+  //         method: "GET",
+  //         headers: {
+  //           "Authorization": `Bearer ${token}`,
+  //           "Content-Type": "application/json"
+  //         }
+  //       });
 
-        if (response.ok) {
-          const data = await response.json();
-          setFavorites(data);
-        } else {
-          console.error("Failed to fetch favorites");
-        }
-      } catch (error) {
-        console.error("Error fetching favorites:", error);
-      }
-  };
+  //       if (response.ok) {
+  //         const data = await response.json();
+  //         setFavorites(data);
+  //       } else {
+  //         console.error("Failed to fetch favorites");
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching favorites:", error);
+  //     }
+  // };
 
-  const handleAddFavorite = async (id) => {
-      try {
-        const response = await fetch("https://www.smarketp.somee.com/api/Favorite/Add", {
-          method: "POST",
-          headers: {
-            "Authorization": `Bearer ${token}`,
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ productId: id })
-        });
+  // const handleAddFavorite = async (id) => {
+  //     try {
+  //       const response = await fetch("https://www.smarketp.somee.com/api/Favorite/Add", {
+  //         method: "POST",
+  //         headers: {
+  //           "Authorization": `Bearer ${token}`,
+  //           "Content-Type": "application/json"
+  //         },
+  //         body: JSON.stringify({ productId: id })
+  //       });
   
-        if (response.ok) {
-          // If deletion is successful, reload the page
-          fetchFavorites();        
-        } else {
-          console.error("Failed to delete favorite");
-        }
-      } catch (error) {
-        console.error("Error deleting favorite:", error);
-      }
-  };
+  //       if (response.ok) {
+  //         // If deletion is successful, reload the page
+  //         fetchFavorites();        
+  //       } else {
+  //         console.error("Failed to delete favorite");
+  //       }
+  //     } catch (error) {
+  //       console.error("Error deleting favorite:", error);
+  //     }
+  // };
 
   // const handleDeleteFavorite = async (productId) => {
   //   const token = localStorage.getItem("userToken");
@@ -126,11 +125,37 @@ function Product() {
   //   }
   // };
 
-  if(favToggel){
-    handleAddFavorite()
-    console.log()
-  }
+  // if(favToggel){
+  //   handleAddFavorite()
+  //   console.log()
+  // }
+const addToCart =()=>{
+  const sendPostRequest = async (url, data, token) => {
+    try {
+      const config = {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          "Content-Type": "application/json"
+        },
+      };
+      const response = await axios.post(url, data, config);
+      console.log('Response:', response.data);
+      toast.success("Add to Cart Success !")
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
+  const apiUrl = 'https://www.smarketp.somee.com/api/Order/AddToCart';
+  const postData = {
+    "productId": product.id,
+    "quantity": quantity
+  };
+  const accessToken = token;
+
+  sendPostRequest(apiUrl, postData, accessToken);
+}
+  
 
   const activeStyle = {
     width: "fit-content",
@@ -142,6 +167,7 @@ function Product() {
     {!loading ?(
       <div className="product py-3 my-3">
         <div className="container-fluid">
+          <ToastContainer />
           <div className="row">
             <div className="col-6">
               <div className="product-img">
@@ -167,7 +193,7 @@ function Product() {
                   </div>
                 </div>
                 <div className="action">
-                  <button className="btn border border-2 me-1">Add to Cart</button>
+                  <button className="btn border border-2 me-1" onClick={addToCart} >Add to Cart</button>
                   <button className="btn primary-color me-1">Buy Now</button>
                   <button 
                     style={activeStyle}
@@ -192,6 +218,7 @@ function Product() {
         </div>
       </div>
     ) : <div className="parentloader"><div class="loader"></div></div>}
+
     <div className="other-products mb-4">
       <div className="container-fluid">
         <div className="row justify-content-around">
