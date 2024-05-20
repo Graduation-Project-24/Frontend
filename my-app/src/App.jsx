@@ -22,6 +22,7 @@ import Cart from './Pages/Cart/Cart.jsx';
 import Order from './Pages/Profile/Order.jsx';
 import Favorite from './Pages/Profile/Favorite.jsx';
 import Login from './Pages/User/Login/Login.jsx';
+import CheckOut from './Pages/Checkout/CheckOut.jsx';
 
 
 function App() { 
@@ -51,6 +52,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="checkOut" element={<CheckOut />} />
 
           <Route path="shop">
             <Route index element={<Shop />} />

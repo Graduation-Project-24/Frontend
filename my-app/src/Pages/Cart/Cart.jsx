@@ -2,20 +2,23 @@ import "./Cart.css";
 import { MdDelete } from "react-icons/md";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Cart() {
 
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   var token = localStorage.getItem("userToken", token);
   const apiUrl = "https://www.smarketp.somee.com/api/Order/getShoppingCartbyUser"
+  const DeleteItemApi ="https://www.smarketp.somee.com/api/Order/RemoveFromCart"
   const AuthString = 'Bearer '.concat(token);
 
   //reQuest Main Data
-    useEffect(()=>{
-      fetchData()
-    },[])
+  useEffect(()=>{
+    fetchData()
+  },[])
 
   const fetchData =()=>{
     axios.get(apiUrl, { headers: { Authorization: AuthString } })
@@ -27,41 +30,47 @@ function Cart() {
       })
   }
 
-  console.log(data)
-
-  //reQuest Remove Data
-  const handleDeleteItem = async (Id) => {
-    const DeleteItemApi ="https://www.smarketp.somee.com/api/Order/RemoveFromCart"
-    axios.post(apiUrl, { productId: Id }, { headers: { Authorization: AuthString } })
-      .then(response => {
-        console.log(response.ok)
-        fetchData()
-      })
-      .then(() => {
-        setLoading(false);
-      })
-
-    // try {
-    //   const response = await fetch(DeleteItemApi, {
-    //     method: "POST",
-    //     headers: {
-    //       "Authorization": `Bearer ${token}`,
-    //       "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify({ productId: Id })
-    //   });
-    //   console.log(response)
-    //   console.log(JSON.stringify({ productId: Id }))
-    //   if (response.ok) {
-        
-    //   } else {
-    //     console.error("Failed to delete From Cart");
-    //   }
-    // } catch (error) {
-    //   console.error("Error deleting favorite:", error);
-    // }
-  };
-  
+  // Delete Item from DataBase
+  const handleDelete = async (Id) => {
+    if (!token) {
+      console.error('No token provided');
+      setError('No token provided');
+      return;
+    }
+    try {
+      const response = await axios.post(
+        DeleteItemApi,
+        { productId:Id }, 
+        {
+          headers: {
+            Authorization: AuthString,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      // Handle successful deletion (e.g., update state, show notification)
+      setData(data.filter((item) => item.productId !== Id));
+    } catch (error) {
+      if (error.response) {
+        // Server responded with a status other than 200 range
+        if (error.response.status === 401) {
+          console.error('Unauthorized: Check your token.');
+          setError('Unauthorized: Check your token.');
+        } else {
+          setError(`Error: ${error.response.status} ${error.response.statusText}`);
+        }
+      } else if (error.request) {
+        // Request was made but no response received
+        console.error('No response received:', error.request);
+        setError('No response received from server.');
+      } else {
+        // Something else caused the error
+        console.error('Error message:', error.message);
+        setError(`Error: ${error.message}`);
+      }
+    }
+  }
+    
   //caclulate Total 
   let getTotal = ()=>{
     var total = 0
@@ -80,35 +89,33 @@ function Cart() {
       <div className="cart my-5 py-3">
         <div className="container-fluid">
           <table class="table table-striped table-bordered">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Product Image</th>
-                  <th>Quantity</th>
-                  <th>Price</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>  
-
-              <tbody>
-                {!loading ? (
-                  data.map((e, i)=>
-                    <tr>
-                      <td>{i+1}</td>
-                      <td><img src={e.productImageUrl} alt="Product 2" width="50" height="50"/></td>
-                      <td>{e.count}</td>
-                      <td>${e.count * e.price}</td>
-                      <td>
-                        <MdDelete className="action ms-2 text-danger" onClick={()=>handleDeleteItem(e.productId)} />
-                      </td>
-                    </tr>)
-                    ):<div className="parentloader"><div className="loader"></div></div>}
-              </tbody>
-
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Product Image</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Delete</th>
+              </tr>
+            </thead>  
+            <tbody>
+              {!loading ? (
+                data.map((e, i)=>
+                  <tr>
+                    <td>{i+1}</td>
+                    <td><img src={e.productImageUrl} alt="Product 2" width="50" height="50"/></td>
+                    <td>{e.count}</td>
+                    <td>${e.count * e.price}</td>
+                    <td>
+                      <MdDelete className="action ms-2 text-danger" onClick={()=>handleDelete(e.productId)} />
+                    </td>
+                  </tr>)
+                  ):<div className="parentloader"><div className="loader"></div></div>}
+            </tbody>
           </table>
           <div className="total d-flex justify-content-between ">
             <h4 className="fw-bold">Total : ${getTotal()}</h4>
-            <button className="btn bg-orange fw-bold">Check Out</button>
+            <Link to="/checkout" className="btn bg-orange fw-bold">Checkout</Link>
           </div>
         </div>
       </div>
