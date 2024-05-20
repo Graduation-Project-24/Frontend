@@ -139,7 +139,6 @@ const addToCart =()=>{
         },
       };
       const response = await axios.post(url, data, config);
-      console.log('Response:', response.data);
       toast.success("Add to Cart Success !")
     } catch (error) {
       console.error('Error:', error);

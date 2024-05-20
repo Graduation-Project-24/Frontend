@@ -1,7 +1,5 @@
 import "./Cart.css";
-import { IoIosAddCircle } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
-import { CiCircleMinus } from "react-icons/ci";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -14,26 +12,67 @@ function Cart() {
   const apiUrl = "https://www.smarketp.somee.com/api/Order/getShoppingCartbyUser"
   const AuthString = 'Bearer '.concat(token);
 
-  useEffect(()=>{
+  //reQuest Main Data
+    useEffect(()=>{
+      fetchData()
+    },[])
+
+  const fetchData =()=>{
     axios.get(apiUrl, { headers: { Authorization: AuthString } })
-    .then(response => {
-        setData(response.data)
-    })
-    .finally(() => {
-      setLoading(false);
-    })
-  },[])
+      .then(response => {
+        setData(response.data.packages)
+      })
+      .then(() => {
+        setLoading(false);
+      })
+  }
+
+  console.log(data)
+
+  //reQuest Remove Data
+  const handleDeleteItem = async (Id) => {
+    const DeleteItemApi ="https://www.smarketp.somee.com/api/Order/RemoveFromCart"
+    axios.post(apiUrl, { productId: Id }, { headers: { Authorization: AuthString } })
+      .then(response => {
+        console.log(response.ok)
+        fetchData()
+      })
+      .then(() => {
+        setLoading(false);
+      })
+
+    // try {
+    //   const response = await fetch(DeleteItemApi, {
+    //     method: "POST",
+    //     headers: {
+    //       "Authorization": `Bearer ${token}`,
+    //       "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify({ productId: Id })
+    //   });
+    //   console.log(response)
+    //   console.log(JSON.stringify({ productId: Id }))
+    //   if (response.ok) {
+        
+    //   } else {
+    //     console.error("Failed to delete From Cart");
+    //   }
+    // } catch (error) {
+    //   console.error("Error deleting favorite:", error);
+    // }
+  };
   
-  if(loading){
-    let getTotal = ()=>{
-      var total = 0;
-      for (var i = 0; i < data.packages.length; i++) {
-        total += data.packages[i].count * data.packages[i].price;
+  //caclulate Total 
+  let getTotal = ()=>{
+    var total = 0
+    if(!loading){
+      for (var i = 0; i < data.length; i++) {
+        total += data[i].count * data[i].price;
       }
       return total;
+    }else{
+      return total
     }
-  }else{
-    return 0
   }
 
   return (
@@ -47,21 +86,20 @@ function Cart() {
                   <th>Product Image</th>
                   <th>Quantity</th>
                   <th>Price</th>
-                  <th>Actions</th>
+                  <th>Delete</th>
                 </tr>
-              </thead>
+              </thead>  
+
               <tbody>
                 {!loading ? (
-                  data.packages.map((e, i)=>
+                  data.map((e, i)=>
                     <tr>
                       <td>{i+1}</td>
                       <td><img src={e.productImageUrl} alt="Product 2" width="50" height="50"/></td>
                       <td>{e.count}</td>
                       <td>${e.count * e.price}</td>
                       <td>
-                        <IoIosAddCircle className="action me-2 text-primary" />
-                        <CiCircleMinus className="action mx-2 text-primary" />
-                        <MdDelete className="action ms-2 text-danger" />
+                        <MdDelete className="action ms-2 text-danger" onClick={()=>handleDeleteItem(e.productId)} />
                       </td>
                     </tr>)
                     ):<div className="parentloader"><div className="loader"></div></div>}
@@ -70,7 +108,7 @@ function Cart() {
           </table>
           <div className="total d-flex justify-content-between ">
             <h4 className="fw-bold">Total : ${getTotal()}</h4>
-            <button className="btn bg-orange fw-bold">Confirm</button>
+            <button className="btn bg-orange fw-bold">Check Out</button>
           </div>
         </div>
       </div>
