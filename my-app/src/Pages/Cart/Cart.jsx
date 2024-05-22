@@ -9,6 +9,7 @@ function Cart() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [checkLink, setCheckLink] =useState([])
 
   var token = localStorage.getItem("userToken", token);
   const apiUrl = "https://www.smarketp.somee.com/api/Order/getShoppingCartbyUser"
@@ -42,7 +43,7 @@ function Cart() {
     try {
       const response = await axios.post(
         DeleteItemApi,
-        { Id }, 
+        { productId:Id }, 
         {
           headers: {
             Authorization: AuthString,
@@ -75,6 +76,40 @@ function Cart() {
       }
     }
   }
+
+  let checkout =async () =>{
+    try {
+      const response = await axios.post(
+        checkoutApi,{}, 
+        {
+          headers: {
+            Authorization: AuthString,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      // Handle successful deletion (e.g., update state, show notification)
+      setCheckLink(response.data.sessionUrl)
+    }catch (error) {
+      if (error.response) {
+        // Server responded with a status other than 200 range
+        if (error.response.status === 401) {
+          console.error('Unauthorized: Check your token.');
+          setError('Unauthorized: Check your token.');
+        } else {
+          setError(`Error: ${error.response.status} ${error.response.statusText}`);
+        }
+      } else if (error.request) {
+        // Request was made but no response received
+        console.error('No response received:', error.request);
+        setError('No response received from server.');
+      } else {
+        // Something else caused the error
+        console.error('Error message:', error.message);
+        setError(`Error: ${error.message}`);
+      }
+    }
+  }
     
   //caclulate Total 
   let getTotal = ()=>{
@@ -88,42 +123,6 @@ function Cart() {
       return total
     }
   }
-
-  // let checkout =async () =>{
-  //   try {
-  //     const response = await axios.post(
-  //       checkoutApi, 
-  //       {
-  //         headers: {
-  //           Authorization: AuthString,
-  //           "Content-Type": "application/json",
-  //         },
-  //       }
-  //     );
-  //     // Handle successful deletion (e.g., update state, show notification)
-  //     toast.error("Aleardy Deleted, Bye",{
-  //       icon:MdDelete
-  //     })
-  //   } catch (error) {
-  //     if (error.response) {
-  //       // Server responded with a status other than 200 range
-  //       if (error.response.status === 401) {
-  //         console.error('Unauthorized: Check your token.');
-  //         setError('Unauthorized: Check your token.');
-  //       } else {
-  //         setError(`Error: ${error.response.status} ${error.response.statusText}`);
-  //       }
-  //     } else if (error.request) {
-  //       // Request was made but no response received
-  //       console.error('No response received:', error.request);
-  //       setError('No response received from server.');
-  //     } else {
-  //       // Something else caused the error
-  //       console.error('Error message:', error.message);
-  //       setError(`Error: ${error.message}`);
-  //     }
-  //   }
-  // }
 
   return (
     <>
@@ -164,7 +163,7 @@ function Cart() {
             <div>
               <button 
                 className="btn bg-orange fw-bold text-white"
-                >Checkout</button>
+                onClick={()=>checkout()}>Checkout</button>
             </div>
           </div>
         </div>

@@ -5,11 +5,11 @@ import abomagd from "../../assets/abo magd.jpg"
 import esmael from "../../assets/esmael.jpg"
 import hazem from "../../assets/hazem.jpg"
 import magdy from "../../assets/magdy.jpg"
-import mai from "../../assets/mai.jpg"
 import toka from "../../assets/toka.jpg"
 import asmaa from "../../assets/asmaa.jpg"
 import ashrakat from "../../assets/ashrakat.jpg"
 import nayera from "../../assets/nayera.jpg"
+import mai from "../../assets/maii.PNG"
 
 function About() {
   return (
@@ -50,7 +50,7 @@ function About() {
               <img src={magdy} class="card-img-top" alt="member-image"  />
             </div>
             <div class="box-body">
-              <h5 class="box-title">Omar EL-Nahas</h5>
+              <h5 class="box-title">Ahmed Magdy</h5>
               <p class="box-text text-black-50">AI</p>
             </div>
           </div>
@@ -86,7 +86,7 @@ function About() {
               <img src={mai} class="card-img-top" alt="member-image" />
             </div>
             <div class="box-body">
-              <h5 class="box-title">Mai Mohamed</h5>
+              <h5 class="box-title">Mai Allam</h5>
               <p class="box-text text-black-50">BackEnd</p>
             </div>
           </div>
@@ -104,7 +104,7 @@ function About() {
               <img src={ashrakat} class="card-img-top" alt="member-image" />
             </div>
             <div class="box-body">
-              <h5 class="box-title">Ashrakat</h5>
+              <h5 class="box-title">Ashrakat Elkholy</h5>
               <p class="box-text text-black-50">Mobile</p>
             </div>
           </div>
@@ -113,7 +113,7 @@ function About() {
               <img src={nayera} class="card-img-top" alt="member-image"  />
             </div>
             <div class="box-body">
-              <h5 class="box-title">nayera</h5>
+              <h5 class="box-title">Nayera</h5>
               <p class="box-text text-black-50">Mobile</p>
             </div>
           </div>
