@@ -9,12 +9,14 @@ import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaEye } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
 function Login() {
+
+  const functionThatReturnPromise = () => new Promise(resolve => setTimeout(resolve, 3000));
 
   const [values, setValues] = useState({
     email:'',
@@ -53,7 +55,8 @@ function Login() {
 
   return <>
     <div className="login d-flex">
-        <ToastContainer />
+        <ToastContainer
+          theme="dark"/>
         <div className="left" data-aos="fade-right">
           <img className="" src={background} alt="" />
         </div>  
@@ -93,7 +96,6 @@ function Login() {
               <a href="#" className="text-black-50 text-end mb-3">Forget your password?</a>
               <button 
                 type="submit" 
-                // onClick={} 
                 onSubmit={handleSubmit} 
                 className="btn primary-color rounded-3 text-white mb-3 fw-bold"
                 >Login</button>

@@ -2,7 +2,7 @@ import "./Cart.css";
 import { MdDelete } from "react-icons/md";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
 function Cart() {
 
@@ -13,11 +13,13 @@ function Cart() {
   var token = localStorage.getItem("userToken", token);
   const apiUrl = "https://www.smarketp.somee.com/api/Order/getShoppingCartbyUser"
   const DeleteItemApi ="https://www.smarketp.somee.com/api/Order/RemoveFromCart"
+  const checkoutApi ="https://www.smarketp.somee.com/api/Order/Checkout"
   const AuthString = 'Bearer '.concat(token);
 
   //reQuest Main Data
   useEffect(()=>{
     fetchData()
+    // checkout()
   },[])
 
   const fetchData =()=>{
@@ -40,7 +42,7 @@ function Cart() {
     try {
       const response = await axios.post(
         DeleteItemApi,
-        { productId:Id }, 
+        { Id }, 
         {
           headers: {
             Authorization: AuthString,
@@ -50,6 +52,9 @@ function Cart() {
       );
       // Handle successful deletion (e.g., update state, show notification)
       setData(data.filter((item) => item.productId !== Id));
+      toast.error("Aleardy Deleted, Bye",{
+        icon:MdDelete
+      })
     } catch (error) {
       if (error.response) {
         // Server responded with a status other than 200 range
@@ -84,10 +89,49 @@ function Cart() {
     }
   }
 
+  // let checkout =async () =>{
+  //   try {
+  //     const response = await axios.post(
+  //       checkoutApi, 
+  //       {
+  //         headers: {
+  //           Authorization: AuthString,
+  //           "Content-Type": "application/json",
+  //         },
+  //       }
+  //     );
+  //     // Handle successful deletion (e.g., update state, show notification)
+  //     toast.error("Aleardy Deleted, Bye",{
+  //       icon:MdDelete
+  //     })
+  //   } catch (error) {
+  //     if (error.response) {
+  //       // Server responded with a status other than 200 range
+  //       if (error.response.status === 401) {
+  //         console.error('Unauthorized: Check your token.');
+  //         setError('Unauthorized: Check your token.');
+  //       } else {
+  //         setError(`Error: ${error.response.status} ${error.response.statusText}`);
+  //       }
+  //     } else if (error.request) {
+  //       // Request was made but no response received
+  //       console.error('No response received:', error.request);
+  //       setError('No response received from server.');
+  //     } else {
+  //       // Something else caused the error
+  //       console.error('Error message:', error.message);
+  //       setError(`Error: ${error.message}`);
+  //     }
+  //   }
+  // }
+
   return (
     <>
       <div className="cart my-5 py-3">
         <div className="container-fluid">
+          <ToastContainer
+            autoClose={2000}
+            theme="dark" />
           <table class="table table-striped table-bordered">
             <thead>
               <tr>
@@ -113,9 +157,15 @@ function Cart() {
                   ):<div className="parentloader"><div className="loader"></div></div>}
             </tbody>
           </table>
-          <div className="total d-flex justify-content-between ">
-            <h4 className="fw-bold">Total : ${getTotal()}</h4>
-            <Link to="/checkout" className="btn bg-orange fw-bold">Checkout</Link>
+          <div className="total d-flex justify-content-around ">
+            <div>
+              <h4 className="fw-bold">Total : ${getTotal()}</h4>
+            </div>
+            <div>
+              <button 
+                className="btn bg-orange fw-bold text-white"
+                >Checkout</button>
+            </div>
           </div>
         </div>
       </div>

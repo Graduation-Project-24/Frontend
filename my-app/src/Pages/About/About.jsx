@@ -1,6 +1,15 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import './about.css'
 import omar from "../../assets/me.jpg"
+import abomagd from "../../assets/abo magd.jpg"
+import esmael from "../../assets/esmael.jpg"
+import hazem from "../../assets/hazem.jpg"
+import magdy from "../../assets/magdy.jpg"
+import mai from "../../assets/mai.jpg"
+import toka from "../../assets/toka.jpg"
+import asmaa from "../../assets/asmaa.jpg"
+import ashrakat from "../../assets/ashrakat.jpg"
+import nayera from "../../assets/nayera.jpg"
 
 function About() {
   return (
@@ -20,92 +29,92 @@ function About() {
           <h3>Our Team</h3>     
           <div class="box" style={{width: 220}}>
             <div className="box-img">
-              <img src={omar} class="card-img-top" alt="member-image" />
+              <img src={omar} class="card-img-top" alt="member-image"/>
             </div>
             <div class="box-body">
               <h5 class="box-title">Omar EL-Nahas</h5>
-              <p class="box-text text-black-50">Frontend Developer</p>
+              <p class="box-text text-black-50">FrontEnd</p>
             </div>
           </div>
           <div class="box" style={{width: 220}}>
             <div className="box-img">
-              <img src={omar} class="card-img-top" alt="member-image" />
+              <img src={esmael} class="card-img-top" alt="member-image" />
             </div>
             <div class="box-body">
-              <h5 class="box-title">Omar EL-Nahas</h5>
-              <p class="box-text text-black-50">Frontend Developer</p>
+              <h5 class="box-title">Esmael Saleh</h5>
+              <p class="box-text text-black-50">AI</p>
             </div>
           </div>
           <div class="box" style={{width: 220}}>
             <div className="box-img">
-              <img src={omar} class="card-img-top" alt="member-image" />
+              <img src={magdy} class="card-img-top" alt="member-image"  />
             </div>
             <div class="box-body">
               <h5 class="box-title">Omar EL-Nahas</h5>
-              <p class="box-text text-black-50">Frontend Developer</p>
+              <p class="box-text text-black-50">AI</p>
             </div>
           </div>
           <div class="box" style={{width: 220}}>
             <div className="box-img">
-              <img src={omar} class="card-img-top" alt="member-image" />
+              <img src={hazem} class="card-img-top" alt="member-image" />
             </div>
             <div class="box-body">
-              <h5 class="box-title">Omar EL-Nahas</h5>
-              <p class="box-text text-black-50">Frontend Developer</p>
+              <h5 class="box-title">Mohamed Hazem</h5>
+              <p class="box-text text-black-50">BackEnd</p>
             </div>
           </div>
           <div class="box" style={{width: 220}}>
             <div className="box-img">
-              <img src={omar} class="card-img-top" alt="member-image" />
+              <img src={abomagd} class="card-img-top" alt="member-image" />
             </div>
             <div class="box-body">
-              <h5 class="box-title">Omar EL-Nahas</h5>
-              <p class="box-text text-black-50">Frontend Developer</p>
+              <h5 class="box-title">Ahmed Aboelmagd </h5>
+              <p class="box-text text-black-50">BackEnd</p>
             </div>
           </div>
           <div class="box" style={{width: 220}}>
             <div className="box-img">
-              <img src={omar} class="card-img-top" alt="member-image" />
+              <img src={asmaa} class="card-img-top" alt="member-image" />
             </div>
             <div class="box-body">
-              <h5 class="box-title">Omar EL-Nahas</h5>
-              <p class="box-text text-black-50">Frontend Developer</p>
+              <h5 class="box-title">Asmaa Mohamed</h5>
+              <p class="box-text text-black-50">BackEnd</p>
             </div>
           </div>
           <div class="box" style={{width: 220}}>
             <div className="box-img">
-              <img src={omar} class="card-img-top" alt="member-image" />
+              <img src={mai} class="card-img-top" alt="member-image" />
             </div>
             <div class="box-body">
-              <h5 class="box-title">Omar EL-Nahas</h5>
-              <p class="box-text text-black-50">Frontend Developer</p>
+              <h5 class="box-title">Mai Mohamed</h5>
+              <p class="box-text text-black-50">BackEnd</p>
             </div>
           </div>
           <div class="box" style={{width: 220}}>
             <div className="box-img">
-              <img src={omar} class="card-img-top" alt="member-image" />
+              <img src={toka} class="card-img-top" alt="member-image" />
             </div>
             <div class="box-body">
-              <h5 class="box-title">Omar EL-Nahas</h5>
-              <p class="box-text text-black-50">Frontend Developer</p>
+              <h5 class="box-title">Toka Gamal</h5>
+              <p class="box-text text-black-50">Mobile</p>
             </div>
           </div>
           <div class="box" style={{width: 220}}>
             <div className="box-img">
-              <img src={omar} class="card-img-top" alt="member-image" />
+              <img src={ashrakat} class="card-img-top" alt="member-image" />
             </div>
             <div class="box-body">
-              <h5 class="box-title">Omar EL-Nahas</h5>
-              <p class="box-text text-black-50">Frontend Developer</p>
+              <h5 class="box-title">Ashrakat</h5>
+              <p class="box-text text-black-50">Mobile</p>
             </div>
           </div>
           <div class="box" style={{width: 220}}>
             <div className="box-img">
-              <img src={omar} class="card-img-top" alt="member-image" />
+              <img src={nayera} class="card-img-top" alt="member-image"  />
             </div>
             <div class="box-body">
-              <h5 class="box-title">Omar EL-Nahas</h5>
-              <p class="box-text text-black-50">Frontend Developer</p>
+              <h5 class="box-title">nayera</h5>
+              <p class="box-text text-black-50">Mobile</p>
             </div>
           </div>
         </div>

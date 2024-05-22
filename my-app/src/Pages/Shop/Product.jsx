@@ -1,5 +1,6 @@
 import { FaHeart } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 
 import React from "react";
 import { useParams, Link} from "react-router-dom";
@@ -139,7 +140,9 @@ const addToCart =()=>{
         },
       };
       const response = await axios.post(url, data, config);
-      toast.success("Add to Cart Success !")
+      toast.info("I am in Your Cart Now",{
+        icon:FaShoppingCart
+      })
     } catch (error) {
       console.error('Error:', error);
     }
@@ -166,7 +169,8 @@ const addToCart =()=>{
     {!loading ?(
       <div className="product py-3 my-3">
         <div className="container-fluid">
-          <ToastContainer />
+          <ToastContainer
+            theme="dark"/>
           <div className="row">
             <div className="col-6">
               <div className="product-img">
