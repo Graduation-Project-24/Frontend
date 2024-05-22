@@ -2,6 +2,7 @@ import "./Cart.css";
 import { MdDelete } from "react-icons/md";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate  } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 function Cart() {
@@ -10,6 +11,8 @@ function Cart() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [checkLink, setCheckLink] =useState([])
+
+  const navigate = useNavigate();
 
   var token = localStorage.getItem("userToken", token);
   const apiUrl = "https://www.smarketp.somee.com/api/Order/getShoppingCartbyUser"
@@ -20,7 +23,6 @@ function Cart() {
   //reQuest Main Data
   useEffect(()=>{
     fetchData()
-    // checkout()
   },[])
 
   const fetchData =()=>{
@@ -77,6 +79,7 @@ function Cart() {
     }
   }
 
+  //Checkout 
   let checkout =async () =>{
     try {
       const response = await axios.post(
@@ -90,6 +93,8 @@ function Cart() {
       );
       // Handle successful deletion (e.g., update state, show notification)
       setCheckLink(response.data.sessionUrl)
+      window.open(checkLink, '_blank', "popup");
+
     }catch (error) {
       if (error.response) {
         // Server responded with a status other than 200 range
@@ -110,6 +115,8 @@ function Cart() {
       }
     }
   }
+
+  console.log(checkLink)
     
   //caclulate Total 
   let getTotal = ()=>{
