@@ -80,7 +80,7 @@ function Cart() {
   }
 
   //Checkout 
-  let checkout =async () =>{
+  let checkout = async () =>{
     try {
       const response = await axios.post(
         checkoutApi,{}, 

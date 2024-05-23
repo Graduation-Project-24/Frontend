@@ -32,13 +32,11 @@ function Product() {
     .finally(() => {
       setLoading(false);
     });
-    
   }, [flag])
 
+  // manage Stock and count
   const [quantity, setQuantity] = useState(1)
-
   let stock = product?.left || 0;
-
   function plus(){
     if(quantity < stock )
       setQuantity(quantity + 1)
@@ -48,101 +46,46 @@ function Product() {
       setQuantity(quantity - 1)
   }
 
+//   // manage Favorite
   const [favToggel, setFavToggle] = useState(false)
-
-  // const [favorites, setFavorites] = useState([]);
-
-  // useEffect(() => {
-  //   fetchFavorites();
-  // }, []);
-
-  // const fetchFavorites = async () => {
-  //     try {
-  //       const response = await fetch("https://www.smarketp.somee.com/api/Favorite/GetFavorites", {
-  //         method: "GET",
-  //         headers: {
-  //           "Authorization": `Bearer ${token}`,
-  //           "Content-Type": "application/json"
-  //         }
-  //       });
-
-  //       if (response.ok) {
-  //         const data = await response.json();
-  //         setFavorites(data);
-  //       } else {
-  //         console.error("Failed to fetch favorites");
-  //       }
-  //     } catch (error) {
-  //       console.error("Error fetching favorites:", error);
-  //     }
-  // };
-
-  // const handleAddFavorite = async (id) => {
-  //     try {
-  //       const response = await fetch("https://www.smarketp.somee.com/api/Favorite/Add", {
-  //         method: "POST",
-  //         headers: {
-  //           "Authorization": `Bearer ${token}`,
-  //           "Content-Type": "application/json"
-  //         },
-  //         body: JSON.stringify({ productId: id })
-  //       });
   
-  //       if (response.ok) {
-  //         // If deletion is successful, reload the page
-  //         fetchFavorites();        
-  //       } else {
-  //         console.error("Failed to delete favorite");
-  //       }
-  //     } catch (error) {
-  //       console.error("Error deleting favorite:", error);
-  //     }
-  // };
-
-  // const handleDeleteFavorite = async (productId) => {
-  //   const token = localStorage.getItem("userToken");
-  //   if (token) {
-  //     try {
-  //       const response = await fetch("https://www.smarketp.somee.com/api/Favorite/Delete", {
-  //         method: "POST",
-  //         headers: {
-  //           "Authorization": `Bearer ${token}`,
-  //           "Content-Type": "application/json"
-  //         },
-  //         body: JSON.stringify({ productId: productId })
-  //       });
+//   const [favorites, setFavorites] = useState(() => {
+//     const savedFavorites = localStorage.getItem('favorites');
+//     return savedFavorites ? JSON.parse(savedFavorites) : [];
+//   });
   
-  //       if (response.ok) {
-  //         // If deletion is successful, reload the page
-  //         fetchFavorites();        
-  //       } else {
-  //         console.error("Failed to delete favorite");
-  //       }
-  //     } catch (error) {
-  //       console.error("Error deleting favorite:", error);
-  //     }
-  //   } else {
-  //     console.error("Token not found in localStorage");
-  //   }
-  // };
+//   // Function to add favorite item
+//   const addFavorite = (item) => {
+//     setFavorites([...favorites, item]);
+//   };
 
-  // if(favToggel){
-  //   handleAddFavorite()
-  //   console.log()
-  // }
-const addToCart =()=>{
-  const sendPostRequest = async (url, data, token) => {
-    try {
-      const config = {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          "Content-Type": "application/json"
-        },
-      };
-      const response = await axios.post(url, data, config);
-      toast.info("I am in Your Cart Now",{
-        icon:FaShoppingCart
-      })
+//   // Function to delete favorite item
+//   const deleteFavorite = (item) => {
+//     setFavorites(favorites.filter(fav => fav !== item));
+//   };
+  
+//   const Favorite = () =>{
+//     if(favToggel){
+//       addFavorite(flag)
+//     }else{
+//       deleteFavorite(flag)
+//     }
+//   }
+// console.log(favorites)
+
+  const addToCart =()=>{
+    const sendPostRequest = async (url, data, token) => {
+      try {
+        const config = {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            "Content-Type": "application/json"
+          },
+        };
+        const response = await axios.post(url, data, config);
+        toast.info("I am in Your Cart Now",{
+          icon:FaShoppingCart
+        })
     } catch (error) {
       console.error('Error:', error);
     }
@@ -157,7 +100,6 @@ const addToCart =()=>{
 
   sendPostRequest(apiUrl, postData, accessToken);
 }
-  
 
   const activeStyle = {
     width: "fit-content",
