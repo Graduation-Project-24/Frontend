@@ -79,9 +79,6 @@ function Cart() {
     }
   }
 
-  let goCheck =()=>{
-    window.open(checkLink, '_blank')
-  }
   //Checkout 
   let checkout = async () =>{
     try {
@@ -94,10 +91,10 @@ function Cart() {
           },
         }
       );
-      // Handle successful deletion (e.g., update state, show notification)
-      setCheckLink(response.data.sessionUrl)
-      setTimeout(goCheck(), 2000)
-      console.log(checkLink)
+      // Handle successful deletion (e.g., update state, show notification) 
+      const sessionUrl = response.data.sessionUrl;
+      setCheckLink(sessionUrl);
+      window.open(sessionUrl, "_blank", "popup");
 
     }catch (error) {
       if (error.response) {
@@ -120,7 +117,7 @@ function Cart() {
     }
   }
 
-  console.log(checkLink)
+ 
     
   //caclulate Total 
   let getTotal = ()=>{
