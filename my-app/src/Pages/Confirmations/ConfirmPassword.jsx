@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { Link } from "react-router-dom";
 import "./Confirmations.css";
 
 import { CiCircleCheck } from "react-icons/ci";
@@ -14,7 +15,7 @@ function ConfirmPassword() {
         <div className="content text-center">
           <h2 className="fs-1 py-5">Successfully</h2>
           <p className="text-black-50">We have send for you email confirm Link</p>
-          <a href="#" className="primary-color btn text-white my-3">Continue</a>
+          <Link to="/" className="primary-color btn text-white my-3">Continue</Link>
         </div>
       </div>
     </div>

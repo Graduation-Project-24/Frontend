@@ -154,7 +154,7 @@ function Cart() {
                 data.map((e, i)=>
                   <tr>
                     <td>{i+1}</td>
-                    <td><img src={e.productImageUrl} alt="Product 2" width="50" height="50"/></td>
+                    <td className="product_img"><img src={e.productImageUrl} alt="Product 2"/></td>
                     <td>{e.count}</td>
                     <td>${e.count * e.price}</td>
                     <td>

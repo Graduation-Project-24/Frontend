@@ -60,7 +60,6 @@ function Favorite() {
       console.error("Token not found in localStorage");
     }
   };
-  
 
   return (
     <>

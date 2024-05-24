@@ -12,7 +12,7 @@ export default function Shop() {
   const [products, setData] = useState([])
 
   const [currentPage, setCurrentPage] = useState(1)
-  const [recordsPerPage] = useState(15)
+  const [recordsPerPage] = useState(24)
 
   const indexOfLastRecord = currentPage * recordsPerPage
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage
@@ -28,7 +28,6 @@ export default function Shop() {
     getProduct()
   }, [])
 
-  // console.log(currentRecords[0].reviews[0].rate)
 
   return <>
     <div className="shop">
