@@ -79,6 +79,9 @@ function Cart() {
     }
   }
 
+  let goCheck =()=>{
+    window.open(checkLink, '_blank')
+  }
   //Checkout 
   let checkout = async () =>{
     try {
@@ -93,7 +96,8 @@ function Cart() {
       );
       // Handle successful deletion (e.g., update state, show notification)
       setCheckLink(response.data.sessionUrl)
-      window.open(checkLink, '_blank', "popup");
+      setTimeout(goCheck(), 2000)
+      console.log(checkLink)
 
     }catch (error) {
       if (error.response) {
