@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/Frontend/user/static/css/main.83d5f054.css",
+    "main.js": "/Frontend/user/static/js/main.185dc612.js",
+    "static/media/maii.PNG": "/Frontend/user/static/media/maii.85e9babfe89c9f27371c.PNG",
+    "static/media/hero.jpg": "/Frontend/user/static/media/hero.f1240436adbd7aab66b8.jpg",
+    "static/media/esmael.jpg": "/Frontend/user/static/media/esmael.a669d3f1f4e01d6b632b.jpg",
+    "static/media/hazem.jpg": "/Frontend/user/static/media/hazem.61df2b362e24cd7f2358.jpg",
+    "static/media/contactbackground.png": "/Frontend/user/static/media/contactbackground.09eca9a68a64f670f796.png",
+    "static/media/nayera.jpg": "/Frontend/user/static/media/nayera.14dcb51e3d89be733105.jpg",
+    "static/media/userbackground.png": "/Frontend/user/static/media/userbackground.33f9b1a781bb37eb8132.png",
+    "static/media/ashrakat.jpg": "/Frontend/user/static/media/ashrakat.eaeeb51889ddd3a8c752.jpg",
+    "static/media/magdy.jpg": "/Frontend/user/static/media/magdy.e7dd64e4010ce3cf9fc1.jpg",
+    "static/media/babiesstore-bg.png": "/Frontend/user/static/media/babiesstore-bg.92b9747a18b5fbdb79f6.png",
+    "static/media/abo magd.jpg": "/Frontend/user/static/media/abo magd.70aff995d1b9ca02be50.jpg",
+    "static/media/asmaa.jpg": "/Frontend/user/static/media/asmaa.8b5f48612857ac1ada1f.jpg",
+    "static/media/toka.jpg": "/Frontend/user/static/media/toka.2fd1a57a3fda5fb521bd.jpg",
+    "static/media/electronics-bg.png": "/Frontend/user/static/media/electronics-bg.49f0304cd83c06d5d390.png",
+    "static/media/fashion-bg.png": "/Frontend/user/static/media/fashion-bg.67d042f0eb29e62088bb.png",
+    "static/media/appliances-bg.png": "/Frontend/user/static/media/appliances-bg.e0508bc574d9edc6fea7.png",
+    "static/media/whitelogo.png": "/Frontend/user/static/media/whitelogo.4c7130f8fd581c838ca0.png",
+    "static/media/winmart-bg.png": "/Frontend/user/static/media/winmart-bg.a60bcd782245dd260892.png",
+    "static/media/phone.png": "/Frontend/user/static/media/phone.15704cfc4076701aadef.png",
+    "static/media/watch.png": "/Frontend/user/static/media/watch.6a53692654bbc169c6be.png",
+    "static/media/caple.png": "/Frontend/user/static/media/caple.f4c700e5faf5f7e51e65.png",
+    "static/media/product4.png": "/Frontend/user/static/media/product4.4dbb51fec052c2bc19a9.png",
+    "static/media/product5.png": "/Frontend/user/static/media/product5.4dbb51fec052c2bc19a9.png",
+    "static/media/me.jpg": "/Frontend/user/static/media/me.10f1af1471d8597b6933.jpg",
+    "static/media/product3.png": "/Frontend/user/static/media/product3.3cec667ab5858b10dd4d.png",
+    "static/media/product1.png": "/Frontend/user/static/media/product1.6a2915fb6ecef86a70c1.png",
+    "static/media/stripe.svg": "/Frontend/user/static/media/stripe.91fe40770a208b75ca7d5ee62db1c3ca.svg",
+    "static/media/visa.svg": "/Frontend/user/static/media/visa.31a6666c8b5f5d2d4f683aba4d7423eb.svg",
+    "index.html": "/Frontend/user/index.html",
+    "static/media/mastercard.svg": "/Frontend/user/static/media/mastercard.c66dbbec26938c040843d4706a1965e1.svg",
+    "main.83d5f054.css.map": "/Frontend/user/static/css/main.83d5f054.css.map",
+    "main.185dc612.js.map": "/Frontend/user/static/js/main.185dc612.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83d5f054.css",
+    "static/js/main.185dc612.js"
+  ]
+}
