@@ -10,7 +10,7 @@ import Logo from "../../assets/whitelogo.png";
 function Footer() {
   return <>
       <div className="footer pt-5 pb-3 text-white-50 text-center text-md-start overflow-hidden">
-        <div className="container-fluid">
+        <div className="container">
           <div className="row">
             <div className="col-md-6 col-lg-3" >
               <div className="links" data-aos="fade-right">

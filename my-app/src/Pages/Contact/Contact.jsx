@@ -9,7 +9,7 @@ import { IoIosTime } from "react-icons/io";
 export default function Contact() {
   return <>
     <div className="contact">
-      <div className="container  py-5 my-3">
+      <div className="container py-5 my-3">
         <div className="title">
           <h3 className="fs-1 fw-bold text-center">Get In Touch With Us</h3>
           <p className="text-center text-black-50">For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!</p>

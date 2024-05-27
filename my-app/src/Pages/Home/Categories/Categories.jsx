@@ -76,7 +76,7 @@ function Categories() {
     <>
     <SubCategories />
     <div className="py-2 my-2" >
-      <div className="container-fluid" >
+      <div className="container" >
         <div className="row">
           <div className="parent d-flex flex-wrap justify-content-between overflow-hidden" data-aos="zoom-in">
             {

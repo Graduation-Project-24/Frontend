@@ -6,9 +6,9 @@ import Register from "./Register/Register"
 function User() {
   return <>
     <Routes>
-      <Route path="" element={<Login />}></Route>
-      <Route path="register" element={<Register />}></Route>
+      <Route index element={<Login />}></Route>
+      <Route path="/register" element={<Register />}></Route>
     </Routes>
-  </>;
+  </>
 }
 export default User;

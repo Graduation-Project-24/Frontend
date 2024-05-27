@@ -22,7 +22,7 @@ function BestSeller() {
   return (
     <>
       <div className="bestseller py-4 my-2">
-        <div className="container-fluid">
+        <div className="container">
           <div className="row flex-nowrap justify-content-between align-items-center flex-column flex-lg-row">
             <div className="col-md-4 col-6 mb-3" data-aos="fade-right">
               <div className="title">

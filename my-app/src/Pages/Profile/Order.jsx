@@ -1,7 +1,12 @@
 import React, { useState,useEffect } from "react";
 import Pagination from '../Shop/Pagination'
+import { jwtDecode } from "jwt-decode";
 
 function Order() {
+
+  var token = localStorage.getItem("userToken", token);
+  const decoded = jwtDecode(token);
+  const nameId = parseInt(decoded.nameid)
 
   const [data, setData] = useState([])
 
@@ -21,12 +26,8 @@ function Order() {
     const token = localStorage.getItem("userToken");
     if (token) {
       try {
-        const response = await fetch("https://www.smarketp.somee.com/api/Order/GetAll", {
+        const response = await fetch(`https://www.smarketp.somee.com/api/Order/GetOrderByUser/?id=${nameId}`, {
           method: "GET",
-          headers: {
-            "Authorization": `Bearer ${token}`,
-            "Content-Type": "application/json"
-          }
         });
 
         if (response.ok) {

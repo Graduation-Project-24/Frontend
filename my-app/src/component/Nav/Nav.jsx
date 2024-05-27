@@ -33,7 +33,7 @@ function Navigation() {
     <>
     
       <Navbar expand="lg" className="nav">
-        <Container fluid className='justifycontent-between'>
+        <Container className='justify-content-between'>
           <Navbar.Brand href="#">
             <Link className="logo" to='./' data-aos="fade-right">
               <img src={Logo} alt="Logo" />

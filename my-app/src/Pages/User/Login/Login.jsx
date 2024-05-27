@@ -16,8 +16,6 @@ import axios from 'axios';
 
 function Login() {
 
-  const functionThatReturnPromise = () => new Promise(resolve => setTimeout(resolve, 3000));
-
   const [values, setValues] = useState({
     email:'',
     password:'',
@@ -110,10 +108,10 @@ function Login() {
             </div>
             <div className="register d-flex justify-content-center">
               <p>Don't have account?</p>
-              <Link to="/register" className="orange">Register Now</Link>
+              <Link to="/user/register" className="orange">Register Now</Link>
             </div>
             <div className="admin">
-            <Link to="/user/register" className="text-black d-block text-center">Admin</Link>
+              <Link to="/user/register" className="text-black d-block text-center">Admin</Link>
             </div>
           </div>
         </div>

@@ -3,7 +3,6 @@ import Category from "./Category/Category"
 import Price from "./Price/Price"
 
 function Sidebar({handleChange}) {
-    console.log(handleChange)
     return (
         <>
             <section className="sidebar">

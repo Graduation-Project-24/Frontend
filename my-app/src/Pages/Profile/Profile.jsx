@@ -19,7 +19,7 @@ export default function Profile() {
   return (
     <>
       <div className="profile">
-        <div className="container-fluid">
+        <div className="container">
           <div className="content my-3 pt-3">
             <div class="row  justify-content-around gap-3">
               <div className="col-3 box py-4 rounded" data-aos="fade-right">

@@ -135,7 +135,7 @@ function Cart() {
   return (
     <>
       <div className="cart my-5 py-3">
-        <div className="container-fluid">
+        <div className="container">
           <ToastContainer
             autoClose={2000}
             theme="dark" />

@@ -50,7 +50,7 @@ function Arrivals() {
   return (
     <>
       <div className="arrivals my-1 py-2 ">
-        <div className="container-fluid ">
+        <div className="container ">
           <h3><span className="orange">New</span> Arrivals</h3>
           <div className="row justify-content-around flex-wrap">
             {

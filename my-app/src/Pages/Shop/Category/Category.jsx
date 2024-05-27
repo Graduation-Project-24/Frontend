@@ -13,26 +13,56 @@ function Category({ handleChange }) {
 
         <Input
             handleChange={handleChange}
-            value="sneakers"
-            title="Sneakers"
+            value="fashion"
+            title="Fashion"
             name="test"
         />
         <Input
             handleChange={handleChange}
-            value="flats"
-            title="Flats"
+            value="school"
+            title="School"
             name="test"
         />
         <Input
             handleChange={handleChange}
-            value="sandals"
-            title="Sandals"
+            value="electroincs"
+            title="Electroincs"
             name="test"
         />
         <Input
             handleChange={handleChange}
-            value="heels"
-            title="Heels"
+            value="supermarket"
+            title="Supermarket"
+            name="test"
+        />
+        <Input
+            handleChange={handleChange}
+            value="beauty"
+            title="Beauty"
+            name="test"
+        />
+        <Input
+            handleChange={handleChange}
+            value="mobile"
+            title="Mobile"
+            name="test"
+        />
+        <Input
+            handleChange={handleChange}
+            value="footweat"
+            title="Footweat"
+            name="test"
+        />
+        <Input
+            handleChange={handleChange}
+            value="toys"
+            title="Toys"
+            name="test"
+        />
+        <Input
+            handleChange={handleChange}
+            value="laptops"
+            title="Laptops"
             name="test"
         />
       </div>

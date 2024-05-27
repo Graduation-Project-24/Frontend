@@ -28,10 +28,9 @@ export default function Shop() {
     getProduct()
   }, [])
 
-
   return <>
     <div className="shop">
-      <div className='container-fluid d-flex my-3 py-2'>
+      <div className='container d-flex my-3 py-2'>
         <SideBar />
         <div className="products flex-wrap d-flex justify-content-center mx-auto">
           {products ? (

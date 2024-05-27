@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Hero() {
   return <>
     <div className="hero">
-        <div className="container-fluid">
+        <div className="container">
             <div className="row">
                 <div className="left col-6 col-md-6 my-5 py-5 d-flex flex-column justify-content-center" data-aos="fade-right">
                     <h1>Shop Computer & experience</h1>
