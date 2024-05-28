@@ -21,7 +21,7 @@
     .products { grid-template-columns: repeat(4, 1fr);}
 }
 .shop .box{
-    height:300px;
+    height:fit-content;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@
     justify-content: center;
     align-items: center;
     z-index: -1;
-    background-color: #fff6e0;
+    background-color: #d5e2ea80;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;

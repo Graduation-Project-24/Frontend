@@ -6,17 +6,23 @@
     background-image: url(./assets/hero.jpg);
     background-size: cover;
 }
-/* .heroimg{
-    position: absolute;
-    top:-40px;
-    left:0;
-    width:100%;
-    z-index:-100
-} */
-.hero .left h1{
-    font-size:42px
+.hero .left{
+    margin-top:auto;
+    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
 }
-.hero .left a{
+.hero .left h1{
+    font-size:4rem;
+    margin-bottom:30px
+}
+.hero .left p{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.hero .left Link{
     width:fit-content;
     background-color: var(--forth-color);
     border: #0AAEB9;
@@ -24,7 +30,6 @@
 }
 .hero .left a:hover{
     background-color: var(--secondary-color);
-
 }
 .hero .right{
     position: relative;
@@ -83,8 +88,9 @@
     width:220px
 }
 .services .box{
-    background: var(--neutral-02100, #F3F5F7);
+    padding:10px 15px;
     border-radius: 50px;
-    background: #e0e0e0;
-    padding:10px 15px
+    background: #fff;
+    box-shadow:  50px 50px 100px #e0e0e0,
+    -50px -50px 100px #ffffff;
 }

@@ -10,9 +10,10 @@
     border: 2px solid #adadad;
     border-radius: 10px;
     display: flex;
+    color:#fff;
     flex-direction: column;
     align-items: center;
-    background-color: #fff6e0;
+    background-color: #384959;
     margin-right:20px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;

@@ -35,7 +35,7 @@ export default function Shop() {
         <div className="products flex-wrap d-flex justify-content-center mx-auto">
           {products ? (
             currentRecords.map((e) => 
-            <div className="cardd border rounded-3 px-2 py-2" style={{width: 200}}>
+            <div className="box border rounded-3 px-2 py-2" style={{width: 200}}>
               <div className='card-img'>
                 <img className="" src={e.imageUrl} alt="Card" />
               </div>

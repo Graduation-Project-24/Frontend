@@ -2,7 +2,6 @@ import "./Cart.css";
 import { MdDelete } from "react-icons/md";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate  } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 function Cart() {
@@ -11,8 +10,6 @@ function Cart() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [checkLink, setCheckLink] =useState([])
-
-  const navigate = useNavigate();
 
   var token = localStorage.getItem("userToken", token);
   const apiUrl = "https://www.smarketp.somee.com/api/Order/getShoppingCartbyUser"
@@ -117,8 +114,6 @@ function Cart() {
     }
   }
 
- 
-    
   //caclulate Total 
   let getTotal = ()=>{
     var total = 0

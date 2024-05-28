@@ -6,11 +6,10 @@ function Hero() {
     <div className="hero">
         <div className="container">
             <div className="row">
-                <div className="left col-6 col-md-6 my-5 py-5 d-flex flex-column justify-content-center" data-aos="fade-right">
-                    <h1>Shop Computer & experience</h1>
+                <div className="left col-6 col-md-6 py-5">
+                    <h1>Discover the Best Deals Today!</h1>
                     <p>
-                        You cannot inspect quality into the product, it is already there.
-                        I am not a product of my circumstances.I am a product of my decisions.
+                    At Smarket, we bring you a curated selection of the finest products across various categories.
                     </p>
                     <Link to='/shop' className='btn btn-primary'>View More</Link>
                 </div>
