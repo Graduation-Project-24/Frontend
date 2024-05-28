@@ -94,7 +94,7 @@ function Cart() {
       // Handle successful deletion (e.g., update state, show notification) 
       const sessionUrl = response.data.sessionUrl;
       setCheckLink(sessionUrl);
-      window.open(sessionUrl, "_blank", "popup");
+      window.open(sessionUrl, "_self", "popup");
 
     }catch (error) {
       if (error.response) {

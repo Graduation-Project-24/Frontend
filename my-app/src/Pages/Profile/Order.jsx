@@ -64,7 +64,7 @@ function Order() {
                 <td>#{e.id}</td>
                 <td>{e.date}</td>
                 <td>{e.status = 0 ? "Delivered" : "undelivered"}</td>
-                <td>${e.price}</td>
+                <td>${e.totalPrice}</td>
               </tr>)
               ):<div className="parentloader"><div class="loader"></div></div>}
           </tbody>
