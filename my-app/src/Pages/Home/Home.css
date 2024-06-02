@@ -51,6 +51,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    animation: jumping 1s ease-in-out infinite;
 }
 .category {
     width:100px;
@@ -93,4 +94,16 @@
     background: #fff;
     box-shadow:  50px 50px 100px #e0e0e0,
     -50px -50px 100px #ffffff;
+}
+
+@keyframes jumping {
+    0%{
+        margin-top:50px
+    }
+    50%{
+        margin-top: 0;
+    }
+    100%{
+        margin-top: 50px;
+    }
 }

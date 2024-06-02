@@ -18,18 +18,18 @@ function About() {
         <div className="row">
           <h3 className='fw-bold'>Who We Are</h3> 
           <p>
-            Our Graduation project revolves around a cutting-edge E-Commerce system designed to redefine the online shopping experience. Users can effortlessly place orders through a user-friendly website, or mobile application initiating a seamless process that combines advanced technology and artificial intelligence. The heart of the system lies in a Raspberry Pi-powered robot, meticulously engineered to navigate autonomously through a predefined space to retrieve items. What sets this project apart is the integration of an AI-powered algorithm, specifically the A* algorithm, which intelligently determines the optimal path for the robot to traverse in reaching the desired products. The key to this efficiency is a meticulously crafted map that serves as a digital blueprint of the shopping environment. Each product's precise location, represented by coordinates on the x, y, and z axes, is stored in a database. This spatial information is then utilized by the A* algorithm to calculate the most efficient route for the robot to follow, ensuring quick and precise retrieval of the ordered items. Real-time updates are seamlessly communicated to users via the website, keeping them informed about the status of their orders. As the robot successfully retrieves the items, it strategically returns to a central point for streamlined delivery preparation
+            Our Graduation project revolves around a cutting-edge E-Commerce system designed to redefine the online shopping experience. Users can effortlessly place orders through a user-friendly website, or mobile application initiating a seamless process that combines advanced technology and artificial intelligence. The heart of the system lies in a Raspberry Pi-powered robot, meticulously engineered to navigate autonomously through a predefined space to retrieve items. What sets this project apart is the integration of an AI-powered algorithm, specifically the A* algorithm, which intelligently determines the optimal path for the robot to traverse in reaching the desired products. The key to this efficiency is a meticulously crafted map that serves as a digital blueprint of the shopping environment. Each product's precise location, represented by coordinates on the x, y, and z axes, is stored in a database. This spatial information is then utilized by the A* algorithm to calculate the most efficient route for the robot to follow, ensuring quick and precise retrieval of the ordered items. Real-time updates are seamlessly communicated to users via the website, keeping them informed about the status of their orders. As the robot successfully retrieves the items, it strategically returns to a central point for streamlined delivery preparation.
           </p>  
         </div>
         <hr />
         <div className="row mt-3">
           <h3 className='fw-bold'>How It Works</h3> 
-          <div className="video mt-2"></div>
+          <div className="video mt-2" data-aos="flip-left"></div>
         </div>
         <hr />
         <div className="row mt-3 justify-content-between">
           <h3 className='fw-bold'>Our Team</h3>     
-          <div class="box" style={{width: 220}}>
+          <div class="box" style={{width: 220}} data-aos="flip-up">
             <div className="box-img">
               <img src={omar} class="card-img-top" alt="member-image"/>
             </div>
@@ -38,7 +38,7 @@ function About() {
               <p class="box-text text-black-50">FrontEnd</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}}>
+          <div class="box" style={{width: 220}} data-aos="flip-up">
             <div className="box-img">
               <img src={esmael} class="card-img-top" alt="member-image" />
             </div>
@@ -47,7 +47,7 @@ function About() {
               <p class="box-text text-black-50">AI</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}}>
+          <div class="box" style={{width: 220}} data-aos="flip-up">
             <div className="box-img">
               <img src={magdy} class="card-img-top" alt="member-image"  />
             </div>
@@ -56,7 +56,7 @@ function About() {
               <p class="box-text text-black-50">AI</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}}>
+          <div class="box" style={{width: 220}} data-aos="flip-up">
             <div className="box-img">
               <img src={hazem} class="card-img-top" alt="member-image" />
             </div>
@@ -65,7 +65,7 @@ function About() {
               <p class="box-text text-black-50">BackEnd</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}}>
+          <div class="box" style={{width: 220}} data-aos="flip-up">
             <div className="box-img">
               <img src={abomagd} class="card-img-top" alt="member-image" />
             </div>
@@ -74,7 +74,7 @@ function About() {
               <p class="box-text text-black-50">BackEnd</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}}>
+          <div class="box" style={{width: 220}} data-aos="flip-down">
             <div className="box-img">
               <img src={asmaa} class="card-img-top" alt="member-image" />
             </div>
@@ -83,7 +83,7 @@ function About() {
               <p class="box-text text-black-50">BackEnd</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}}>
+          <div class="box" style={{width: 220}} data-aos="flip-down">
             <div className="box-img">
               <img src={mai} class="card-img-top" alt="member-image" />
             </div>
@@ -92,7 +92,7 @@ function About() {
               <p class="box-text text-black-50">BackEnd</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}}>
+          <div class="box" style={{width: 220}} data-aos="flip-down">
             <div className="box-img">
               <img src={toka} class="card-img-top" alt="member-image" />
             </div>
@@ -101,7 +101,7 @@ function About() {
               <p class="box-text text-black-50">Mobile</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}}>
+          <div class="box" style={{width: 220}} data-aos="flip-down">
             <div className="box-img">
               <img src={ashrakat} class="card-img-top" alt="member-image" />
             </div>
@@ -110,7 +110,7 @@ function About() {
               <p class="box-text text-black-50">Mobile</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}}>
+          <div class="box" style={{width: 220}} data-aos="flip-down">
             <div className="box-img">
               <img src={nayera} class="card-img-top" alt="member-image"  />
             </div>
