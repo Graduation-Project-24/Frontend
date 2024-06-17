@@ -51,7 +51,7 @@ function Arrivals() {
     <>
       <div className="arrivals my-1 py-2 ">
         <div className="container ">
-          <h3><span className="orange">New</span> Arrivals</h3>
+          <h3><span className="orange mb-2">New</span> Arrivals</h3>
           <div className="row justify-content-around flex-wrap">
             {
               data.map((element)=>

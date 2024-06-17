@@ -7,6 +7,7 @@
 .logo img{
     height:100%;
     position: absolute;
+    width:100%
 }
 .nav{
     background-color: var(--primary-color);
@@ -20,11 +21,24 @@
     color:#fff
 }
 .form-control{
-    border-radius:4px 0 0 4px ;
-    -webkit-border-radius:4px 0 0 4px ;
-    -moz-border-radius:4px 0 0 4px ;
-    -ms-border-radius:4px 0 0 4px ;
-    -o-border-radius:4px 0 0 4px ;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    -ms-border-radius:4px;
+    -o-border-radius:4px;
+    width: 200px;
+}
+@media (max-width:767px){
+    .logo{
+        width:100px;
+        height:50px
+    }
+    .form-control{
+        width:120px
+    }
+    .navbar-toggle{
+        width:40px
+    }
 }
 .dropdown{
     border-radius: 0px 4px 4px 0px;
@@ -47,12 +61,7 @@
     outline: none;
     border: none;
 }
-.search:hover{
-    background-color: #000 !important;
-}
-.search:active{
-    background-color: #fff !important;
-}
+
 .btn-primary{
     border: 0;
 }
