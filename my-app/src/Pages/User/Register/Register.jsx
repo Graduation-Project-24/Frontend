@@ -165,7 +165,7 @@ function Register() {
               </div>
               </div>
             </div>
-            <button type="submit" className="btn primary-color rounded-3 text-white mb-3 fw-bold">Register</button>
+            <button type="submit" className="btn primary-color rounded-3 text-white mb-3 fw-bold" onClick={handleSubmit}>Register</button>
           </form>
           <div className="register d-flex justify-content-center">
             <p>have account?</p>

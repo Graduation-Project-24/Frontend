@@ -4,6 +4,7 @@ import { FaCamera } from "react-icons/fa";
 import { Outlet, NavLink } from "react-router-dom";
 
 import { jwtDecode } from "jwt-decode";
+import { useState, useEffect } from "react";
 
 export default function Profile() {
 
@@ -16,6 +17,12 @@ export default function Profile() {
   var token = localStorage.getItem("userToken", token);
   const decoded = jwtDecode(token);
 
+  const [file, setFile] = useState();
+    function handleChange(e) {
+        console.log(e.target.files);
+        setFile(URL.createObjectURL(e.target.files[0]));
+    }
+
   return (
     <>
       <div className="profile">
@@ -24,8 +31,8 @@ export default function Profile() {
             <div class="row  justify-content-around gap-3">
               <div className="col-3 box py-4 rounded" data-aos="fade-right">
                 <div className="box-img">
-                  <img src={decoded.imageUrl} alt="profile" />
-                  <FaCamera className="camera text-white fs-3"/>
+                  <img src={file || decoded.imageUrl} alt="profile" />
+                  <input type="file" onChange={handleChange} />
                 </div>
                 <div className="box-title">
                   <h3 className="fw-bold fs-5 text-center mt-2">{decoded.given_name} {decoded.family_name}</h3>
