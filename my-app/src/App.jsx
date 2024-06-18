@@ -26,9 +26,9 @@ import Login from './Pages/User/Login/Login.jsx';
 function App() { 
   useEffect(() => {
     AOS.init({
-      once: true,
+      once: false,
       disable: "phone",
-      duration: 700,
+      duration: 1000,
       easing: "ease-out-cubic",
     });
   }, []);

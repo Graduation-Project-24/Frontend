@@ -15,7 +15,6 @@ import './Nav.css'
 
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaCartArrowDown } from "react-icons/fa";
-import { IoMenu } from "react-icons/io5";
 
 function Navigation() {
 
@@ -52,57 +51,47 @@ function Navigation() {
             <Button className='bg-orange text-white'><AiOutlineSearch /></Button>
           </Form>
 
-          <div>
-            <Button color="primary-color" onClick={toggle}>
-              <IoMenu  className='fs-1 text-white'/>
-            </Button>
-            <Offcanvas isOpen={isOpen} toggle={toggle} direction="end">
-              <OffcanvasHeader toggle={toggle} className='orange primary-color'>Menu</OffcanvasHeader>
-              <OffcanvasBody className='primary-color '>
-                <Nav className="justify-content-end flex-grow-1 pe-3" data-aos="fade-left">
-                  <NavLink 
-                    to="/"
-                    style={({isActive}) => isActive ? activeStyle : null }
-                    className="nav-link"
-                  >
-                    Home
-                  </NavLink>
-                  
-                  <NavLink 
-                    to="/about"
-                    style={({isActive}) => isActive ? activeStyle : null }
-                    className="nav-link"
-                  >
-                    About
-                  </NavLink>
-                  
-                  <NavLink 
-                    to="/shop"
-                    style={({isActive}) => isActive ? activeStyle : null }
-                    className="nav-link"
-                  >
-                    Shop
-                  </NavLink>
-                  <NavLink 
-                    to="/contact"
-                    style={({isActive}) => isActive ? activeStyle : null }
-                    className="nav-link"
-                  >
-                    Contact
-                  </NavLink>
-                  <NavLink 
-                    to="/cart"
-                    style={({isActive}) => isActive ? activeStyle : null }
-                    className="nav-link"
-                  >
-                    <FaCartArrowDown className='me-1' />
-                    Cart 
-                  </NavLink>
-                </Nav>
-              <Link className="profile-icon" to='./profile' data-aos="fade-left"><img src={decode.imageUrl} alt="Profile" /></Link>   
-              </OffcanvasBody>
-            </Offcanvas>
-          </div>
+          <Nav className="justify-content-end flex-grow-1 pe-3" data-aos="fade-left">
+            <NavLink 
+              to="/"
+              style={({isActive}) => isActive ? activeStyle : null }
+              className="nav-link"
+            >
+              Home
+            </NavLink>
+            
+            <NavLink 
+              to="/about"
+              style={({isActive}) => isActive ? activeStyle : null }
+              className="nav-link"
+            >
+              About
+            </NavLink>
+            
+            <NavLink 
+              to="/shop"
+              style={({isActive}) => isActive ? activeStyle : null }
+              className="nav-link"
+            >
+              Shop
+            </NavLink>
+            <NavLink 
+              to="/contact"
+              style={({isActive}) => isActive ? activeStyle : null }
+              className="nav-link"
+            >
+              Contact
+            </NavLink>
+            <NavLink 
+              to="/cart"
+              style={({isActive}) => isActive ? activeStyle : null }
+              className="nav-link"
+            >
+              <FaCartArrowDown className='me-1' />
+              Cart 
+            </NavLink>
+          </Nav>
+          <Link className="profile-icon" to='./profile' data-aos="fade-left"><img src={decode.imageUrl} alt="Profile" /></Link>   
         </Container>
       </Navbar>
   </>

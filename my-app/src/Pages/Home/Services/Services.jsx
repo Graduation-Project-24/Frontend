@@ -29,13 +29,13 @@ function Services() {
 
   return (
     <>
-      <div className="services py-5 my-2">
+      <div className="services">
         <div className="container">
-          <div className="row">
-            <h3><span className="orange">Our</span> Services</h3>
-            <div className="ourservices d-flex justify-content-between align-items-center mt-3 flex-wrap">
+          <div className="py-5 my-2">
+            <h3 className="fw-bold"><span className="orange">Our</span> Services</h3>
+            <div className="ourservices row d-flex justify-content-between align-items-center mt-3 flex-wrap">
             {data.map((e) => 
-              <div className="box col-2 m-1 rounded-3" data-aos="zoom-in">
+              <div className="box col-lg-2 col-4 m-1 rounded-3" data-aos="zoom-in">
                 <div className="icon fs-1 fw-normal mb-3">
                   {e.icon}
                 </div>

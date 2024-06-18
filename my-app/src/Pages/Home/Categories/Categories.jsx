@@ -19,7 +19,7 @@ function Categories() {
 
   return (
     <>
-    <div className="py-4 my-2" >
+    <div className="py-2 my-2" >
       <div className="container" >
         <div className="row">
           <h3 className="mb-2 fw-bold orange">Categories</h3>
@@ -34,7 +34,7 @@ function Categories() {
                       <img src={element.image.url} alt="" />
                     </a>
                   </div>
-                  <h3 className="mt-2 fs-6 text-black">{element.name}</h3>
+                  <h3 className="mt-3 fs-6 text-black">{element.name}</h3>
                 </Link>
               )
             }

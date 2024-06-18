@@ -13,6 +13,5 @@ function Home() {
     <Arrivals />
     <BestSeller />
     <Services />
-    <Contact />
   </>
 }export default Home

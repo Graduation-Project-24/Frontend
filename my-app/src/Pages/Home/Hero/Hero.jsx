@@ -7,8 +7,7 @@ function Hero() {
         <div className="overlay">
             <div className="container">
                 <div className="row ">
-                    
-                    <div className="left col-6 col-md-6 py-5 d-flex flex-column">
+                    <div className="left col-6 col-md-6 py-5 d-flex flex-column" data-aos="zoom-in">
                         <h1 className='fw-bold'>Discover the Best Deals Today!</h1>
                         <p className='text-white'>
                         At Smarket, we bring you a curated selection of the finest products across various categories.

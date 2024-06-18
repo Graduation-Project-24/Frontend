@@ -110,7 +110,7 @@ function Product() {
   return <>
     {!loading ?(
       <div className="product py-3 my-3">
-        <div className="container-fluid">
+        <div className="container">
           <ToastContainer
             theme="dark"/>
           <div className="row">
@@ -165,7 +165,7 @@ function Product() {
     ) : <div className="parentloader"><div class="loader"></div></div>}
 
     <div className="other-products mb-4">
-      <div className="container-fluid">
+      <div className="container">
         <div className="row justify-content-around">
           {!loading ?(
             product.productDtoFilters.map((e) => 
