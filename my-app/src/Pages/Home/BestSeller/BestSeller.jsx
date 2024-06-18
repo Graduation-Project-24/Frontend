@@ -1,11 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import image1 from "../assets/phone.png"
-import image2 from "../assets/caple.png"
-import image3 from "../assets/watch.png"
-
 import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
 
-import React, { useState } from 'react';
 import {
   Carousel,
   CarouselItem,
@@ -15,22 +11,19 @@ import {
 } from 'reactstrap';
 
 
-const items =[
-  {
-    src:image1,
-    price:"EGP 29,999"
-  },
-  {
-    src:image2,
-    price:"EGP 150"
-  },
-  {
-    src:image3,
-    price:"EGP 2,499"
-  }
-]
-
 function BestSeller() {
+
+  const [items, setData] = useState([])
+
+  const api = "https://esmael-saleh-recommend-50-samples.hf.space/api/best_selling?n=3"
+  useEffect(() => {
+    const getProduct = async () => {
+      const response = await fetch(api)
+      const data = await response.json()
+      setData(data)
+    };
+    getProduct()
+  }, [])
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
@@ -57,14 +50,15 @@ function BestSeller() {
       <CarouselItem
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
-        key={item.src}
+        key={item.product_id}
         className="bg-fifth px-2 py-4"
       >
         <div className="best-item d-flex m-auto">
-          <img src={item.src} alt={item.altText} className="" />
+          <img src={item.img_link_y} alt={item.altText} className="" />
         </div>
-        <div className="price text-black">
-          <h4>{item.price}</h4>
+        <div className="price text-black d-flex justify-content-between">
+          <h4 className='text-black-50'><del>$ {item.actual_price}</del></h4>
+          <h4>$ {item.discounted_price}</h4>
         </div>
         <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
       </CarouselItem>

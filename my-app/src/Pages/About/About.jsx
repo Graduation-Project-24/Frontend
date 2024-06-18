@@ -10,8 +10,10 @@ import asmaa from "../../assets/asmaa.jpg"
 import ashrakat from "../../assets/ashrakat.jpg"
 import nayera from "../../assets/nayera.jpg"
 import mai from "../../assets/maii.PNG"
+import video from "../../assets/project.mp4"
 
 function About() {
+
   return (
     <div className="about py-4 my-4">
       <div className="container">
@@ -24,99 +26,102 @@ function About() {
         <hr />
         <div className="row mt-3">
           <h3 className='fw-bold'>How It Works</h3> 
-          <div className="video mt-2" data-aos="flip-left"></div>
+          <div className="video mt-2" data-aos="flip-left">
+          <video src={video} preload="auto" width="100%" height="100%" autoPlay loop controls  poster="assets/img/header-bg-2.jpg">
+          </video>
+          </div>
         </div>
         <hr />
         <div className="row mt-3 justify-content-between">
           <h3 className='fw-bold'>Our Team</h3>     
-          <div class="box" style={{width: 220}} data-aos="flip-up">
+          <div className="box" style={{width: 220}} data-aos="flip-up">
             <div className="box-img">
-              <img src={omar} class="card-img-top" alt="member-image"/>
+              <img src={omar} className="card-img-top" alt="member-image"/>
             </div>
-            <div class="box-body">
-              <h5 class="box-title">Omar EL-Nahas</h5>
-              <p class="box-text text-black-50">FrontEnd</p>
+            <div className="box-body">
+              <h5 className="box-title">Omar EL-Nahas</h5>
+              <p className="box-text text-black-50">FrontEnd</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}} data-aos="flip-up">
+          <div className="box" style={{width: 220}} data-aos="flip-up">
             <div className="box-img">
-              <img src={esmael} class="card-img-top" alt="member-image" />
+              <img src={esmael} className="card-img-top" alt="member-image" />
             </div>
-            <div class="box-body">
-              <h5 class="box-title">Esmael Saleh</h5>
-              <p class="box-text text-black-50">AI</p>
+            <div className="box-body">
+              <h5 className="box-title">Esmael Saleh</h5>
+              <p className="box-text text-black-50">AI</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}} data-aos="flip-up">
+          <div className="box" style={{width: 220}} data-aos="flip-up">
             <div className="box-img">
-              <img src={magdy} class="card-img-top" alt="member-image"  />
+              <img src={magdy} className="card-img-top" alt="member-image"  />
             </div>
-            <div class="box-body">
-              <h5 class="box-title">Ahmed Magdy</h5>
-              <p class="box-text text-black-50">AI</p>
+            <div className="box-body">
+              <h5 className="box-title">Ahmed Magdy</h5>
+              <p className="box-text text-black-50">AI</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}} data-aos="flip-up">
+          <div className="box" style={{width: 220}} data-aos="flip-up">
             <div className="box-img">
-              <img src={hazem} class="card-img-top" alt="member-image" />
+              <img src={hazem} className="card-img-top" alt="member-image" />
             </div>
-            <div class="box-body">
-              <h5 class="box-title">Mohamed Hazem</h5>
-              <p class="box-text text-black-50">BackEnd</p>
+            <div className="box-body">
+              <h5 className="box-title">Mohamed Hazem</h5>
+              <p className="box-text text-black-50">BackEnd</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}} data-aos="flip-up">
+          <div className="box" style={{width: 220}} data-aos="flip-up">
             <div className="box-img">
-              <img src={abomagd} class="card-img-top" alt="member-image" />
+              <img src={abomagd} className="card-img-top" alt="member-image" />
             </div>
-            <div class="box-body">
-              <h5 class="box-title">Ahmed Aboelmagd </h5>
-              <p class="box-text text-black-50">BackEnd</p>
+            <div className="box-body">
+              <h5 className="box-title">Ahmed Aboelmagd </h5>
+              <p className="box-text text-black-50">BackEnd</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}} data-aos="flip-down">
+          <div className="box" style={{width: 220}} data-aos="flip-down">
             <div className="box-img">
-              <img src={asmaa} class="card-img-top" alt="member-image" />
+              <img src={asmaa} className="card-img-top" alt="member-image" />
             </div>
-            <div class="box-body">
-              <h5 class="box-title">Asmaa Mohamed</h5>
-              <p class="box-text text-black-50">BackEnd</p>
+            <div className="box-body">
+              <h5 className="box-title">Asmaa Mohamed</h5>
+              <p className="box-text text-black-50">BackEnd</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}} data-aos="flip-down">
+          <div className="box" style={{width: 220}} data-aos="flip-down">
             <div className="box-img">
-              <img src={mai} class="card-img-top" alt="member-image" />
+              <img src={mai} className="card-img-top" alt="member-image" />
             </div>
-            <div class="box-body">
-              <h5 class="box-title">Mai Allam</h5>
-              <p class="box-text text-black-50">BackEnd</p>
+            <div className="box-body">
+              <h5 className="box-title">Mai Allam</h5>
+              <p className="box-text text-black-50">BackEnd</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}} data-aos="flip-down">
+          <div className="box" style={{width: 220}} data-aos="flip-down">
             <div className="box-img">
-              <img src={toka} class="card-img-top" alt="member-image" />
+              <img src={toka} className="card-img-top" alt="member-image" />
             </div>
-            <div class="box-body">
-              <h5 class="box-title">Toka Gamal</h5>
-              <p class="box-text text-black-50">Mobile</p>
+            <div className="box-body">
+              <h5 className="box-title">Toka Gamal</h5>
+              <p className="box-text text-black-50">Mobile</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}} data-aos="flip-down">
+          <div className="box" style={{width: 220}} data-aos="flip-down">
             <div className="box-img">
-              <img src={ashrakat} class="card-img-top" alt="member-image" />
+              <img src={ashrakat} className="card-img-top" alt="member-image" />
             </div>
-            <div class="box-body">
-              <h5 class="box-title">Ashrakat Elkholy</h5>
-              <p class="box-text text-black-50">Mobile</p>
+            <div className="box-body">
+              <h5 className="box-title">Ashrakat Elkholy</h5>
+              <p className="box-text text-black-50">Mobile</p>
             </div>
           </div>
-          <div class="box" style={{width: 220}} data-aos="flip-down">
+          <div className="box" style={{width: 220}} data-aos="flip-down">
             <div className="box-img">
-              <img src={nayera} class="card-img-top" alt="member-image"  />
+              <img src={nayera} className="card-img-top" alt="member-image"  />
             </div>
-            <div class="box-body">
-              <h5 class="box-title">Nayera</h5>
-              <p class="box-text text-black-50">Mobile</p>
+            <div className="box-body">
+              <h5 className="box-title">Nayera</h5>
+              <p className="box-text text-black-50">Mobile</p>
             </div>
           </div>
         </div>

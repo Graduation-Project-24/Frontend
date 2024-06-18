@@ -1,7 +1,7 @@
 .about .video{
     width:calc(100% - 100px);
     height:500px;
-    background-color: #000;
+
     margin: auto;
     border-radius: 20px;
     -webkit-border-radius: 20px;
