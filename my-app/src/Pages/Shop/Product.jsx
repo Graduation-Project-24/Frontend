@@ -139,7 +139,6 @@ function Product() {
                 </div>
                 <div className="action">
                   <button className="btn border border-2 me-1" onClick={addToCart} >Add to Cart</button>
-                  <button className="btn primary-color me-1">Buy Now</button>
                   <button 
                     style={activeStyle}
                     className={favToggel ? "text-danger" : null }

@@ -79,6 +79,9 @@ p {
 .sixth-color{
   color:var(--sixth-color)
 }
+.bg-sixth{
+  background-color: var(--sixth-color);
+}
 .primary-color{
   background-color: #40637a;
   color:#1c2630

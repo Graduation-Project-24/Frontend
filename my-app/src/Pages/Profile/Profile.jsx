@@ -17,8 +17,6 @@ export default function Profile() {
   var token = localStorage.getItem("userToken", token);
   const decoded = jwtDecode(token);
 
-  
-
   return (
     <>
       <div className="profile">

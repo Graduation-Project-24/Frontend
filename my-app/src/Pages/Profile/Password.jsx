@@ -12,8 +12,6 @@ function Password() {
     newPassword:'',
   })
 
-  console.log(formData)
-
   const handleChange = (event) => {
     const { name, value } = event.target
     setFormData((prevProps) => ({
