@@ -1,34 +1,49 @@
-
-.login .left,
-.register .left{
-    height: 100vh;
-    width:50%;
+.login,
+.register{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background-color: var(--fifth-color);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    overflow: hidden;
 }
-
-
-.register .right img,
+.login .left,
+.register .right{
+    width:50%;
+    height: 700px;
+    overflow: hidden;
+}
 .login .left img{
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    border-radius: 20px 0px 0px 20px;
+    -webkit-border-radius: 20px 0px 0px 20px;
+    -moz-border-radius: 20px 0px 0px 20px;
+    -ms-border-radius: 20px 0px 0px 20px;
+    -o-border-radius: 20px 0px 0px 20px;
 }
-@media (max-width:991px) {
-    .login .left,
-    .register .right{
-        display: none !important
-    }
-    .login .right,
-    .register .left {
-        margin:0  auto;
-        width: 100%;
-    }
+.register .right img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0px 20px 20px 0px;
+    -webkit-border-radius: 0px 20px 20px 0px;
+    -moz-border-radius: 0px 20px 20px 0px;
+    -ms-border-radius: 0px 20px 20px 0px;
+    -o-border-radius: 0px 20px 20px 0px;
+    transform: scaleX(-1);
 }
+
 .login .right,
 .register .right  {
-    height: 100vh;
     width:50%; 
-}
-.login form{
-    width:400px
 }
 .login .email,
 .login .password,
@@ -40,6 +55,11 @@
     background-color: #fff;
     padding:5px 10px;
     margin: 0 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 label{
     margin:0 30px

@@ -13,7 +13,7 @@
     color:#fff;
     flex-direction: column;
     align-items: center;
-    background-color: #384959;
+    background-color: var(--primary-color);
     margin-right:20px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;

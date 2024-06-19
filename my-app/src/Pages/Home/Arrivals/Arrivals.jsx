@@ -16,13 +16,12 @@ function Arrivals() {
     getProduct()
   }, [])
 
-  console.log(items)
 
   return (
     <>
       <div className="arrivals my-3 py-4 ">
         <div className="container ">
-          <h3 className="fw-bold"><span className="orange mb-2">New</span> Arrivals</h3>
+          <h3 className="fw-bold"><span className="sixth-color mb-2">New</span> Arrivals</h3>
           <div className="row justify-content-around flex-wrap">
             {
               items.map((element)=>

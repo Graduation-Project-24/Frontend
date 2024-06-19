@@ -52,17 +52,17 @@ function Login() {
   }
 
   return <>
-    <div className="login d-flex">
-        <ToastContainer
+    <ToastContainer
           theme="dark"/>
+    <div className="login d-flex">
         <div className="left" data-aos="fade-right">
           <img className="" src={background} alt="" />
         </div>  
         <div className="right d-flex flex-column justify-content-center align-items-center" data-aos="fade-left">
           <div className="login-form">
             <header className="mb-4">
-              <h3 className="fw-bold fs-1 text-center">Welcome</h3>
-              <p className="fs-3 fst-italic text-black-50 text-center">Ship Smarter Today</p>
+              <h3 className="fw-bold fs-1 text-center">Welcome to Smarket</h3>
+              <p className="fs-3 fst-italic text-black-50 text-center">Shop Smarter Today</p>
             </header>
             <form className="d-flex flex-column" onSubmit={handleSubmit}>
               <label htmlFor="email">Enter Email<span className="text-danger">*</span></label>
@@ -96,22 +96,12 @@ function Login() {
                 type="submit" 
                 onSubmit={handleSubmit} 
                 className="btn primary-color rounded-3 text-white mb-3 fw-bold"
-                >Login</button>
+              >Login
+              </button>
             </form>
-            <div className="line d-flex">
-              <p className="text text-black-50 mb-0 text-center">OR</p>
-            </div>
-            <div className="links d-flex justify-content-center my-3 gap-3">
-              <a href="#" className="link"><FaGoogle /></a>
-              <a href="#" className="link"><FaFacebookF/></a>
-              <a href="#" className="link"><FaApple/></a>
-            </div>
-            <div className="register d-flex justify-content-center">
-              <p>Don't have account?</p>
-              <Link to="/user/register" className="orange">Register Now</Link>
-            </div>
-            <div className="admin">
-              <Link to="/user/register" className="text-black d-block text-center">Admin</Link>
+            <div className="d-flex justify-content-center">
+              <p>Don't have account? </p>
+              <Link to="/user/register" className="text-info ms-1"> Register Now</Link>
             </div>
           </div>
         </div>

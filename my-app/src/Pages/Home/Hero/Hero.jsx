@@ -12,7 +12,7 @@ function Hero() {
                         <p className='text-white'>
                         At Smarket, we bring you a curated selection of the finest products across various categories.
                         </p>
-                        <Link to='/shop' className='btn bg-orange text-white'>View More</Link>
+                        <Link to='/shop' className='btn bg-orange'>View More</Link>
                     </div>
                     <div className="col-6 col-md-6 right align-self-start">
                         <div className='offer'>

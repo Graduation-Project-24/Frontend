@@ -20,7 +20,7 @@
     margin-bottom: 10px;
     margin-right:10px;
     padding: 0;
-    background-color: #D5E2EA ;
+    background-color: var(--fifth-color) ;
 }
 .about .box .box-body{
     padding-inline: 10px;

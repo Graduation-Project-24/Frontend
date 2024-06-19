@@ -1,5 +1,5 @@
 .footer{
-    background: linear-gradient(90deg, #253036 0.33%, #414E56 99.7%);
+    background: var(--primary-color)
 }
 .text{
     width:400px

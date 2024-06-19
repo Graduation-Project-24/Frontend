@@ -5,6 +5,7 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { FaEye } from "react-icons/fa";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
 import axios from 'axios';
 
@@ -38,9 +39,8 @@ function Register() {
         phoneNumber:formData.phoneNumber,
         email:formData.email,
         password:formData.password,
-
       })
-      .then(window.location.href ="/user")
+      .then(toast.success("Login Success !"))
       .catch((err) => window.alert("checkpassword"))
   }
 
@@ -51,15 +51,15 @@ function Register() {
     })
   }
 
-  console.log(formData)
-
   return <>
-    <div className="Register d-flex">
-      <div className="left d-flex flex-column justify-content-center align-items-center" data-aos="fade-right">
+    <ToastContainer
+      theme="dark"/>
+    <div className="Register d-flex justify-content-between ">
+      <div className="left d-flex flex-column justify-content-center " data-aos="fade-right">
         <div className="login-form">
           <header className="mb-4">
-            <h3 className="fw-bold fs-1 text-center">Welcome</h3>
-            <p className="fs-3 fst-italic text-black-50 text-center">Ship Smarter Today</p>
+            <h3 className="fw-bold fs-1 text-center">Welcome To Smarket</h3>
+            <p className="fs-3 fst-italic text-black-50 text-center">Shop Smarter Today</p>
           </header>
           <form className="d-flex flex-column" onSubmit={handleSubmit}>
             <div className="d-flex justify-content-between">
@@ -114,7 +114,7 @@ function Register() {
                   <input 
                     type="phone" 
                     name="phoneNumber" 
-                    placeholder="01013477824"
+                    placeholder="0123456789"
                     value={formData.phoneNumber}
                     onChange={handleChange}
                     required
@@ -167,9 +167,9 @@ function Register() {
             </div>
             <button type="submit" className="btn primary-color rounded-3 text-white mb-3 fw-bold" onClick={handleSubmit}>Register</button>
           </form>
-          <div className="register d-flex justify-content-center">
-            <p>have account?</p>
-            <Link to="/user" className="orange">Login</Link>
+          <div className="d-flex justify-content-center">
+            <p>have account? </p>
+            <Link to="/user" className="text-info ms-1">Login</Link>
           </div>
         </div>
       </div>

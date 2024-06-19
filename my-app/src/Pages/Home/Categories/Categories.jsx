@@ -22,7 +22,7 @@ function Categories() {
     <div className="py-2 my-2" >
       <div className="container" >
         <div className="row">
-          <h3 className="mb-2 fw-bold orange">Categories</h3>
+          <h3 className="mb-2 fw-bold sixth-color">Categories</h3>
           <div className="parent d-flex flex-wrap justify-content-between overflow-hidden" data-aos="zoom-in">
             {
               category.map((element) => 

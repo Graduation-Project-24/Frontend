@@ -72,7 +72,7 @@ function BestSeller() {
           <div className="row flex-nowrap justify-content-between align-items-center flex-sm-row flex-column">
             <div className="col-md-4 col-6 mb-3" data-aos="fade-right">
               <div className="title">
-                <h3 className="mb-5 fw-bold "><span className="orange">Best</span> Seller</h3>
+                <h3 className="mb-5 fw-bold "><span className="sixth-color">Best</span> Seller</h3>
                 <p className="lh-lg mb-5">You cannot inspect quality into the product; it is already there. I am not a product of my circumstances. I am a product of my decisions.</p>
                 <Link to="/shop" className="btn primary-color text-white">View More</Link>
               </div>

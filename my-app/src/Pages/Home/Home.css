@@ -41,16 +41,16 @@
     font-size:3em;
     margin-bottom:30px;
     z-index: 111;
-    color:#000
+    color:var(--third-color)
 }
 .hero .left p{
     font-size: 2rem;
     margin-bottom: 30px;
-    color:#d5e2ea80
+    color:var(--secondary-color)
 }
 .hero .left Link{
     width:fit-content;
-    background-color: var(--forth-color);
+    background-color: var(--third-color);
     border: #0AAEB9;
     padding-inline:20px
 }
@@ -66,7 +66,7 @@
     top: 40px;
     right: 50px;
     color: #fff;
-    background: linear-gradient(#FDC830, #F37335);
+    background: linear-gradient(#40637a, #c2d6df);
     width: 200px;
     border-radius: 50%;
     text-align: center;
@@ -94,7 +94,7 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     margin-bottom:10px;
-    background-color:#d5e2ea80;
+    background-color:var(--fifth-color);
     padding:10px;
     overflow: hidden;
 }
@@ -207,8 +207,6 @@
     padding:10px 15px;
     border-radius: 50px;
     background: linear-gradient(145deg, #cacaca, #f0f0f0);
-    box-shadow:  20px 20px 60px #bebebe,
-                -20px -20px 60px #ffffff;
 }
 
 @keyframes jumping {

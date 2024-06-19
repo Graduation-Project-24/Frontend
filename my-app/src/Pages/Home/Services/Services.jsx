@@ -32,7 +32,7 @@ function Services() {
       <div className="services">
         <div className="container">
           <div className="py-5 my-2">
-            <h3 className="fw-bold"><span className="orange">Our</span> Services</h3>
+            <h3 className="fw-bold"><span className="sixth-color">Our</span> Services</h3>
             <div className="ourservices row d-flex justify-content-between align-items-center mt-3 flex-wrap">
             {data.map((e) => 
               <div className="box col-lg-2 col-4 m-1 rounded-3" data-aos="zoom-in">

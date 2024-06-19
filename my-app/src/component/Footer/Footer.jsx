@@ -6,6 +6,8 @@ import Stripe from "../../assets/stripe.svg";
 import Mastercard from "../../assets/mastercard.svg";
 import Logo from "../../assets/whitelogo.png";
 
+import {Link}from "react-router-dom"
+
 
 function Footer() {
   return <>
@@ -17,19 +19,19 @@ function Footer() {
                 <h5 className="text-light">Company</h5>
                 <ul className="list-unstyled lh-lg">
                   <li>
-                    <a href="#" className="text-white-50">
+                    <Link to="/about" className="text-white-50">
                       About
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="text-white-50">
+                    <Link to="/shop" className="text-white-50">
                       All Products
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="text-white-50">
+                    <Link to="/contact" className="text-white-50">
                       Contact Us
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a href="#" className="text-white-50">

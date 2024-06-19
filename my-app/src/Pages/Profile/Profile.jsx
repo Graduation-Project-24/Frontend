@@ -17,11 +17,7 @@ export default function Profile() {
   var token = localStorage.getItem("userToken", token);
   const decoded = jwtDecode(token);
 
-  const [file, setFile] = useState();
-    function handleChange(e) {
-        console.log(e.target.files);
-        setFile(URL.createObjectURL(e.target.files[0]));
-    }
+  
 
   return (
     <>
@@ -31,8 +27,7 @@ export default function Profile() {
             <div class="row  justify-content-around gap-3">
               <div className="col-3 box py-4 rounded" data-aos="fade-right">
                 <div className="box-img">
-                  <img src={file || decoded.imageUrl} alt="profile" />
-                  <input type="file" onChange={handleChange} />
+                  <img src={decoded.imageUrl} alt="profile" />
                 </div>
                 <div className="box-title">
                   <h3 className="fw-bold fs-5 text-center mt-2">{decoded.given_name} {decoded.family_name}</h3>
