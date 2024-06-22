@@ -4,7 +4,7 @@ function Input({handleChange, value, title, name, color}) {
         <label className='sidebar-label-container'>
                 <input
                     type='radio'
-                    name={name}
+                    name={name} 
                     value={value}
                     onChange={handleChange}
                 />

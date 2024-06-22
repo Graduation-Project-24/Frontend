@@ -33,7 +33,6 @@ function ForgetPassword() {
   const accessToken = token
   sendPostRequest(apiUrl, accessToken)
   }
-
   return <>
 
     <div className="forget_password py-5 my-3">
