@@ -29,7 +29,7 @@ function ConfirmPassword() {
     }
   };
 
-  const apiUrl = `https://www.smarketp.somee.com/api/Order/ConfirmOrder/${decoded.nameid}`;
+  const apiUrl = `https://www.smarketp.somee.com/api/Order/ConfirmOrder?userId=${decoded.nameid}`;
   const accessToken = token
   sendPostRequest(apiUrl, accessToken)
   }
