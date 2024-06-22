@@ -29,7 +29,7 @@ function ForgetPassword() {
     }
   };
 
-  const apiUrl = `https://www.smarketp.somee.com/api/Order/DenyOrde?userId=${decoded.nameid}`;
+  const apiUrl = `https://www.smarketp.somee.com/api/Order/DenyOrder?userId=${decoded.nameid}`;
   const accessToken = token
   sendPostRequest(apiUrl, accessToken)
   }
