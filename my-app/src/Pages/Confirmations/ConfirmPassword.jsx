@@ -11,8 +11,11 @@ function ConfirmPassword() {
 
   var token = localStorage.getItem("userToken", token);
   const decoded = jwtDecode(token);
-  console.log(decoded.nameid)
 
+  let goHome =()=>{
+    window.location.href ="/"
+  }
+  
   const handleSubmit =()=>{
     const sendPostRequest = async (url, data, token) => {
       try {
@@ -22,8 +25,10 @@ function ConfirmPassword() {
             "Content-Type": "application/json"
           },
         };
+
         const response = await axios.get(url, config)
-        toast.info("I am in Your Cart Now")
+        setTimeout(goHome,1000)
+        toast.info("Payment Accepted")
     } catch (error) {
       console.error('Error:', error)
     }
@@ -35,6 +40,7 @@ function ConfirmPassword() {
   }
   return <>
     <div className="confirm_password py-5 my-3 mb-2">
+      <ToastContainer />
       <div className="container">
         <div className="image text-center">
           <CiCircleCheck />
