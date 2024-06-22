@@ -65,7 +65,7 @@ function App() {
 
         {/* Other routes */}
         <Route path="forgetpassword" element={<ForgetPassword />} />
-        <Route path="confirmpassword" element={<ConfirmPassword />} />
+        <Route path="confirm" element={<ConfirmPassword />} />
       </Routes>
     </BrowserRouter>
     </>

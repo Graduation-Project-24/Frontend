@@ -55,7 +55,7 @@ function Account() {
   };
   const accessToken = token
   sendPostRequest(apiUrl, postData, accessToken)
-}
+  }
 
   return (
     <>
