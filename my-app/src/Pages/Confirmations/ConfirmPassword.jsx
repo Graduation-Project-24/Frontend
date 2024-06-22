@@ -17,7 +17,7 @@ function ConfirmPassword() {
   }
   
   const handleSubmit =()=>{
-    const sendPostRequest = async (url, data, token) => {
+    const sendPostRequest = async (url, token) => {
       try {
         const config = {
           headers: {
@@ -27,7 +27,7 @@ function ConfirmPassword() {
         };
 
         const response = await axios.get(url, config)
-        setTimeout(goHome,1000)
+        setTimeout(goHome,3000)
         toast.info("Payment Accepted")
     } catch (error) {
       console.error('Error:', error)
