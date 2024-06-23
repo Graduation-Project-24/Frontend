@@ -1,6 +1,6 @@
-.chatbot-button {
+.chatbot-button button {
     position: fixed;
-    bottom: 20px;
+    bottom: 40vh;
     right: 20px;
     z-index: 1000;
 }

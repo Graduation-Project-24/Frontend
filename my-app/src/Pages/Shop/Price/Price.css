@@ -1,3 +1,14 @@
-.price-title{
-    margin-top: 20px;
-}
+.ml {
+    margin-left: 20px;
+  }
+  
+  .sidebar-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar-label-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }

@@ -5,10 +5,12 @@ import Register from "./Register/Register"
 
 function User() {
   return <>
-    <Routes>
-      <Route index element={<Login />}></Route>
-      <Route path="/register" element={<Register />}></Route>
-    </Routes>
+    <div className="user">
+      <Routes>
+        <Route index element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
+      </Routes>
+    </div>
   </>
 }
 export default User;

@@ -14,39 +14,50 @@ function ChatBot() {
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
-    if (userMessage.trim() === '') return
-
+    if (userMessage.trim() === '') return;
+  
     const newMessage = {
       text: userMessage,
       sender: 'user',
     };
-    setMessages([...messages, newMessage])
+  
+    setMessages(prevMessages => [...prevMessages, newMessage]);
+    setUserMessage('');
+    console.log(userMessage)
 
     try {
-      const response = await axios.get(`https://esmael-saleh-smarkety.hf.space/api/v1/smarkety?question=${messages}`);
-      const botMessage = {
-        text: response.data.response ,
-        sender: 'bot',
-      };
-      console.log(response)
-      setMessages((prevMessages) => [...prevMessages, botMessage])
+      // Prepare the API call
+      const apiUrl = `https://esmael-saleh-smarkety.hf.space/api/v1/smarkety?question=${encodeURIComponent(userMessage)}`;
+  
+      // Make the API call
+      const response = await axios.get(apiUrl);
+  
+      // Handle API response
+      if (response.data && response.data.response) {
+        const botMessage = {
+          text: response.data.response,
+          sender: 'bot',
+        };
+        setMessages(prevMessages => [...prevMessages, botMessage]);
+      } else {
+        throw new Error('Empty response from server');
+      }
     } catch (error) {
+      console.error('Error fetching response:', error);
       const errorMessage = {
         text: 'Sorry, something went wrong. Please try again later.',
         sender: 'bot',
       };
-      setMessages((prevMessages) => [...prevMessages, errorMessage])
+      setMessages(prevMessages => [...prevMessages, errorMessage]);
     }
-
-    setUserMessage('')
   };
 
   return <>
     <div className="chatbot d-flex flex-column justify-content-center align-items-center">
         <div className="chatbot-button">
           <Button className="fifth-color" onClick={toggle}>
-            <RiRobot2Fill className='fs-2 mb-2'/>
-            <p className='m-0'>Chat Bot</p>
+            <RiRobot2Fill className='icon fs-2 mb-2'/>
+            <p className='title m-0'>Chat Bot</p>
           </Button>
           <Modal isOpen={modal} toggle={toggle} className="chatbot-modal">
             <ModalHeader toggle={toggle}>Chatbot</ModalHeader>

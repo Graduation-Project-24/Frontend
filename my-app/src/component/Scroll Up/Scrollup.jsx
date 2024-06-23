@@ -29,7 +29,7 @@ const ScrollToTopButton = () => {
     return (
     <div className="scroll-to-top">
         {visible && (
-        <Button className="bg-sixth border-0" onClick={scrollToTop}>
+        <Button className="bg-sixth border-0 fs-2" onClick={scrollToTop}>
             ↑
         </Button>
         )}

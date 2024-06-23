@@ -26,7 +26,7 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
                         className= {`page-item  ${currentPage == pgNumber ? 'active' : ''} `} >
 
                         <a onClick={() => setCurrentPage(pgNumber)}  
-                            className='page-link primary-color' 
+                            className='page-link' 
                             href='#'>
                             
                             {pgNumber}
@@ -37,7 +37,6 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
                     <a className="page-link" 
                         onClick={goToNextPage}
                         href='#'>
-                        
                         Next
                     </a>
                 </li>

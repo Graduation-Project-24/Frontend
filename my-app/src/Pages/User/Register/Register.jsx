@@ -54,7 +54,7 @@ function Register() {
   return <>
     <ToastContainer
       theme="dark"/>
-    <div className="Register d-flex justify-content-between ">
+    <div className="register d-flex justify-content-between ">
       <div className="left d-flex flex-column justify-content-center " data-aos="fade-right">
         <div className="login-form">
           <header className="mb-4">
@@ -94,14 +94,14 @@ function Register() {
             </div>
             <div className="d-flex justify-content-between">
               <div>
-                <label htmlFor="birthday">Enter Your Data<span className="text-danger">*</span></label>
+                <label htmlFor="birthday">Enter Email<span className="text-danger">*</span></label>
                 <div className="email d-flex align-items-center mt-1 my-3">
                   <MdEmail className="fs-5 text-black-50"/>
                   <input 
-                    type="date" 
-                    name="date" 
-                    placeholder="11/4/2001"
-                    value={formData.date}
+                    type="email" 
+                    name="email" 
+                    placeholder="omar"
+                    value={formData.email}
                     onChange={handleChange}
                     required
                   />
@@ -120,20 +120,6 @@ function Register() {
                     required
                   />
                 </div>
-              </div>
-            </div>
-            <div className="d-flex align-items-center justify-content-center">
-              <label htmlFor="email">Enter Email<span className="text-danger">*</span></label>
-              <div className="email d-flex align-items-center mt-1 my-3">
-                <MdEmail className="fs-5 text-black-50"/>
-                <input 
-                    type="email" 
-                    name="email" 
-                    placeholder="ommar@gmail.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
               </div>
             </div>
             <div className="d-flex justify-content-between">
@@ -163,6 +149,20 @@ function Register() {
                   />
                   <span className="eye" onClick={handleShowPass}><FaEye className="fs-5 text-black-50"/></span>
               </div>
+              </div>
+            </div>
+            <div className="d-flex align-items-center justify-content-center">
+              <label htmlFor="email">Enter Date<span className="text-danger">*</span></label>
+              <div className="email d-flex align-items-center mt-1 my-3">
+                <MdEmail className="fs-5 text-black-50"/>
+                <input 
+                    type="date" 
+                    name="date" 
+                    placeholder="11/4/2001"
+                    value={formData.date}
+                    onChange={handleChange}
+                    required
+                  />
               </div>
             </div>
             <button type="submit" className="btn primary-color rounded-3 text-white mb-3 fw-bold" onClick={handleSubmit}>Register</button>
