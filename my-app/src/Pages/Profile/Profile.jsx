@@ -54,7 +54,7 @@ export default function Profile() {
                       className="nav-link mb-4">Favorite
                     </NavLink>
                     <NavLink 
-                      to="/user" 
+                      to="/" 
                       style={({isActive}) => isActive ? activeStyle : null }
                       className="nav-link mb-4"
                       onClick={()=>(localStorage.removeItem("userToken"))}>Logout

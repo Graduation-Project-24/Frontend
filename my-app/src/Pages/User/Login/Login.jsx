@@ -27,7 +27,7 @@ function Login() {
   }
 
   let goHome =()=>{
-    window.location.href ="/"
+    window.location.href ="/home"
   }
 
   const handleSubmit =(e)=>{
@@ -97,7 +97,7 @@ function Login() {
           </form>
           <div className="d-flex justify-content-center">
             <p>Don't have account? </p>
-            <Link to="/user/register" className="text-info ms-1"> Register Now</Link>
+            <Link to="/register" className="text-info ms-1"> Register Now</Link>
           </div>
         </div>
       </div>

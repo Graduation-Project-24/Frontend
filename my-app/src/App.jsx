@@ -36,38 +36,41 @@ function App() {
   return (
     <>  
     <BrowserRouter>
-      <Routes>
-        {/* Public routes */}
-        <Route path="/user" element={<User />}>
-          <Route index element={<Login />} />
-          <Route path="register" element={<Register />} />
-        </Route>
-
-        {/* Protected routes */}
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="cart" element={<Cart />} />
-
-          <Route path="shop">
-            <Route index element={<Shop />} />
-            <Route path=":id" element={<Product />} />
+        <Routes>
+          {/* Public routes */}
+          <Route path="/" element={<User />}>
+            <Route index element={<Login />} />
+            <Route path="register" element={<Register />} />
           </Route>
 
-          <Route path="profile" element={<Profile />}>
-            <Route index element={<Account />} />
-            <Route path="password" element={<Password />} />
-            <Route path="orders" element={<Order />} />
-            <Route path="favorite" element={<Favorite />} />
-          </Route>
-        </Route>
+          {/* Protected routes */}
+          <Route path="/home" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="cart" element={<Cart />} />
 
-        {/* Other routes */}
-        <Route path="deny" element={<ForgetPassword />} />
-        <Route path="confirm" element={<ConfirmPassword />} />
-      </Routes>
-    </BrowserRouter>
+            <Route path="shop">
+              <Route index element={<Shop />} />
+              <Route path=":id" element={<Product />} />
+            </Route>
+
+            <Route path="profile" element={<Profile />}>
+              <Route index element={<Account />} />
+              <Route path="password" element={<Password />} />
+              <Route path="orders" element={<Order />} />
+              <Route path="favorite" element={<Favorite />} />
+            </Route>
+          </Route>
+
+          {/* Other routes */}
+          <Route path="deny" element={<ForgetPassword />} />
+          <Route path="confirm" element={<ConfirmPassword />} />
+
+          {/* Fallback route for 404 Not Found */}
+          <Route path="*" element={<div>404 Not Found</div>} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

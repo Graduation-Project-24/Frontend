@@ -20,10 +20,7 @@ function Navigation() {
 
   var token = localStorage.getItem('userToken', token)
   var decode = jwtDecode(token)
-
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
 
   const activeStyle = {
     fontWeight: "bold",
@@ -53,7 +50,7 @@ function Navigation() {
 
           <Nav className="justify-content-end flex-grow-1 pe-3" data-aos="fade-left">
             <NavLink 
-              to="/"
+              to="/home"
               style={({isActive}) => isActive ? activeStyle : null }
               className="nav-link"
             >
@@ -61,7 +58,7 @@ function Navigation() {
             </NavLink>
             
             <NavLink 
-              to="/about"
+              to="/home/about"
               style={({isActive}) => isActive ? activeStyle : null }
               className="nav-link"
             >
@@ -69,21 +66,21 @@ function Navigation() {
             </NavLink>
             
             <NavLink 
-              to="/shop"
+              to="/home/shop"
               style={({isActive}) => isActive ? activeStyle : null }
               className="nav-link"
             >
               Shop
             </NavLink>
             <NavLink 
-              to="/contact"
+              to="/home/contact"
               style={({isActive}) => isActive ? activeStyle : null }
               className="nav-link"
             >
               Contact
             </NavLink>
             <NavLink 
-              to="/cart"
+              to="/home/cart"
               style={({isActive}) => isActive ? activeStyle : null }
               className="nav-link"
             >

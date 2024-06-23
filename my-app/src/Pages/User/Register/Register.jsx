@@ -169,7 +169,7 @@ function Register() {
           </form>
           <div className="d-flex justify-content-center">
             <p>have account? </p>
-            <Link to="/user" className="text-info ms-1">Login</Link>
+            <Link to="/" className="text-info ms-1">Login</Link>
           </div>
         </div>
       </div>
