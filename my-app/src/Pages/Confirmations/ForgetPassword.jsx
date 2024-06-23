@@ -9,7 +9,7 @@ function ForgetPassword() {
   const decoded = jwtDecode(token);
 
   let goHome =()=>{
-    window.location.href ="/"
+    window.location.href ="/home"
   }
 
   const handleSubmit =()=>{
