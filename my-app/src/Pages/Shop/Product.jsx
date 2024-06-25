@@ -12,13 +12,12 @@ const Product = () => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [recommendations, setRecommendations] = useState([]);
-  const [flag, setFlag] = useState()
+  const [flag, setFlag] = useState(id)
 
-  // Fetch product details
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiUrl = `https://www.smarketp.somee.com/api/Product/getproductdetailsforweb/${id}`;
+        const apiUrl = `https://www.smarketp.somee.com/api/Product/getproductdetailsforweb/${flag}`;
         const response = await axios.get(apiUrl);
         setProduct(response.data);
         setLoading(false);
@@ -29,16 +28,17 @@ const Product = () => {
     };
 
     fetchData();
-  }, [id]);
+  }, [flag]);
 
   // Fetch recommendations
   useEffect(() => {
     const fetchRecommendations = async () => {
       if (product) {
         try {
-          const apiUrl = `https://esmael-saleh-recommend-50-samples.hf.space/api/recommendations?product_id=${product.id}&num_recommendations=5`;
+          const apiUrl = `https://esmael-saleh-recommend-50-samples.hf.space/api/recommendations?product_id=${id}&num_recommendations=5`;
           const response = await axios.get(apiUrl);
           setRecommendations(response.data.recommendations);
+          console.log(recommendations)
         } catch (error) {
           console.error('Error fetching recommendations:', error);
         }
@@ -52,7 +52,7 @@ const Product = () => {
   useEffect(() => {
     const checkFavorite = async () => {
       if (product) {
-        const apiUrl = `https://www.smarketp.somee.com/api/Favorite/CheckFavorite?productId=${product.id}`;
+        const apiUrl = `https://www.smarketp.somee.com/api/Favorite/CheckFavorite?productId=${id}`;
         try {
           const config = {
             headers: {
@@ -103,7 +103,7 @@ const Product = () => {
 
     const apiUrl = 'https://www.smarketp.somee.com/api/Order/AddToCart';
     const postData = {
-      "productId": product.id,
+      "productId": id,
       "quantity": quantity
     };
 
@@ -207,7 +207,7 @@ const Product = () => {
                   </div>
                   <hr />
                   <div className='d-flex justify-content-between align-items-center'>
-                    <Link to={`/shop/${recommendedItem.productId}`} onClick={() => setFlag(recommendedItem.productId)} className="btn bg-orange">See more</Link>
+                    <Link to={`/home/shop/${recommendedItem.product_id}`} onClick={() => setFlag(recommendedItem.product_id)} className="btn bg-orange">See more</Link>
                   </div>
                 </div>
               ))
