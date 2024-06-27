@@ -1,10 +1,7 @@
 import "./Profile.css";
-import { FaCamera } from "react-icons/fa";
-
 import { Outlet, NavLink } from "react-router-dom";
-
 import { jwtDecode } from "jwt-decode";
-import { useState, useEffect } from "react";
+import { ToastContainer} from 'react-toastify';
 
 export default function Profile() {
 
@@ -21,6 +18,7 @@ export default function Profile() {
     <>
       <div className="profile">
         <div className="container">
+        <ToastContainer theme="dark" />
           <div className="content my-3 pt-3">
             <div class="row  justify-content-around gap-3">
               <div className="col-3 box py-4 rounded" data-aos="fade-right">
@@ -28,7 +26,7 @@ export default function Profile() {
                   <img src={decoded.imageUrl} alt="profile" />
                 </div>
                 <div className="box-title">
-                  <h3 className="fw-bold fs-5 text-center mt-2">{decoded.given_name} {decoded.family_name}</h3>
+                  <h3 className="fw-bold fs-5 text-center mt-2">{decoded.unique_name}</h3>
                 </div>
                 <div className="box-list d-flex flex-column justify-content-between align-items-start">
                   <nav className="mb-0 mt-3">

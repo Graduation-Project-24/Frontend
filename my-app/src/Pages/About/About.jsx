@@ -10,7 +10,6 @@ import asmaa from "../../assets/asmaa.jpg"
 import ashrakat from "../../assets/ashrakat.jpg"
 import nayera from "../../assets/nayera.jpg"
 import mai from "../../assets/maii.PNG"
-import video from "../../assets/project.mp4"
 
 function About() {
 
@@ -27,8 +26,15 @@ function About() {
         <div className="row mt-3">
           <h3 className='fw-bold'>How It Works</h3> 
           <div className="video mt-2" data-aos="flip-left">
-          <video src={video} preload="auto" width="100%" height="100%" autoPlay muted  poster="assets/img/header-bg-2.jpg">
-          </video>
+          <div style={{ position: 'relative', paddingBottom: '56.25%', height: "0", overflow: 'hidden', maxWidth: '100%', background: '#000' }}>
+            <iframe
+              title="YouTube video"
+              src="https://www.youtube.com/embed/eSyQhWeRRG0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+            ></iframe>
+          </div>
           </div>
         </div>
         <hr />

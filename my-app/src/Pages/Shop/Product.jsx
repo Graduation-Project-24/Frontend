@@ -86,11 +86,11 @@ const Product = () => {
         }
       };
 
-      const method = isFavorite ? axios.delete : axios.post;
+      const method = axios.post;
       await method(apiUrl, { productId: product.id }, config);
       setIsFavorite(!isFavorite);
       const message = isFavorite ? "Removed from favorites" : "Added to favorites";
-      toast.success(message);
+      !isFavorite ? toast.success(message) : toast.warning(message);
     } catch (error) {
       console.error('Error toggling favorite:', error);
       toast.error("Failed to update favorite status");
@@ -181,7 +181,6 @@ const Product = () => {
                 <nav>
                   <ul className="d-flex">
                     <li className="active">Overview</li>
-                    <li>Rating</li>
                   </ul>
                 </nav>
                 <p>{product.description}</p>
