@@ -74,3 +74,5 @@ This project is licensed under the MIT License.
 
 Contact
 For any inquiries or feedback, please reach out to omarelnahas1141@gmail.com
+
+Thank you for checking out SMARKET! We hope you find it innovative and engaging. 🚀
